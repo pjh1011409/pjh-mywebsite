@@ -1,0 +1,15 @@
+.footerMark{
+    display: block;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.footerInfo{
+    color:aliceblue;
+   text-align: center
+;}
+
+.footerIcon:hover{
+    transform: scale(1.1);
+
+}

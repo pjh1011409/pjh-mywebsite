@@ -1,0 +1,6 @@
+.navBtn{
+    margin: 0 auto;
+}
+.navBtn:hover {
+        transform: scale(1.1);
+    }

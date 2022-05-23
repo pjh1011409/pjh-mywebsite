@@ -54,7 +54,7 @@ function Information(){
               <Col sm className={styles.info}>
                 <FontAwesomeIcon
                   icon={faFile}
-                  style={{ marginBottom: "10px" }}
+                  style={{ marginBottom: "10px"}}
                 />
                 <h4>이력서 보러가기</h4>
               </Col>
