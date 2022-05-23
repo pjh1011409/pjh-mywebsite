@@ -9,19 +9,21 @@ li{
 
 .backGround{
     font-size: 30px;
-    background-color: antiquewhite;
+    background-color: black;
     height: 200px;
 }
 .title{
     display: block;
     text-align: center;
     margin: 60px;
+    color: aliceblue;
 }
 
 .aboutMe{
     width: 80%;
     padding: 50px 60px;
     margin: 0 auto;
+    
 }
 
 .myPhoto{
@@ -50,4 +52,9 @@ li{
     text-align: center;
     margin: 20px;
     min-width: 200px;
+}
+
+
+.profileIcon:hover{
+    transform: scale(1.1);
 }
