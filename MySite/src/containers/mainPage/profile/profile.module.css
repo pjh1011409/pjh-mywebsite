@@ -1,0 +1,38 @@
+.aboutMe{
+    width: 80%;
+    padding: 50px 60px;
+    margin: 0 auto;
+    
+}
+
+.myPhoto{
+    width: 400px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.profile{
+    display: block;
+    margin-top: 100px;
+    text-align: center;
+}
+
+.icons{
+    list-style: none;
+    display: block;
+}
+
+.icon:hover{
+    transform: scale(1.1);
+}
+
+.icon{
+    width: 40px;
+    margin: 5px;
+}
+
+.introduce{
+    margin-top: 50px;
+    text-align: center;
+}

@@ -2,6 +2,7 @@
     display: block;
     text-align: center;
     padding-top: 50px;
+    background-color:#505050
 }
 
 .footerInfo{
@@ -9,7 +10,13 @@
    text-align: center
 ;}
 
-.footerIcon:hover{
-    transform: scale(1.1);
 
+
+.icon:hover{
+    transform: scale(1.1);
+}
+
+.icon{
+    width: 40px;
+    margin: 7px;
 }

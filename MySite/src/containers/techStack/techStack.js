@@ -7,10 +7,18 @@ function TechStack() {
   return (
     <div>
       <Header></Header>
-      <img className={styles.icon} src="/assets/images/html-icon.png"></img>
-      <img className={styles.icon} src="/assets/images/css-icon.png"></img>
-      <img className={styles.icon} src="/assets/images/js-icon.png"></img>
-      <img className={styles.icon} src="/assets/images/react-icon.png"></img>
+      <img className={styles.icon} src="/assets/images/icons/html-icon.png"></img>
+      <img className={styles.icon} src="/assets/images/icons/css-icon.png"></img>
+      <img className={styles.icon} src="/assets/images/icons/js-icon.png"></img>
+      <img className={styles.icon} src="/assets/images/icons/react-icon.png"></img>
+      <img className={styles.icon} src="/assets/images/icons/vue-icon.png"></img>
+      <img className={styles.icon} src="/assets/images/icons/django-icon.png"></img>
+      <img className={styles.icon} src="/assets/images/icons/mysql-icon.png"></img>
+      <img className={styles.icon} src="/assets/images/icons/github-icon.png"></img>
+      <img className={styles.icon} src="/assets/images/icons/java-icon.png"></img>
+      <img className={styles.icon} src="/assets/images/icons/typescript-icon.png"></img>
+      <img className={styles.icon} src="/assets/images/icons/python-icon.png"></img>
+      <img className={styles.icon} src="/assets/images/icons/node-icon.png"></img>
 
     </div>
   );
