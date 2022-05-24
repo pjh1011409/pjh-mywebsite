@@ -16,6 +16,9 @@ function Header() {
               <Nav.Link as={Link} to="/projects"  className={styles.navBtn} >Projects</Nav.Link>
               <Nav.Link as={Link} to="/myStory"  className={styles.navBtn} >My Story</Nav.Link>
               <Nav.Link as={Link} to="/study"  className={styles.navBtn} >Study</Nav.Link>
+              <Nav.Link as={Link} to="/myRecord"  className={styles.navBtn} >MyRecord</Nav.Link>
+              <Nav.Link as={Link} to="/login"  className={styles.navBtn} >Login</Nav.Link>
+
             </Nav>
             <Form className="d-flex">
               <FormControl
@@ -24,7 +27,7 @@ function Header() {
                 className="me-2"
                 aria-label="Search"
               />
-              <Button variant="outline-success">Search</Button>
+            <Button variant="outline-dark">Search</Button>
             </Form>
           </Navbar.Collapse>
         </Container>

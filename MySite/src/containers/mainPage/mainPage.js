@@ -1,8 +1,8 @@
 import Header from '../../components/common/Header/header'
 import Footer from '../../components/common/Footer/footer'
-import Title from './title'
-import Profile from './profile'
-import Information from './information'
+import Title from './title/title'
+import Profile from './profile/profile'
+import Information from './information/information'
 
 function MainPage() {
   return (

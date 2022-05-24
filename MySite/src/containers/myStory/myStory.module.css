@@ -1,0 +1,35 @@
+.row1{
+    width: 70%;
+    height: 300px;
+    margin: 0 auto;
+    margin-top: 70px;
+}
+
+.row2{
+    width: 70%;
+    height: 300px;
+    margin: 0 auto;
+    margin-top: 170px;
+}
+
+.image1{
+    width: 400px;
+    display: block;
+    margin: 0 auto;
+}
+
+.image2{
+    width: 400px;
+   
+}
+
+
+
+.story1{
+   text-align: center;
+}
+
+
+.story2{
+  
+}
