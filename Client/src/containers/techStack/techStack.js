@@ -3,10 +3,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faJs} from '@fortawesome/free-brands-svg-icons';
 
 import styles from './techStack.module.css'
+import { MdHeight } from 'react-icons/md';
 function TechStack() {
   return (
-    <div>
-      <Header></Header>
+    <div style={{display:'flex', justifyContent:'center', alignContent:'center',height:'400px'}}>
       <img className={styles.icon} src="/assets/images/icons/html-icon.png"></img>
       <img className={styles.icon} src="/assets/images/icons/css-icon.png"></img>
       <img className={styles.icon} src="/assets/images/icons/js-icon.png"></img>

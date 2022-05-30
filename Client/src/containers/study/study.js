@@ -2,8 +2,8 @@ import Header from '../../components/common/Header/header'
 
 function Study(){
     return(
-        <div>
-            <Header></Header>
+        <div style={{height:'600px', backgroundColor:'#Cccc'}}>
+            study 공간
         </div>
     )
 }
