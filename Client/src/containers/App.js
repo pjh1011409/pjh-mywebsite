@@ -12,12 +12,21 @@ import StudyWrite from './myRecord/skillStudy/studyWrite/studyWrite';
 import StudyDetail from './myRecord/skillStudy/studyDetail/studyDetail'
 import {Routes, Switch, Route} from 'react-router-dom'
 
+import scrollbar from 'smooth-scrollbar'
+
+
+// smooth scroll 설정
+scrollbar.init(document.querySelector('#smooth-scroll'));
 
 function App() {
   return (
     <div>
       <Routes>
       <Route exact path='/' element = {<MainPage/>}/>
+      <Route exact path='/techStack' element = {<TechStack/>}/>
+      <Route exact path='/projects' element = {<Projects/>}/>
+      <Route exact path='/myStory' element = {<MyStory/>}/>
+      <Route exact path='/study' element = {<Study/>}/>
       <Route exact path='/myRecord' element = {<MyRecord/>}/>
       <Route exact path='/login' element = {<Login/>}/>
 
