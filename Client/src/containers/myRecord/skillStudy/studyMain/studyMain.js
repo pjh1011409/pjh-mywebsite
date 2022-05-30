@@ -2,14 +2,14 @@ import { Card, Button, Form, FormControl } from 'react-bootstrap'
 import styles from './studyMain.module.css'
 import StudyWrite from '../studyWrite/studyWrite'
 import StudyDetail from '../studyDetail/studyDetail'
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { useState, useEffect, useRef } from 'react'
 
 function SKillStudyMain() {
-    let navigate = useNavigate(); 
-
+    const [search, setSearch] = useState('')
     const [text, setText] = useState([])
+    const [searchBtn, setSearchBtn] = useState('');
 
     const eventHandler = (event) => {
         axios
@@ -30,15 +30,26 @@ function SKillStudyMain() {
         } else {
             console.log('랜더링 될때마다 실행')
             console.log(text)
-
         }
     }, [text])
 
-
     return (
         <div className={styles.contentLayout}>
-            {text.map((e) => (
-                <Card style={{ marginBottom: '20px' }}>
+            
+            {
+
+            text.filter((val) => {
+                if(search === ""){
+                    console.log(searchBtn)
+
+                    return val
+                }else if(val.title.toLowerCase().includes(searchBtn.toLowerCase())){
+                    console.log(searchBtn)
+
+                    return val
+                }
+            }).map((e) => (
+                <Card style={{ marginBottom: '20px' }} key={e.id}>
                     <Card.Header as="h5">{e.id}</Card.Header>
                     <Card.Body>
                         <Card.Title>{e.title}</Card.Title>
@@ -51,6 +62,7 @@ function SKillStudyMain() {
                     </Card.Body>
                 </Card>
             ))}
+           
 
             <Button
                 className={styles.button}
@@ -67,9 +79,19 @@ function SKillStudyMain() {
                     className="me-2"
                     aria-label="Search"
                     style={{ width: '200px' }}
+                    onChange={(e) => {
+                        setSearch(e.target.value)
+                        console.log(search)
+                    }}
                 />
-                <Button variant="outline-dark">Search</Button>
+                <Button
+                    variant="outline-dark"
+                    onClick={()=>{setSearchBtn(search)}}
+                >
+                    Search
+                </Button>
             </Form>
+
         </div>
     )
 }

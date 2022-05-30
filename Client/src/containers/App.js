@@ -18,10 +18,6 @@ function App() {
     <div>
       <Routes>
       <Route exact path='/' element = {<MainPage/>}/>
-      <Route exact path='/techStack' element = {<TechStack/>}/>
-      <Route exact path='/projects' element = {<Projects/>}/>
-      <Route exact path='/myStory' element = {<MyStory/>}/>
-      <Route exact path='/study' element = {<Study/>}/>
       <Route exact path='/myRecord' element = {<MyRecord/>}/>
       <Route exact path='/login' element = {<Login/>}/>
 

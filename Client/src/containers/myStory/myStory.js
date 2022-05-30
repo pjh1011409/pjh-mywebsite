@@ -1,11 +1,9 @@
-import Header from '../../components/common/Header/header'
 import {Row,Col} from 'react-bootstrap'
 import styles from './myStory.module.css'
 
 function MyStory() {
   return (
     <div>
-      <Header></Header>
       <Row className={styles.row1}>
         <Col sm className={styles.rowLeft}>
           <img

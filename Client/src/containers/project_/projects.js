@@ -3,9 +3,8 @@ import {Carousel} from 'react-bootstrap'
 function Projects(){
     return(
         <div>
-            <Header></Header>
-           <div style={{marginBottom:'100px'}}>
-
+           <div style={{marginBottom:'100px', height:'700px', backgroundColor:'gray'}}>
+                프로젝트 공간
            </div>
         </div>
     )
