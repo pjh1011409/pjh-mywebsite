@@ -1,65 +1,40 @@
 import Header from '../../components/common/Header/header'
 import { Form, Button } from 'react-bootstrap'
 import './login.scss'
+
+import styled from 'styled-components';
+import Middle from './Middle';
+import Side from './Sid';
+
+
+const MainDiv = styled.div`
+  margin: 3rem 5rem;
+`
+
+const ContentDiv = styled.div`
+  width: 100%;
+  display: flex;
+`
+
 function Login() {
     return (
         <div>
             <Header></Header>
 
-            <div class="pages">
-                <input id="one" name="trigger" type="radio"></input>
-                <input id="two" name="trigger" type="radio"></input>
-                <input id="three" name="trigger" type="radio"></input>
-                <input id="four" name="trigger" type="radio"></input>
 
-                <div class="pages_page">
-                    <div class="pages_page__inner">
-                        첫번째(파랑색)
-                        <div class="content"></div>
-                    </div>
-                </div>
+            <MainDiv>
+      <ContentDiv>
+        <Middle />
+        <Side />
+      </ContentDiv>
+    </MainDiv>
 
-                <div class="pages_page">
-                    <div class="pages_page__inner">
-                        두번째(갈색)
-                        <div class="control next">
-                            <label for="two"></label>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="pages_page">
-                    <div class="pages_page__inner">
-                        세번째(살색)
-                        <div class="control">
-                            <label for="one"></label>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="pages_page">
-                    <div class="pages_page__inner">
-                        네번째(하늘색)
-                        <div class="control next">
-                            <label for="three"></label>
-                        </div>
-                        <div class="content"></div>
-                    </div>
-                </div>
 
-                <div class="pages_page">
-                    <div class="pages_page__inner">
-                        다섯번째(초록색)
-                        <div class="control">
-                            <label for="two"></label>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="pages_page">
-                    <div class="pages_page__inner">마지막페이지(연보라)</div>
-                </div>
-            </div>
+
+
 
             {/* <div style={{ width: '50%', margin: '0 auto' }}>
                 <Form>
