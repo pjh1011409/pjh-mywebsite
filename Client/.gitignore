@@ -4,10 +4,9 @@
 /node_modules
 /.pnp
 .pnp.js
-/venvs
+venvs/
 # testing
 /coverage
-
 # production
 /build
 
