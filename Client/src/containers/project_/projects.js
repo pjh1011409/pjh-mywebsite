@@ -3,8 +3,8 @@ import {Col} from 'react-bootstrap'
 function Projects(){
     return(
         <div>
-           <div style={{marginBottom:'100px', height:'700px', backgroundColor:'gray'}}>
-           <div class="pages">
+           <div style={{marginBottom:'100px', height:'1000px', backgroundColor:'gray'}}>
+           <div class="pages" style={{height:'1300px'}}>
                 <input id="one" name="trigger" type="radio"></input>
                 <input id="two" name="trigger" type="radio"></input>
                 <input id="three" name="trigger" type="radio"></input>
@@ -13,14 +13,20 @@ function Projects(){
                 
                 <div class="pages_page">
                     <div class="pages_page__inner">
-                        첫번째(파랑색)
+                        <div class="project"></div>
+                        <div class="introduce">
+                        <h1>프로젝트명</h1>
+                        <h4>------------프로젝트 소개--------------</h4>
+                        <h4>기간</h4>
+                        <h4>팀원</h4>
+                        </div>
                         <div class="content"></div>
                     </div>
                 </div>
 
                 <div class="pages_page">
                     <div class="pages_page__inner">
-                        두번째(갈색)
+                       
                         <div class="control next">
                             <label for="two"></label>
                         </div>
