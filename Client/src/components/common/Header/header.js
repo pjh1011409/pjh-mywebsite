@@ -9,8 +9,10 @@ import {
 import { Link } from 'react-router-dom'
 
 import styles from './header.module.css'
+import $ from 'jquery'
 
 function Header() {
+  
     return (
         <div>
             <Navbar bg="light" expand="lg">

@@ -35,7 +35,7 @@ body {
         perspective: var(--perspective);
         box-shadow: 0 41px 38px -20px #0a3150;
         max-width: 1300px;
-        max-height: 650px;
+        max-height: 700px;
 
 
         input {
@@ -132,9 +132,21 @@ body {
     }
 }
 
+project{
+     border: 1px solid black;
+     width: 95%;
+     height: 50%;
+     display: block;
+     margin: 0 auto;
+     padding-top: 30px;
+ }
 
+.introduce{
 
-
+    h1,h4{
+        text-align: center;
+    }
+}
 
 
             &__inner {

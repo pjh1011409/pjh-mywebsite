@@ -9,13 +9,14 @@ import Study from '../study/study'
 import MyRecord from '../myRecord/myRecord'
 import TechStack from '../techStack/techStack'
 function MainPage() {
+
   return (
     <div>
       <Header></Header>
       <Title></Title>
       <Profile></Profile>
       <Information></Information>
-      <TechStack></TechStack>
+      <TechStack ></TechStack>
       <Project></Project>
       <MyStory></MyStory>
       <Study></Study>
