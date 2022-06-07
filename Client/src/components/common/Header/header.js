@@ -7,15 +7,20 @@ import {
     Button,
 } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+import * as React from 'react';
 
 import styles from './header.module.css'
-import $ from 'jquery'
 
-function Header() {
+
+
+
+const Header = () => {
+
+   
   
     return (
         <div>
-            <Navbar bg="light" expand="lg">
+            <Navbar bg="light" expand="lg" style={{position:'-webkit-sticky',position:'sticky',width:'100%',top:'0',left:'0',right:'0',}}>
                 <Container>
                     <img
                         src="assets/images/profile/park.png"
@@ -37,9 +42,9 @@ function Header() {
                                 Tech Stack
                             </Nav.Link>
                             <Nav.Link
-                                as={Link}
-                                to="/projects"
+                                
                                 className={styles.navBtn}
+
                             >
                                 Projects
                             </Nav.Link>

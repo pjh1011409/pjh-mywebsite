@@ -8,21 +8,25 @@ import Project from '../project_/projects'
 import Study from '../study/study'
 import MyRecord from '../myRecord/myRecord'
 import TechStack from '../techStack/techStack'
-function MainPage() {
+import React, {useRef, useState} from 'react';
 
-  return (
+function MainPage(){
+  const mainRef = useRef(null); //represents main section
+  const projecttRef = useRef(null); //represents about section
+  const usageRef = useRef(null); /
+  return(
     <div>
-      <Header></Header>
-      <Title></Title>
-      <Profile></Profile>
-      <Information></Information>
-      <TechStack ></TechStack>
-      <Project></Project>
-      <MyStory></MyStory>
-      <Study></Study>
-      <Footer></Footer>
+    <Header ref={scrollRef}></Header>
+    <Title >
+    </Title>
+    <Profile></Profile>
+    <Information></Information>
+    <div ref={scrollRef}>
+    <Project></Project>
 
     </div>
+    </div>
+   
   );
 }
 
