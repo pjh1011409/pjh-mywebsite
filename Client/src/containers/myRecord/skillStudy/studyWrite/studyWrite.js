@@ -15,6 +15,7 @@ import { Link } from 'react-router-dom'
 function StudyWrite() {
     const [inputTitle, setInputTitle] = useState('')
     const [inputContent, setInputContent] = useState('')
+    const [inputCategory, setInputCategory] = useState('')
 
     const titleHandler = (event) => {
         setInputTitle(event.target.value)
@@ -22,12 +23,17 @@ function StudyWrite() {
     const contentHandler = (event) => {
         setInputContent(event.target.value)
     }
+    const categoryHandler = (event) => {
+        setInputCategory(event.target.value)
+    }
 
     const onClickHandler = (event) => {
         axios
             .post('http://127.0.0.1:8000/review/', {
+                category: inputCategory,
                 title: inputTitle,
                 content: inputContent,
+            
             })
             .then(function (response) {
                 console.log(response)
@@ -51,18 +57,12 @@ function StudyWrite() {
                 {/* -------------Category-------------- */}
 
                 <Col sm>
-                    <DropdownButton
-                        id="dropdown-basic-button"
-                        title="카테고리를 선택하세요"
-                    >
-                        <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-                        <Dropdown.Item href="#/action-2">
-                            Another action
-                        </Dropdown.Item>
-                        <Dropdown.Item href="#/action-3">
-                            Something else
-                        </Dropdown.Item>
-                    </DropdownButton>
+                    <select onChange={(e) => categoryHandler(e)}>
+                        <option value="공부">필수선택</option>
+                        <option value="React">React</option>
+                        <option value="javaScript">JavaScript</option>
+
+                    </select>
                 </Col>
             </Row>
             {/* -------------Subtitle-------------- */}

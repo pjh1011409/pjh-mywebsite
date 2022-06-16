@@ -1,77 +1,278 @@
 import './projects.scss'
-import {Col} from 'react-bootstrap'
-function Projects(){
-    return(
+import { Col } from 'react-bootstrap'
+function Projects() {
+    return (
         <div>
-           <div style={{marginBottom:'100px', height:'1000px', backgroundColor:'gray'}}>
-           <div class="pages" style={{height:'1300px'}}>
-                <input id="one" name="trigger" type="radio"></input>
-                <input id="two" name="trigger" type="radio"></input>
-                <input id="three" name="trigger" type="radio"></input>
-                <input id="four" name="trigger" type="radio"></input>
+            <div
+                style={{
+                    marginBottom: '100px',
+                    height: '1000px',
+                    backgroundColor: 'gray',
+                }}
+            >
+                <div class="pages" style={{ height: '1300px' }}>
+                    <input id="one" name="trigger" type="radio"></input>
+                    <input id="two" name="trigger" type="radio"></input>
+                    <input id="three" name="trigger" type="radio"></input>
+                    <input id="four" name="trigger" type="radio"></input>
 
-                
-                <div class="pages_page">
-                    <div class="pages_page__inner">
-                        <div class="project"></div>
-                        <div class="introduce">
-                        <h1>프로젝트명</h1>
-                        <h4>------------프로젝트 소개--------------</h4>
-                        <h4>기간</h4>
-                        <h4>팀원</h4>
-                        </div>
-                        <div class="content"></div>
-                    </div>
-                </div>
+                    <div class="pages_page">
+                        <div class="pages_page__inner">
+                            <div class="project"></div>
+                            <div class="introduce">
+                                <h1>펫송완료</h1>
+                                <h4>애완패션 사이트</h4>
+                                <p>
+                                    {' '}
+                                    자신과 살 대중을 청춘의 찾아다녀도,
+                                    아름다우냐? 구하지 예수는 커다란 풀이 얼마나
+                                    실로 내려온 방황하여도, 철환하였는가? 남는
+                                    사는가 같지 없는 유소년에게서 따뜻한
+                                </p>
 
-                <div class="pages_page">
-                    <div class="pages_page__inner">
-                       
-                        <div class="control next">
-                            <label for="two"></label>
-                        </div>
-                    </div>
-                </div>
+                                <h4>2021.11 ~ 2022.02</h4>
+                                <h4>FE - 1명 / BE - 1명 </h4>
 
-                <div class="pages_page">
-                    <div class="pages_page__inner">
-                        세번째(살색)
-                        <div class="control">
-                            <label for="one"></label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="pages_page">
-                    <div class="pages_page__inner">
-                        네번째(하늘색)
-                        <div class="control next">
-                            <label for="three"></label>
-                        </div>
-                        <div class="content"></div>
-                    </div>
-                </div>
-
-                <div class="pages_page">
-                    <div class="pages_page__inner">
-                        다섯번째(초록색)
-                        <div class="control">
-                            <label for="two"></label>
+                                <div
+                                    style={{
+                                        width: '90%',
+                                        height: '350px',
+                                        border: '1px solid',
+                                        margin: '0 auto',
+                                    }}
+                                >
+                                    사이트 소개 사진
+                                </div>
+                                <button
+                                    style={{
+                                        display: 'block',
+                                        margin: '0 auto',
+                                        margibTop: '30px',
+                                    }}
+                                >
+                                    더보기
+                                </button>
+                            </div>
+                            <div class="content"></div>
                         </div>
                     </div>
-                </div>
-               
 
-               
-                <div class="pages_page">
-                    <div class="pages_page__inner">여섯번째 (노랑)</div>
+                    <div class="pages_page">
+                        <div class="pages_page__inner">
+                            <div class="project"></div>
+                            <div class="introduce">
+                                <h1>펫송완료</h1>
+                                <h4>애완패션 사이트</h4>
+                                <p>
+                                    {' '}
+                                    자신과 살 대중을 청춘의 찾아다녀도,
+                                    아름다우냐? 구하지 예수는 커다란 풀이 얼마나
+                                    실로 내려온 방황하여도, 철환하였는가? 남는
+                                    사는가 같지 없는 유소년에게서 따뜻한
+                                </p>
+
+                                <h4>2021.11 ~ 2022.02</h4>
+                                <h4>FE - 1명 / BE - 1명 </h4>
+
+                                <div
+                                    style={{
+                                        width: '90%',
+                                        height: '350px',
+                                        border: '1px solid',
+                                        margin: '0 auto',
+                                    }}
+                                >
+                                    사이트 소개 사진
+                                </div>
+                                <button
+                                    style={{
+                                        display: 'block',
+                                        margin: '0 auto',
+                                        margibTop: '30px',
+                                    }}
+                                >
+                                    더보기
+                                </button>
+                            </div>
+                            <div class="control next">
+                                <label for="two"></label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pages_page">
+                        <div class="pages_page__inner">
+                            <div class="project"></div>
+                            <div class="introduce">
+                                <h1>펫송완료</h1>
+                                <h4>애완패션 사이트</h4>
+                                <p>
+                                    {' '}
+                                    자신과 살 대중을 청춘의 찾아다녀도,
+                                    아름다우냐? 구하지 예수는 커다란 풀이 얼마나
+                                    실로 내려온 방황하여도, 철환하였는가? 남는
+                                    사는가 같지 없는 유소년에게서 따뜻한
+                                </p>
+
+                                <h4>2021.11 ~ 2022.02</h4>
+                                <h4>FE - 1명 / BE - 1명 </h4>
+
+                                <div
+                                    style={{
+                                        width: '90%',
+                                        height: '350px',
+                                        border: '1px solid',
+                                        margin: '0 auto',
+                                    }}
+                                >
+                                    사이트 소개 사진
+                                </div>
+                                <button
+                                    style={{
+                                        display: 'block',
+                                        margin: '0 auto',
+                                        margibTop: '30px',
+                                    }}
+                                >
+                                    더보기
+                                </button>
+                            </div>
+                            <div class="control">
+                                <label for="one"></label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pages_page">
+                        <div class="pages_page__inner">
+                            <div class="project"></div>
+                            <div class="introduce">
+                                <h1>펫송완료</h1>
+                                <h4>애완패션 사이트</h4>
+                                <p>
+                                    {' '}
+                                    자신과 살 대중을 청춘의 찾아다녀도,
+                                    아름다우냐? 구하지 예수는 커다란 풀이 얼마나
+                                    실로 내려온 방황하여도, 철환하였는가? 남는
+                                    사는가 같지 없는 유소년에게서 따뜻한
+                                </p>
+
+                                <h4>2021.11 ~ 2022.02</h4>
+                                <h4>FE - 1명 / BE - 1명 </h4>
+
+                                <div
+                                    style={{
+                                        width: '90%',
+                                        height: '350px',
+                                        border: '1px solid',
+                                        margin: '0 auto',
+                                    }}
+                                >
+                                    사이트 소개 사진
+                                </div>
+                                <button
+                                    style={{
+                                        display: 'block',
+                                        margin: '0 auto',
+                                        margibTop: '30px',
+                                    }}
+                                >
+                                    더보기
+                                </button>
+                            </div>
+                            <div class="control next">
+                                <label for="three"></label>
+                            </div>
+                            <div class="content"></div>
+                        </div>
+                    </div>
+
+                    <div class="pages_page">
+                        <div class="pages_page__inner">
+                            <div class="project"></div>
+                            <div class="introduce">
+                                <h1>펫송완료</h1>
+                                <h4>애완패션 사이트</h4>
+                                <p>
+                                    {' '}
+                                    자신과 살 대중을 청춘의 찾아다녀도,
+                                    아름다우냐? 구하지 예수는 커다란 풀이 얼마나
+                                    실로 내려온 방황하여도, 철환하였는가? 남는
+                                    사는가 같지 없는 유소년에게서 따뜻한
+                                </p>
+
+                                <h4>2021.11 ~ 2022.02</h4>
+                                <h4>FE - 1명 / BE - 1명 </h4>
+
+                                <div
+                                    style={{
+                                        width: '90%',
+                                        height: '350px',
+                                        border: '1px solid',
+                                        margin: '0 auto',
+                                    }}
+                                >
+                                    사이트 소개 사진
+                                </div>
+                                <button
+                                    style={{
+                                        display: 'block',
+                                        margin: '0 auto',
+                                        margibTop: '30px',
+                                    }}
+                                >
+                                    더보기
+                                </button>
+                            </div>
+                            <div class="control">
+                                <label for="two"></label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pages_page">
+                        <div class="pages_page__inner">
+                            <div class="project"></div>
+                            <div class="introduce">
+                                <h1>펫송완료</h1>
+                                <h4>애완패션 사이트</h4>
+                                <p>
+                                    {' '}
+                                    자신과 살 대중을 청춘의 찾아다녀도,
+                                    아름다우냐? 구하지 예수는 커다란 풀이 얼마나
+                                    실로 내려온 방황하여도, 철환하였는가? 남는
+                                    사는가 같지 없는 유소년에게서 따뜻한
+                                </p>
+
+                                <h4>2021.11 ~ 2022.02</h4>
+                                <h4>FE - 1명 / BE - 1명 </h4>
+
+                                <div
+                                    style={{
+                                        width: '90%',
+                                        height: '350px',
+                                        border: '1px solid',
+                                        margin: '0 auto',
+                                    }}
+                                >
+                                    사이트 소개 사진
+                                </div>
+                                <button
+                                    style={{
+                                        display: 'block',
+                                        margin: '0 auto',
+                                        margibTop: '30px',
+                                    }}
+                                >
+                                    더보기
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                
-                
             </div>
-           </div>
         </div>
     )
 }
 
-export default Projects;
+export default Projects

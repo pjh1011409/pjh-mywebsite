@@ -9,8 +9,14 @@
     width: 70%;
     height: 300px;
     margin: 0 auto;
-    margin-top: 170px;
 }
+
+.row3{
+    width: 70%;
+    height: 1000px;
+    margin: 0 auto;
+}
+
 
 .image1{
     width: 400px;

@@ -44,5 +44,5 @@ class ReviewDetail(APIView):
     
     def delete(self, request, pk, format=None):
         review = self.get_object(pk)
-        review.delete()
+        review.all().delete()
         return Response(status=status.HTTP_204_NO_CONTENT)

@@ -6,7 +6,7 @@ from django.db import models
 
 class Review(models.Model):
    
-   
+    category = models.CharField(max_length=50, default='')
     title = models.CharField(max_length=50)
     content = models.TextField()
     updated_at = models.DateTimeField(auto_now=True)

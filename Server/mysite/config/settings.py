@@ -76,27 +76,27 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-# my_settings.py
-
-# import pymysql
-
-# pymysql.install_as_MySQLdb()
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.mysql', #1
-#         'NAME': 'mysite', #2
-#         'USER': 'root', #3                      
-#         'PASSWORD': '1409',  #4              
-#         'HOST': '127.0.0.1',   #5                
-#         'PORT': '3000', #6
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
+# my_settings.py
+
+import pymysql
+
+pymysql.install_as_MySQLdb()
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql', #1
+        'NAME': 'mywebsite', #2
+        'USER': 'root', #3                      
+        'PASSWORD': '1409',  #4              
+        'HOST': '127.0.0.1',   #5                
+        'PORT': '0', #6
+    }
+}
 
 # SECRET = {
 #     'secret': '시크릿키',

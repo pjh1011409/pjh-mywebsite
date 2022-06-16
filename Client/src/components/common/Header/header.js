@@ -7,55 +7,78 @@ import {
     Button,
 } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-import * as React from 'react';
+import * as React from 'react'
 
 import styles from './header.module.css'
 
-
-
-
-const Header = () => {
-
-   
-  
+const Header = (props) => {
     return (
         <div>
-            <Navbar bg="light" expand="lg" style={{position:'-webkit-sticky',position:'sticky',width:'100%',top:'0',left:'0',right:'0',}}>
+            <Navbar
+                bg="light"
+                expand="lg"
+                style={{
+                    position: 'fixed',
+                    opacity: '0.9',
+                    width: '100%',
+                    top: '0',
+                    left: '0',
+                    right: '0',
+                    zIndex: '1',
+                }}
+            >
                 <Container>
                     <img
                         src="assets/images/profile/park.png"
                         style={{ width: '50px', marginRight: '30px' }}
                     ></img>
 
-                    <Navbar.Brand as={Link} to="/">
+                    <Navbar.Brand onClick={() => props.handleIndexClick(0)} style={{cursor:'pointer'}}>
                         PJH's WebSite
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
                             <Nav.Link
-                                as={Link}
-                                to="/techStack"
-                                style={{ color: 'black' }}
+                                style={{
+                                    color: 'black',
+                                    minWidth: '100px',
+                                    textAlign: 'center',
+                                }}
                                 className={styles.navBtn}
+                                onClick={() => props.handleIndexClick(1)}
                             >
                                 Tech Stack
                             </Nav.Link>
                             <Nav.Link
-                                
+                                style={{
+                                    color: 'black',
+                                    minWidth: '100px',
+                                    textAlign: 'center',
+                                }}
                                 className={styles.navBtn}
-
-                            >
-                                Projects
-                            </Nav.Link>
-                            <Nav.Link
-                                as={Link}
-                                to="/myStory"
-                                className={styles.navBtn}
+                                onClick={() => props.handleIndexClick(2)}
                             >
                                 My Story
                             </Nav.Link>
                             <Nav.Link
+                                style={{
+                                    color: 'black',
+                                    minWidth: '100px',
+                                    textAlign: 'center',
+                                }}
+                                className={styles.navBtn}
+                                onClick={() => props.handleIndexClick(3)}
+                            >
+                                Projects
+                            </Nav.Link>
+
+                            <Nav.Link
+                                style={{
+                                    color: 'black',
+                                    minWidth: '100px',
+                                    textAlign: 'center',
+                                }}
                                 as={Link}
                                 to="/study"
                                 className={styles.navBtn}
@@ -63,6 +86,11 @@ const Header = () => {
                                 Study
                             </Nav.Link>
                             <Nav.Link
+                                style={{
+                                    color: 'black',
+                                    minWidth: '100px',
+                                    textAlign: 'center',
+                                }}
                                 as={Link}
                                 to="/myRecord"
                                 className={styles.navBtn}
@@ -70,6 +98,11 @@ const Header = () => {
                                 MyRecord
                             </Nav.Link>
                             <Nav.Link
+                                style={{
+                                    color: 'black',
+                                    minWidth: '100px',
+                                    textAlign: 'center',
+                                }}
                                 as={Link}
                                 to="/login"
                                 className={styles.navBtn}

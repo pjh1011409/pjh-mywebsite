@@ -2,11 +2,15 @@ import { Card, Button, Form, FormControl } from 'react-bootstrap'
 import styles from './studyMain.module.css'
 import StudyWrite from '../studyWrite/studyWrite'
 import StudyDetail from '../studyDetail/studyDetail'
-import { Link, useNavigate } from 'react-router-dom'
+import { Route,Routes, Link, useParams} from 'react-router-dom'
 import axios from 'axios'
 import { useState, useEffect, useRef } from 'react'
+import {useNavigate} from 'react-router';
 
 function SKillStudyMain() {
+
+
+    const navigate = useNavigate();
     const [search, setSearch] = useState('')
     const [text, setText] = useState([])
     const [searchBtn, setSearchBtn] = useState('');
@@ -17,6 +21,7 @@ function SKillStudyMain() {
             .then((response) => {
                 setText([...response.data])
                 console.log(response.data)
+                
             })
             .catch((error) => {
                 console.log(error)
@@ -34,8 +39,10 @@ function SKillStudyMain() {
     }, [text])
 
     return (
+
         <div className={styles.contentLayout}>
-            
+           
+
             {
 
             text.filter((val) => {
@@ -50,19 +57,21 @@ function SKillStudyMain() {
                 }
             }).map((e) => (
                 <Card style={{ marginBottom: '20px' }} key={e.id}>
-                    <Card.Header as="h5">{e.id}</Card.Header>
+                    <Card.Header as="h5">{e.category}</Card.Header>
                     <Card.Body>
                         <Card.Title>{e.title}</Card.Title>
                         <Card.Text>
                             서버와의 데이터렌더링 GET, POST에 대하여 알아보자.
                         </Card.Text>
-                        <Button variant="primary" as={Link} to="studyDetail/">
+                        
+                        <Button variant="primary" onClick={()=>{navigate(`/studyDetail/${e.id}`)}} >
+
                             Go Detail
                         </Button>
                     </Card.Body>
                 </Card>
             ))}
-           
+
 
             <Button
                 className={styles.button}

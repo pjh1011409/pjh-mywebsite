@@ -4,7 +4,6 @@ import styles from './myRecord.module.css'
 
 import SKillStudyMain from './skillStudy/studyMain/studyMain'
 import ToDoMain from './toDoList/toDoMain'
-import CounterContainer from './interview/counterContainer'
 function MyRecord() {
     return (
         <div>
@@ -62,7 +61,6 @@ function RecordContent() {
                     <SKillStudyMain></SKillStudyMain>
                 </Tab.Pane>
                 <Tab.Pane eventKey="second">
-                    <CounterContainer></CounterContainer>
                 </Tab.Pane>
                 <Tab.Pane eventKey="third">sdsd</Tab.Pane>
                 <Tab.Pane eventKey="fourth">sdsd</Tab.Pane>
