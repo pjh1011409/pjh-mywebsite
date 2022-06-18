@@ -8,7 +8,8 @@ import styles from './information.module.css'
 
 function Information(){
     return(
-        <div>
+        <div style={{    backgroundColor:'aliceblue'
+        }}>
              <Row className={styles.information}>
         <Col sm>
           <div className={styles.infoLayout}>

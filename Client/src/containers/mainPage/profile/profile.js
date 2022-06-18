@@ -5,9 +5,11 @@ import {Row, Col} from 'react-bootstrap'
 
 import styles from './profile.module.css'
 
-function Profile() {
+function Profile() {   
+
   return (
-    <Row style={{ width: "90%", margin: "0 auto" }}>
+    <div style={{backgroundColor:"aliceblue"}}>
+   <Row style={{ margin: "0 auto"}}>
       <Col sm>
         <img className={styles.myPhoto} src="assets/images/profile/박정호.jpeg"></img>
       </Col>
@@ -66,6 +68,8 @@ function Profile() {
         </span>
       </Col>
     </Row>
+    </div>
+ 
   );
 }
 

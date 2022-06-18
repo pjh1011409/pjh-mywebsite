@@ -10,10 +10,12 @@ import { Link } from 'react-router-dom'
 import * as React from 'react'
 
 import styles from './header.module.css'
+import { scrollToBottom } from 'react-scroll/modules/mixins/animate-scroll'
 
 const Header = (props) => {
     return (
         <div>
+           
             <Navbar
                 bg="light"
                 expand="lg"
@@ -24,7 +26,7 @@ const Header = (props) => {
                     top: '0',
                     left: '0',
                     right: '0',
-                    zIndex: '1',
+                    zIndex: '999',
                 }}
             >
                 <Container>
@@ -33,7 +35,7 @@ const Header = (props) => {
                         style={{ width: '50px', marginRight: '30px' }}
                     ></img>
 
-                    <Navbar.Brand onClick={() => props.handleIndexClick(0)} style={{cursor:'pointer'}}>
+                    <Navbar.Brand as={Link} to="/" style={{cursor:'pointer'}}>
                         PJH's WebSite
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -46,7 +48,7 @@ const Header = (props) => {
                                     textAlign: 'center',
                                 }}
                                 className={styles.navBtn}
-                                onClick={() => props.handleIndexClick(1)}
+                                onClick={() => props.handleIndexClick(0)}
                             >
                                 Tech Stack
                             </Nav.Link>
@@ -57,7 +59,7 @@ const Header = (props) => {
                                     textAlign: 'center',
                                 }}
                                 className={styles.navBtn}
-                                onClick={() => props.handleIndexClick(2)}
+                                onClick={() => props.handleIndexClick(1)}
                             >
                                 My Story
                             </Nav.Link>
@@ -68,7 +70,7 @@ const Header = (props) => {
                                     textAlign: 'center',
                                 }}
                                 className={styles.navBtn}
-                                onClick={() => props.handleIndexClick(3)}
+                                onClick={() => props.handleIndexClick(2)}
                             >
                                 Projects
                             </Nav.Link>
