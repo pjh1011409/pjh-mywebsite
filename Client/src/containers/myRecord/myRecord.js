@@ -9,7 +9,7 @@ function MyRecord() {
         <div>
             <Header></Header>
             <Tab.Container id="left-tabs-example" defaultActiveKey="first">
-                <Row style={{ marginTop: '50px' }}>
+                <Row style={{ marginTop: '80px' }}>
                     <RecordMenu></RecordMenu>
                     <RecordContent></RecordContent>
                 </Row>

@@ -1,31 +1,30 @@
+import '../mainPage/test.css'
+import React, { useState } from 'react'
+import { Row, Col } from 'react-bootstrap'
 
-import React, { useRef, useState } from 'react'
-import Footer from '../../components/common/Footer/footer'
-function TestPage() {
-  const targetElement = useRef();
-  const scrollingTop = (event) => {
-    const elmnt = targetElement;
-    elmnt.current.scrollIntoView({
-      behavior: "smooth",
-      block: "center",
-      inline: "start"
-    });
-  };
-  return (
-    <div className="App">
-      <h1>Hello CodeSandbox</h1>
-      <h2>Start editing to see some magic happen!</h2>
-      <p>lorem ipsum </p>
-      <div style={{ height: "1000px", backgroundColor: "orange" }}>
-        <h1>Example Form Tag </h1>
-        <button id="btnAppear" onClick={scrollingTop}>
-          Submit Scroll bottom
-        </button>
-      </div>
-      dd
-      <Footer ref={targetElement}>dd</Footer>
-    </div>
-  );
+const Test = () => {
+    return (
+        <div class="section full-height">
+            <input
+                class="modal-btn"
+                type="checkbox"
+                id="modal-btn"
+                name="modal-btn"
+            />
+            <label for="modal-btn">
+                Open Modal <i class="uil uil-expand-arrows"></i>
+            </label>
+            <div class="modal">
+                <div class="modal-wrap">
+                    <p>
+                        Contrary to popular belief, Lorem Ipsum is not simply
+                        random text. It has roots in a piece of classical Latin
+                        literature from 45 BC, making it over 2000 years old.
+                    </p>
+                </div>
+            </div>
+        </div>
+    )
 }
 
-export default TestPage
+export default Test
