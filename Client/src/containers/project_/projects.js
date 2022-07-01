@@ -160,7 +160,9 @@ function Projects() {
                     </Slider>
 
                 </div>
-                <div class="section full-height">
+              
+            </div>
+            {/* <div class="section full-height">
                     <input
                         class="modal-btn"
                         type="checkbox"
@@ -180,8 +182,7 @@ function Projects() {
                             </p>
                         </div>
                     </div>
-                </div>
-            </div>
+                </div> */}
         </div>
     )
 }
