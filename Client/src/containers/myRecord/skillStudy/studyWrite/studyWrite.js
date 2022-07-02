@@ -10,12 +10,13 @@ import Header from '../../../../components/common/Header/header'
 import styles from './studyWrite.module.css'
 import { useState } from 'react'
 import axios from 'axios'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 function StudyWrite() {
     const [inputTitle, setInputTitle] = useState('')
     const [inputContent, setInputContent] = useState('')
     const [inputCategory, setInputCategory] = useState('')
+    const navigate = useNavigate();
 
     const titleHandler = (event) => {
         setInputTitle(event.target.value)
@@ -41,6 +42,8 @@ function StudyWrite() {
             .catch(function (error) {
                 console.log(error)
             })
+            navigate('/myRecord')
+            window.location.reload(true)
     }
     return (
         <div>
@@ -92,9 +95,7 @@ function StudyWrite() {
                 </Form.Group>
                 <Button
                     variant="outline-primary"
-                    onClick={onClickHandler}
-                    as={Link}
-                    to="/myRecord"
+                    onClick={onClickHandler} 
                 >
                     등록
                 </Button>
