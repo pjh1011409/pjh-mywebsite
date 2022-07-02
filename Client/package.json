@@ -1,51 +1,48 @@
 {
-  "name": "shop",
-  "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.1.1",
-    "@fortawesome/free-brands-svg-icons": "^6.1.1",
-    "@fortawesome/free-regular-svg-icons": "^6.1.1",
-    "@fortawesome/free-solid-svg-icons": "^6.1.1",
-    "@fortawesome/react-fontawesome": "^0.1.18",
-    "@fullpage/react-fullpage": "^0.1.26",
-    "@reduxjs/toolkit": "^1.8.2",
-    "@testing-library/jest-dom": "^5.16.4",
-    "@testing-library/react": "^13.2.0",
-    "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^28.1.1",
-    "@types/node": "^17.0.40",
-    "@types/react-dom": "^18.0.5",
-    "axios": "^0.27.2",
-    "bootstrap": "^5.1.3",
-    "react": "^18.1.0",
-    "react-bootstrap": "^2.4.0",
-    "react-dom": "^18.1.0",
-    "react-icons": "^4.3.1",
-    "react-router-dom": "^6.3.0",
-    "react-scripts": "5.0.1",
-    "react-scroll-into-view": "^1.12.0",
-    "redux": "^4.2.0",
-    "redux-logger": "^3.0.6",
-    "redux-thunk": "^2.4.1",
-    "styled-components": "^5.3.5",
-    "web-vitals": "^2.1.4"
+  "devDependencies": {
+    "node-sass": "^7.0.1",
+    "sass": "^1.53.0",
+    "webpack": "^5.73.0",
+    "webpack-cli": "^4.10.0"
   },
-  "resolutions": {
-    "d2/left-pad": "1.1.1",
-    "c/**/left-pad": "^1.1.2"
-  },
+  "name": "Client",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.1.1",
+    "@fortawesome/free-brands-svg-icons": "^6.1.1",
+    "@fortawesome/free-regular-svg-icons": "^6.1.1",
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@fullpage/react-fullpage": "^0.1.26",
+    "@reduxjs/toolkit": "^1.8.3",
+    "axios": "^0.27.2",
+    "history": "5",
+    "jquery": "^3.6.0",
+    "react": "^18.2.0",
+    "react-bootstrap": "^2.4.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.4.0",
+    "react-redux": "^8.0.2",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^6.3.0",
+    "react-scripts": "^5.0.1",
+    "react-scroll": "^1.8.7",
+    "react-slick": "^0.29.0",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.4.1",
+    "slick-carousel": "^1.8.1",
+    "styled-components": "^5.3.5",
+    "web-vitals": "^2.1.4"
   },
   "browserslist": {
     "production": [
@@ -58,11 +55,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@types/react": "^18.0.11",
-    "redux-devtools-extension": "^2.13.9",
-    "ts-loader": "^9.3.0",
-    "typescript": "^4.7.3"
   }
 }

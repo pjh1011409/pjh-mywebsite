@@ -2,60 +2,29 @@ import { Card, Button, Form, FormControl } from 'react-bootstrap'
 import styles from './studyMain.module.css'
 import StudyWrite from '../studyWrite/studyWrite'
 import StudyDetail from '../studyDetail/studyDetail'
-import { Route,Routes, Link, useParams} from 'react-router-dom'
+import { Route, Routes, Link, useParams } from 'react-router-dom'
 import axios from 'axios'
 import { useState, useEffect, useRef } from 'react'
-import {useNavigate} from 'react-router';
+import { useNavigate } from 'react-router-dom'
+import { getPosts } from '../../../../modules/reducer/getReducer'
+import { useSelector, useDispatch } from 'react-redux'
 
 function SKillStudyMain() {
+    let navigate = useNavigate();
+    const { data, loading, error } = useSelector((state) => state.posts.posts)
+    const dispatch = useDispatch()
 
-
-    const navigate = useNavigate();
-    const [search, setSearch] = useState('')
-    const [text, setText] = useState([])
-    const [searchBtn, setSearchBtn] = useState('');
-
-    const eventHandler = (event) => {
-        axios
-            .get('http://127.0.0.1:8000/review/')
-            .then((response) => {
-                setText([...response.data])
-                console.log(response.data)
-                
-            })
-            .catch((error) => {
-                console.log(error)
-            })
-    }
-    const mounted = useRef(false)
     useEffect(() => {
-        if (!mounted.current) {
-            mounted.current = true
-            eventHandler()
-        } else {
-            console.log('랜더링 될때마다 실행')
-            console.log(text)
-        }
-    }, [text])
+        dispatch(getPosts())
+    }, [dispatch])
+
+    if (loading) return <div>로딩중...</div>
+    if (error) return <div>에러 발생!</div>
+    if (!data) return null
 
     return (
-
         <div className={styles.contentLayout}>
-           
-
-            {
-
-            text.filter((val) => {
-                if(search === ""){
-                    console.log(searchBtn)
-
-                    return val
-                }else if(val.title.toLowerCase().includes(searchBtn.toLowerCase())){
-                    console.log(searchBtn)
-
-                    return val
-                }
-            }).map((e) => (
+            {data.map((e) => (
                 <Card style={{ marginBottom: '20px' }} key={e.id}>
                     <Card.Header as="h5">{e.category}</Card.Header>
                     <Card.Body>
@@ -63,15 +32,18 @@ function SKillStudyMain() {
                         <Card.Text>
                             서버와의 데이터렌더링 GET, POST에 대하여 알아보자.
                         </Card.Text>
-                        
-                        <Button variant="primary" onClick={()=>{navigate(`/studyDetail/${e.id}`)}} >
 
+                        <Button
+                            variant="primary"
+                            onClick={() => {
+                                navigate(`/studyDetail/${e.id}`)
+                            }}
+                        >
                             Go Detail
                         </Button>
                     </Card.Body>
                 </Card>
             ))}
-
 
             <Button
                 className={styles.button}
@@ -95,12 +67,13 @@ function SKillStudyMain() {
                 />
                 <Button
                     variant="outline-dark"
-                    onClick={()=>{setSearchBtn(search)}}
+                    onClick={() => {
+                        setSearchBtn(search)
+                    }}
                 >
                     Search
                 </Button>
             </Form>
-
         </div>
     )
 }
