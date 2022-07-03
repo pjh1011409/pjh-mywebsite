@@ -3,8 +3,8 @@ import styles from './footer.module.css'
 
 function Footer() {
   return (
-    <div style={{ background: "#505050", height: "200px" }}>
-      <div className={styles.footerMark}>
+    <div className={styles.footerMark}>
+      <div >
         <img
           className={styles.icon}
           src="/assets/images/messenger/mail-icon.png"

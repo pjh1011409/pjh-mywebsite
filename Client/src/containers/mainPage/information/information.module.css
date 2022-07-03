@@ -1,10 +1,17 @@
+.infoBg{
+ background-color: #ebf2ee;
+}
+
 .information{
     text-align: center;
-    padding-bottom: 70px;
+    padding-bottom: 10px;
 }
 
 .info{
     font-size: 25px;
     margin:  30px 0px;
     min-width: 250px;
+}
+.info :hover {
+    transform: scale(1.1);
 }

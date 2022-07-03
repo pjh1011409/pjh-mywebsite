@@ -2,6 +2,7 @@ import './projects.scss'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
+import { Row, Col } from 'react-bootstrap'
 function Projects() {
     const settings = {
         dots: true,
@@ -15,22 +16,11 @@ function Projects() {
         <div>
             <div
                 style={{
-                    marginBottom: '100px',
-                    height: '800px',
-                    backgroundColor: 'gray',
+                    backgroundColor: '#72a1ec',
+                    padding: '80px 0px',
                 }}
             >
                 <div>
-                    <h2
-                        style={{
-                            display: 'block',
-                            textAlign: 'center',
-                            padding: '20px',
-                        }}
-                    >
-                        {' '}
-                        Projects
-                    </h2>
                     <Slider {...settings}>
                         <div>
                             <article
@@ -38,7 +28,7 @@ function Projects() {
                                 style={{
                                     margin: '0 auto',
                                     marginBottom: '30px',
-                                    zIndex:'1'
+                                    zIndex: '1',
                                 }}
                             >
                                 <div class="inner">
@@ -53,91 +43,10 @@ function Projects() {
                                         est lorem ipsum dolor sit. Volutpat odio
                                         facilisis mauris sit amet massa.
                                     </p>
-                                    <div style={{ height: '400px' }}>
-                                        <div
-                                            style={{
-                                                height: '100%',
-                                                width: '50%',
-                                                float: 'left',
-                                                border: '1px solid',
-                                            }}
-                                        ></div>
-                                        <div
-                                            style={{
-                                                height: '100%',
-                                                width: '50%',
-                                                float: 'right',
-                                                border: '1px solid',
-                                            }}
-                                        >
-                                            <ul class="features">
-                                                <li>
-                                                    <span class="icon">
-                                                        <svg
-                                                            xmlns="http://www.w3.org/2000/svg"
-                                                            viewBox="0 0 24 24"
-                                                            width="24"
-                                                            height="24"
-                                                        >
-                                                            <path
-                                                                fill="none"
-                                                                d="M0 0h24v24H0z"
-                                                            />
-                                                            <path
-                                                                d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"
-                                                                fill="currentColor"
-                                                            />
-                                                        </svg>
-                                                    </span>
-                                                    <span>FE 2명 / BE 2명</span>
-                                                </li>
-                                                <li>
-                                                    <span class="icon">
-                                                        <svg
-                                                            xmlns="http://www.w3.org/2000/svg"
-                                                            viewBox="0 0 24 24"
-                                                            width="24"
-                                                            height="24"
-                                                        >
-                                                            <path
-                                                                fill="none"
-                                                                d="M0 0h24v24H0z"
-                                                            />
-                                                            <path
-                                                                d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"
-                                                                fill="currentColor"
-                                                            />
-                                                        </svg>
-                                                    </span>
-                                                    <span>
-                                                        2021.11 ~ 2022.02
-                                                    </span>
-                                                </li>
-                                                <li>
-                                                    <span class="icon">
-                                                        <svg
-                                                            xmlns="http://www.w3.org/2000/svg"
-                                                            viewBox="0 0 24 24"
-                                                            width="24"
-                                                            height="24"
-                                                        >
-                                                            <path
-                                                                fill="none"
-                                                                d="M0 0h24v24H0z"
-                                                            />
-                                                            <path
-                                                                d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"
-                                                                fill="currentColor"
-                                                            />
-                                                        </svg>
-                                                    </span>
-                                                    <span>
-                                                        HTML CSS JS React.js
-                                                    </span>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
+                                        <Row style={{width: '100%', margin:'0 auto' }}>
+                                            <Col sm style={{height:'400px', border:'1px solid'}}>1</Col>
+                                            <Col sm style={{height:'400px', border:'1px solid'}}>1</Col>
+                                        </Row>
                                 </div>
                             </article>
                         </div>
@@ -158,9 +67,7 @@ function Projects() {
                             <h3>6</h3>
                         </div>
                     </Slider>
-
                 </div>
-              
             </div>
             {/* <div class="section full-height">
                     <input

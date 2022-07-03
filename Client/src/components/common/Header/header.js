@@ -1,126 +1,70 @@
-import {
-    Navbar,
-    Nav,
-    Container,
-    Form,
-    FormControl,
-    Button,
-} from 'react-bootstrap'
+import { Navbar, Nav, Container } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import * as React from 'react'
 
 import styles from './header.module.css'
-import { scrollToBottom } from 'react-scroll/modules/mixins/animate-scroll'
 
 const Header = (props) => {
     return (
         <div>
-           
-            <Navbar
-                bg="light"
-                expand="lg"
-                style={{
-                    position: 'fixed',
-                    opacity: '0.9',
-                    width: '100%',
-                    top: '0',
-                    left: '0',
-                    right: '0',
-                    zIndex: '999',
-                }}
-            >
+            <Navbar bg="light" expand="lg" variant="light" className={styles.navBar}>
                 <Container>
                     <img
                         src="assets/images/profile/park.png"
-                        style={{ width: '50px', marginRight: '30px' }}
+                        className={styles.navImg}
                     ></img>
 
-                    <Navbar.Brand as={Link} to="/" style={{cursor:'pointer'}}>
+                    <Navbar.Brand
+                        as={Link}
+                        to="/"
+                        style={{ cursor: 'pointer' }}
+                    >
                         PJH's WebSite
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className="me-auto">
+                        <Nav className={styles.navMenu}>
                             <Nav.Link
-                                style={{
-                                    color: 'black',
-                                    minWidth: '100px',
-                                    textAlign: 'center',
-                                }}
-                                className={styles.navBtn}
+                                className={[styles.navLink, styles.navBtn]}
                                 onClick={() => props.handleIndexClick(0)}
                             >
-                                Tech Stack
+                                AboutMe
                             </Nav.Link>
                             <Nav.Link
-                                style={{
-                                    color: 'black',
-                                    minWidth: '100px',
-                                    textAlign: 'center',
-                                }}
-                                className={styles.navBtn}
+                                className={[styles.navLink, styles.navBtn]}
                                 onClick={() => props.handleIndexClick(1)}
                             >
-                                My Story
+                                TechStack
                             </Nav.Link>
                             <Nav.Link
-                                style={{
-                                    color: 'black',
-                                    minWidth: '100px',
-                                    textAlign: 'center',
-                                }}
-                                className={styles.navBtn}
+                                className={[styles.navLink, styles.navBtn]}
                                 onClick={() => props.handleIndexClick(2)}
                             >
                                 Projects
                             </Nav.Link>
 
                             <Nav.Link
-                                style={{
-                                    color: 'black',
-                                    minWidth: '100px',
-                                    textAlign: 'center',
-                                }}
+                                className={[styles.navLink, styles.navBtn]}
                                 as={Link}
                                 to="/study"
-                                className={styles.navBtn}
                             >
                                 Study
                             </Nav.Link>
                             <Nav.Link
-                                style={{
-                                    color: 'black',
-                                    minWidth: '100px',
-                                    textAlign: 'center',
-                                }}
+                                className={[styles.navLink, styles.navBtn]}
                                 as={Link}
                                 to="/myRecord"
-                                className={styles.navBtn}
                             >
                                 MyRecord
                             </Nav.Link>
                             <Nav.Link
-                                style={{
-                                    color: 'black',
-                                    minWidth: '100px',
-                                    textAlign: 'center',
-                                }}
+                                className={[styles.navLink, styles.navBtn]}
                                 as={Link}
                                 to="/login"
-                                className={styles.navBtn}
                             >
                                 Login
                             </Nav.Link>
                         </Nav>
-                        <Form className="d-flex">
-                            <FormControl
-                                type="search"
-                                placeholder="Search"
-                                className="me-2"
-                                aria-label="Search"
-                            />
-                            <Button variant="outline-dark">Search</Button>
-                        </Form>
                     </Navbar.Collapse>
                 </Container>
             </Navbar>

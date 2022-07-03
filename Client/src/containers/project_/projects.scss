@@ -2,7 +2,7 @@
 
 :root {
     // Basic
-    --c-white: #fff;
+    --c-white: #a4aef0;
     --c-black: #000;
   
     // Greys
@@ -11,7 +11,7 @@
     --c-void: #141b22;
   
     // Beige/Browns
-    --c-fair-pink: #FFEDEC;
+    --c-fair-pink: white;
     --c-apricot: #FBC8BE;
     --c-coffee: #754D42;
     --c-del-rio: #917072;
@@ -45,6 +45,8 @@
     box-shadow: 0 30px 30px -25px rgba(#4133B7, .25);
     width: 700px;
     max-width: 95%;
+    
+
   }
   
   .information {
@@ -132,7 +134,7 @@
     padding: 10px;
     background-color: var(--c-white);
     color: var(--c-del-rio);
-    
+    height: auto;
     strong {
       font-weight: 600;
       color: var(--c-coffee);
@@ -145,6 +147,8 @@
       border-radius: 12px;
     position: relative;
       overflow: hidden;
+      height: 100%;
+
     }
     
     .pricing {

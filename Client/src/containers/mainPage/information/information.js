@@ -8,8 +8,7 @@ import styles from './information.module.css'
 
 function Information(){
     return(
-        <div style={{    backgroundColor:'aliceblue'
-        }}>
+        <div className={styles.infoBg}>
              <Row className={styles.information}>
         <Col sm>
           <div className={styles.infoLayout}>
@@ -50,7 +49,7 @@ function Information(){
                   icon={faGraduationCap}
                   style={{ marginBottom: "10px" }}
                 />
-                <h4>한서대 항공컴퓨터공학 전공</h4>
+                <h4>컴퓨터공학 전공</h4>
               </Col>
               <Col sm className={styles.info}>
                 <FontAwesomeIcon

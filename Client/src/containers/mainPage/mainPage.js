@@ -1,9 +1,8 @@
 import Header from '../../components/common/Header/header'
 import Footer from '../../components/common/Footer/footer'
-import Title from './title/title'
 import Profile from './profile/profile'
 import Information from './information/information'
-import MyStory from '../myStory/myStory'
+import AboutMe from '../aboutMe/aboutMe'
 import Project from '../project_/projects'
 import TechStack from '../techStack/techStack'
 import React, { useRef, useState } from 'react'
@@ -67,15 +66,15 @@ const handleScroll = e => {
             <Header handleIndexClick={handleIndexClick}></Header>
             
           
-            <Title></Title>
           
-            <Profile></Profile>
+            <Profile handleIndexClick={handleIndexClick}></Profile>
             <Information></Information>
             <div ref={el => (NavRef.current[0] = el)}>
-                <TechStack></TechStack>
+            <AboutMe></AboutMe>
+
             </div>
             <div ref={el => (NavRef.current[1] = el)}>
-                <MyStory></MyStory>
+            <TechStack></TechStack>
             </div>
 
             <div ref={el => (NavRef.current[2] = el)}>
@@ -84,7 +83,7 @@ const handleScroll = e => {
 
             <PositionContainer>
             <TopButton onClick={handleScroll}>
-            <FontAwesomeIcon icon={faCircleUp} color='blue' size='3x'/>            
+            <FontAwesomeIcon icon={faCircleUp} color='#ffc82f' size='3x'/>            
             </TopButton>
           </PositionContainer>
 

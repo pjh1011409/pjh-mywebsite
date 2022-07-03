@@ -1,8 +1,9 @@
 .footerMark{
     display: block;
     text-align: center;
-    padding-top: 50px;
-    background-color:#505050
+    background-color: #326d62;
+   
+    padding: 40px;
 }
 
 .footerInfo{
