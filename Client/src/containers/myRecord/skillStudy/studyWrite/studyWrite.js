@@ -11,6 +11,9 @@ import styles from './studyWrite.module.css'
 import { useState } from 'react'
 import axios from 'axios'
 import { Link, useNavigate } from 'react-router-dom'
+import { CKEditor } from '@ckeditor/ckeditor5-react';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+
 
 function StudyWrite() {
     const [inputTitle, setInputTitle] = useState('')
@@ -45,6 +48,7 @@ function StudyWrite() {
             navigate('/myRecord')
             window.location.reload(true)
     }
+  
     return (
         <div>
             <Header></Header>
@@ -86,12 +90,27 @@ function StudyWrite() {
                     className="mb-3"
                     controlId="exampleForm.ControlTextarea1"
                 >
+                    
                     <Form.Label>Text area</Form.Label>
-                    <Form.Control
-                        as="textarea"
-                        rows={10}
-                        onChange={contentHandler}
-                    />
+                    <CKEditor
+                    editor={ ClassicEditor }
+                    data=""
+                    onReady={(editor) => {
+                        // You can store the "editor" and use when it is needed.
+                        console.log( 'Editor is ready to use!', editor );
+                    }}
+                    onChange={ ( event, editor ) => {
+                        const data = editor.getData();
+                        console.log( { event, editor, data } );
+                    }}
+                    onBlur={ ( event, editor ) => {
+                        console.log( 'Blur.', editor );
+                    } }
+                    onFocus={ ( event, editor ) => {
+                        console.log( 'Focus.', editor );
+                    } }
+                />
+                  
                 </Form.Group>
                 <Button
                     variant="outline-primary"

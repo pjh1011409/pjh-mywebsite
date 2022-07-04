@@ -31,7 +31,7 @@ function Fullpage(){
                         <input type="password" name="logpass" class="form-style" placeholder="Your Password" id="logpass" autocomplete="off" />
                         {/* <i class="input-icon uil uil-lock-alt"></i> */}
                       </div>
-                      <a href="#" class="btn mt-4">submit</a>
+                      <a href="#" class="loginBtn mt-4">submit</a>
                                     <p class="mb-0 mt-4 text-center"><a href="#0" class="link">Forgot your password?</a></p>
                         </div>
                       </div>
@@ -52,7 +52,7 @@ function Fullpage(){
                         <input type="password" name="logpass" class="form-style" placeholder="Your Password" id="logpass" autocomplete="off"/ >
                         {/* <i class="input-icon uil uil-lock-alt"></i> */}
                       </div>
-                      <a href="#" class="btn mt-4">submit</a>
+                      <a href="#" class="loginBtn mt-4">submit</a>
                         </div>
                       </div>
                     </div>

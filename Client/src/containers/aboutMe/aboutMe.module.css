@@ -1,4 +1,19 @@
 .aboutMeBg{
-  height: 900px;
+  height: auto;
   background-color: #1d698a;
+  color: white;
+}
+
+
+.messenger{
+  width: 40px;
+  margin: 8px;
+}
+
+.messsengerDiv{
+  margin: 0 auto;
+
+}
+.messsengerDiv :hover {
+  transform: scale(1.1);
 }
