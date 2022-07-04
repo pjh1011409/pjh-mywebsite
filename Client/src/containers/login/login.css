@@ -2,7 +2,6 @@
 /* Please ❤ this if you like it! */
 
 
-@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');
 
 .login{
   font-family: 'Poppins', sans-serif;
@@ -10,8 +9,7 @@
   font-size: 15px;
   line-height: 1.7;
   color: #c4c3ca;
-  background-color: #1f2029;
-  overflow-x: hidden;
+  background-color: #165d8d;
 }
 a {
   cursor: pointer;
@@ -75,7 +73,7 @@ h6 span{
   color: #ffeba7;
   background-color: #102770;
   font-family: 'unicons';
-  content: '\eb4f';
+  content: '';
   z-index: 20;
   top: -10px;
   left: -10px;
@@ -234,7 +232,7 @@ h6 span{
     transition: all 200ms linear;
 }
 
-.btn{  
+.loginBtn{  
   border-radius: 4px;
   height: 44px;
   font-size: 13px;
@@ -262,13 +260,13 @@ h6 span{
   color: #102770;
   box-shadow: 0 8px 24px 0 rgba(255,235,167,.2);
 }
-.btn:active,
-.btn:focus{  
+.loginBtn:active,
+.loginBtn:focus{  
   background-color: #102770;
   color: #ffeba7;
   box-shadow: 0 8px 24px 0 rgba(16,39,112,.2);
 }
-.btn:hover{  
+.loginBtn:hover{  
   background-color: #102770;
   color: #ffeba7;
   box-shadow: 0 8px 24px 0 rgba(16,39,112,.2);

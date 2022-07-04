@@ -56,7 +56,7 @@ function RecordContent() {
 
     return (
         <Col sm={9}>
-            <Tab.Content>
+            <Tab.Content >
                 <Tab.Pane eventKey="first">
                     <SKillStudyMain></SKillStudyMain>
                 </Tab.Pane>

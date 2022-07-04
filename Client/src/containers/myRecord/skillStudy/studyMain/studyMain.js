@@ -46,7 +46,7 @@ function SKillStudyMain() {
             ))}
 
             <Button
-                className={styles.button}
+                className={styles.goDetail}
                 variant="outline-primary"
                 as={Link}
                 to="/studyWrite"
