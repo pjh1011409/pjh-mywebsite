@@ -2,26 +2,228 @@ import './projects.scss'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
-import { Row, Col } from 'react-bootstrap'
+import { Carousel, Row, Col } from 'react-bootstrap'
+import { useState, useEffect } from 'react'
+import Modal from './modal'
 function Projects() {
-    const settings = {
-        dots: true,
-        arrows: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1,
+  
+  
+    const [modalOpen, setModalOpen] = useState(false)
+
+    const openModal = () => {
+        document.body.style.overflow = "hidden";
+        setModalOpen(true)
     }
+    const closeModal = () => {
+        document.body.style.overflow = "unset";
+        setModalOpen(false)
+
+    }
+
+    
+
     return (
         <div>
             <div
                 style={{
                     backgroundColor: '#72a1ec',
                     padding: '80px 0px',
+                    height: 'auto',
                 }}
             >
                 <div>
-                    <Slider {...settings}>
+                    <Carousel>
+                        <Carousel.Item style={{ marginBottom: '50px' }}>
+                            <div>
+                                <article
+                                    class="plan [ card ]"
+                                    style={{
+                                        margin: '0 auto',
+                                        marginBottom: '30px',
+                                        zIndex: '1',
+                                    }}
+                                >
+                                    <div class="inner">
+                                        <span class="pricing">
+                                            <span>펫송완료</span>
+                                        </span>
+
+                                        <h2 class="title">애완패션 사이트</h2>
+                                        <p class="info">
+                                            Lorem ipsum dolor sit amet,
+                                            consectetur adipisc Quis hendrerit
+                                            dolor magna eget est lorem ipsum
+                                            dolor sit. Volutpat odio facilisis
+                                            mauris sit amet massa.
+                                        </p>
+                                        <Row
+                                            style={{
+                                                width: '95%',
+                                                margin: '0 auto',
+                                            }}
+                                        >
+                                            <Col
+                                                sm
+                                                style={{
+                                                    height: '400px',
+                                                    border: '1px solid',
+                                                }}
+                                            >
+                                                1
+                                            </Col>
+                                            <Col
+                                                sm
+                                                style={{
+                                                    height: '400px',
+                                                    border: '1px solid',
+                                                }}
+                                            >
+                                                1
+                                                <button class='modalBtn' onClick={openModal}>모달팝업</button>
+                            <Modal
+                                open={modalOpen}
+                                close={closeModal}
+                            >
+                             
+                               
+                            </Modal>{' '}
+                                            </Col>
+                                        </Row>
+                                    </div>
+                                    
+                                </article>
+                            </div>
+                          
+                            
+                        </Carousel.Item>
+
+                        <Carousel.Item style={{ marginBottom: '50px' }}>
+                            <div>
+                                <article
+                                    class="plan [ card ]"
+                                    style={{
+                                        margin: '0 auto',
+                                        marginBottom: '30px',
+                                        zIndex: '1',
+                                    }}
+                                >
+                                    <div class="inner">
+                                        <span class="pricing">
+                                            <span>펫송완료</span>
+                                        </span>
+
+                                        <h2 class="title">애완패션 사이트</h2>
+                                        <p class="info">
+                                            Lorem ipsum dolor sit amet,
+                                            consectetur adipisc Quis hendrerit
+                                            dolor magna eget est lorem ipsum
+                                            dolor sit. Volutpat odio facilisis
+                                            mauris sit amet massa.
+                                        </p>
+                                        <Row
+                                            style={{
+                                                width: '95%',
+                                                margin: '0 auto',
+                                            }}
+                                        >
+                                            <Col
+                                                sm
+                                                style={{
+                                                    height: '400px',
+                                                    border: '1px solid',
+                                                }}
+                                            >
+                                                1
+                                            </Col>
+                                            <Col
+                                                sm
+                                                style={{
+                                                    height: '400px',
+                                                    border: '1px solid',
+                                                }}
+                                            >
+                                                1
+                                            </Col>
+                                        </Row>
+                                    </div>
+                                </article>
+                            </div>
+                        </Carousel.Item>
+                        <Carousel.Item style={{ marginBottom: '50px' }}>
+                            <div>
+                                <article
+                                    class="plan [ card ]"
+                                    style={{
+                                        margin: '0 auto',
+                                        marginBottom: '30px',
+                                        zIndex: '1',
+                                    }}
+                                >
+                                    <div class="inner">
+                                        <span class="pricing">
+                                            <span>펫송완료</span>
+                                        </span>
+
+                                        <h2 class="title">애완패션 사이트</h2>
+                                        <p class="info">
+                                            Lorem ipsum dolor sit amet,
+                                            consectetur adipisc Quis hendrerit
+                                            dolor magna eget est lorem ipsum
+                                            dolor sit. Volutpat odio facilisis
+                                            mauris sit amet massa.
+                                        </p>
+                                        <Row
+                                            style={{
+                                                width: '95%',
+                                                margin: '0 auto',
+                                            }}
+                                        >
+                                            <Col
+                                                sm
+                                                style={{
+                                                    height: '400px',
+                                                    border: '1px solid',
+                                                }}
+                                            >
+                                                1
+                                            </Col>
+                                            <Col
+                                                sm
+                                                style={{
+                                                    height: '400px',
+                                                    border: '1px solid',
+                                                }}
+                                            >
+                                                1
+                                            </Col>
+                                        </Row>
+                                    </div>
+                                </article>
+                            </div>
+                        </Carousel.Item>
+                    </Carousel>
+                </div>
+            </div>
+        </div>
+    )
+}
+
+export default Projects
+
+{
+    /* <button onClick={openModal}>모달팝업</button>
+<Modal
+    open={modalOpen}
+    close={closeModal}
+    header="Modal heading"
+>
+    리액트 함수형 모달 팝업창입니다. 쉽게 만들 수
+    있어요. 같이 만들어봐요!
+</Modal> */
+}
+
+{
+    /* <Slider {...settings}>
                         <div>
                             <article
                                 class="plan [ card ]"
@@ -43,14 +245,36 @@ function Projects() {
                                         est lorem ipsum dolor sit. Volutpat odio
                                         facilisis mauris sit amet massa.
                                     </p>
-                                        <Row style={{width: '100%', margin:'0 auto' }}>
-                                            <Col sm style={{height:'400px', border:'1px solid'}}>1</Col>
-                                            <Col sm style={{height:'400px', border:'1px solid'}}>1</Col>
-                                        </Row>
+                                    <Row
+                                        style={{
+                                            width: '100%',
+                                            margin: '0 auto',
+                                        }}
+                                    >
+                                        <Col
+                                            sm
+                                            style={{
+                                                height: '400px',
+                                                border: '1px solid',
+                                            }}
+                                        >
+                                            1
+                                        </Col>
+                                        <Col
+                                            sm
+                                            style={{
+                                                height: '400px',
+                                                border: '1px solid',
+                                            }}
+                                        >
+                                            1
+                                        </Col>
+                                    </Row>
                                 </div>
                             </article>
+                        
                         </div>
-
+                      
                         <div>
                             <h3>2</h3>
                         </div>
@@ -66,32 +290,5 @@ function Projects() {
                         <div>
                             <h3>6</h3>
                         </div>
-                    </Slider>
-                </div>
-            </div>
-            {/* <div class="section full-height">
-                    <input
-                        class="modal-btn"
-                        type="checkbox"
-                        id="modal-btn"
-                        name="modal-btn"
-                    />
-                    <label for="modal-btn">
-                        Open Modal <i class="uil uil-expand-arrows"></i>
-                    </label>
-                    <div class="modal">
-                        <div class="modal-wrap">
-                            <p>
-                                Contrary to popular belief, Lorem Ipsum is not
-                                simply random text. It has roots in a piece of
-                                classical Latin literature from 45 BC, making it
-                                over 2000 years old.
-                            </p>
-                        </div>
-                    </div>
-                </div> */}
-        </div>
-    )
+                    </Slider> */
 }
-
-export default Projects

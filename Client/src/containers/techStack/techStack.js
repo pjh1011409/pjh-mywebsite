@@ -9,11 +9,11 @@ function TechStack() {
                         <div className={styles.card}>
                             <div className={styles.additional}>
                                 <div className={styles.userCard}>
-                                    <div className={styles.part}>FrontEnd</div>
+                                    <div className={styles.part1}>FrontEnd</div>
                                 </div>
                                 <div className={styles.moreInfo}>
                                     <div className={styles.explain}>
-                                        <li>promise</li>
+                                        <li>내가 알고 있는 지식</li>
                                         <li>promise</li>
                                         <li>promise</li>
                                         <li>promise</li>
@@ -57,7 +57,7 @@ function TechStack() {
                         <div className={styles.card}>
                             <div className={styles.additional}>
                                 <div className={styles.userCard}>
-                                    <div className={styles.part}>BackEnd</div>
+                                    <div className={styles.part2}>BackEnd</div>
                                 </div>
                                 <div className={styles.moreInfo}>
                                     다음페이지
@@ -78,7 +78,7 @@ function TechStack() {
                         <div className={styles.card}>
                             <div className={styles.additional}>
                                 <div className={styles.userCard}>
-                                    <div className={styles.part}>FrontEnd</div>
+                                    <div className={styles.part3}>Version Control Tool</div>
                                 </div>
                                 <div className={styles.moreInfo}>
                                     다음페이지
@@ -92,7 +92,7 @@ function TechStack() {
                         <div className={styles.card}>
                             <div className={styles.additional}>
                                 <div className={styles.userCard}>
-                                    <div className={styles.part}>FrontEnd</div>
+                                    <div className={styles.part4}>Communication</div>
                                 </div>
                                 <div className={styles.moreInfo}>
                                     다음페이지
@@ -103,25 +103,7 @@ function TechStack() {
                     </Col>
                 </Row>
             </div>
-            {/* <Row>
-    <Col sm style={{minWidth:'400px',border:'1px solid'}}>
-      <h1>FrontEnd</h1>
-   
-    </Col>
-    <Col sm style={{minWidth:'400px',border:'1px solid'}}>
-    <h1>BackEnd</h1>
-
   
-      <img className={styles.icon} src="/assets/images/icons/django-icon.png"></img>
-    </Col>
-    <Col sm style={{minWidth:'400px',border:'1px solid'}}>
-    <img className={styles.icon} src="/assets/images/icons/mysql-icon.png"></img>
-      <img className={styles.icon} src="/assets/images/icons/github-icon.png"></img>
-      <img className={styles.icon} src="/assets/images/icons/java-icon.png"></img>
-      <img className={styles.icon} src="/assets/images/icons/python-icon.png"></img>
-      <img className={styles.icon} src="/assets/images/icons/node-icon.png"></img>
-    </Col>
-  </Row> */}
         </div>
     )
 }

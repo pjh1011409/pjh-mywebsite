@@ -11,15 +11,14 @@ import styles from './studyWrite.module.css'
 import { useState } from 'react'
 import axios from 'axios'
 import { Link, useNavigate } from 'react-router-dom'
-import { CKEditor } from '@ckeditor/ckeditor5-react';
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-
+import { CKEditor } from '@ckeditor/ckeditor5-react'
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic'
 
 function StudyWrite() {
     const [inputTitle, setInputTitle] = useState('')
     const [inputContent, setInputContent] = useState('')
     const [inputCategory, setInputCategory] = useState('')
-    const navigate = useNavigate();
+    const navigate = useNavigate()
 
     const titleHandler = (event) => {
         setInputTitle(event.target.value)
@@ -37,7 +36,6 @@ function StudyWrite() {
                 category: inputCategory,
                 title: inputTitle,
                 content: inputContent,
-            
             })
             .then(function (response) {
                 console.log(response)
@@ -45,10 +43,10 @@ function StudyWrite() {
             .catch(function (error) {
                 console.log(error)
             })
-            navigate('/myRecord')
-            window.location.reload(true)
+        navigate('/myRecord')
+        window.location.reload(true)
     }
-  
+
     return (
         <div>
             <Header></Header>
@@ -68,7 +66,6 @@ function StudyWrite() {
                         <option value="공부">필수선택</option>
                         <option value="React">React</option>
                         <option value="javaScript">JavaScript</option>
-
                     </select>
                 </Col>
             </Row>
@@ -90,32 +87,22 @@ function StudyWrite() {
                     className="mb-3"
                     controlId="exampleForm.ControlTextarea1"
                 >
-                    
                     <Form.Label>Text area</Form.Label>
-                    <CKEditor
-                    editor={ ClassicEditor }
-                    data=""
-                    onReady={(editor) => {
-                        // You can store the "editor" and use when it is needed.
-                        console.log( 'Editor is ready to use!', editor );
-                    }}
-                    onChange={ ( event, editor ) => {
-                        const data = editor.getData();
-                        console.log( { event, editor, data } );
-                    }}
-                    onBlur={ ( event, editor ) => {
-                        console.log( 'Blur.', editor );
-                    } }
-                    onFocus={ ( event, editor ) => {
-                        console.log( 'Focus.', editor );
-                    } }
-                />
-                  
+                    <Row className={styles.Title}>
+                        <Form.Label></Form.Label>
+                        <Col
+                            sm
+                            style={{ marginBottom: '20px', height: '300px' }}
+                        >
+                            <Form.Control
+                                as="textarea"
+                                rows={6}
+                                onChange={contentHandler}
+                            />
+                        </Col>
+                    </Row>
                 </Form.Group>
-                <Button
-                    variant="outline-primary"
-                    onClick={onClickHandler} 
-                >
+                <Button variant="outline-primary" onClick={onClickHandler}>
                     등록
                 </Button>
             </Row>
