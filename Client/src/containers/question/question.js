@@ -1,89 +1,151 @@
 import { Button, Collapse } from 'react-bootstrap'
 import { useState } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCaretDown, faCaretUp } from '@fortawesome/free-solid-svg-icons'
+import QuestionData from './questionData'
+import styles from './question.module.css'
 const Question = () => {
-    const [letter,setLetter] = useState(['열기']);
+    const [questionData, setQuestionData] = [QuestionData]
     const [open, setOpen] = useState(false)
-    const [show, setShow] = useState(letter);
-    const openEvent = () =>{
-        setOpen(!open);
-        setShow();
-        setLetter("열기")
+    const [show, setShow] = useState(false)
+
+    const openEvent = (i) => {
+        console.log(i)
+        let newArr = Array(questionData.length).fill(false)
+        console.log(newArr)
+        newArr[i] = true
+        console.log(newArr)
+        setShow(newArr)
+        setOpen(newArr)
+    }
+    const closeEvent = (i) => {
+        console.log(i)
+        let newArr = Array(questionData.length).fill(false)
+        console.log(newArr)
+        newArr[i] = false
+        console.log(newArr)
+        setShow(newArr)
+        setOpen(newArr)
     }
     return (
-        <div style={{ paddingTop: '70px', height: '500px' }}>
+        <div
+            style={{
+                height: '1200px',
+                backgroundColor: '#c6fff7',
+            }}
+        >
             <div
                 style={{
-                    border: '1px solid',
                     width: '90%',
                     margin: '0 auto',
-                    padding: '15px 15px',
+                    padding: '15px 0px 30px 15px',
+                    height: 'auto',
                 }}
             >
-                <div
-                    style={{
-                        border: '1px solid',
-                        width: '90%',
-                        margin: '0 auto',
-                        marginTop: '20px',
-                    }}
-                >
-                    <h3 style={{margin:'10px'}}>Q. 안녕하세요</h3>
-                  
+                {questionData.map((a, i) => {
+                    return (
+                        <>
+                            <div
+                                style={{
+                                    width: '90%',
+                                    margin: '0 auto',
+                                    marginTop: '150px',
+                                }}
+                            >
+                                <h3
+                                    className={styles.underline}
+                                    style={{
+                                        margin: '10px',
+                                        fontWeight: 'bolder',
+                                        color: '#2c3964',
+                                    }}
+                                >
+                                    <img
+                                        src="/assets/images/question.png"
+                                        style={{ width: '45px', marginRight:'20px' }}
+                                    ></img>
 
-                        <Button
-                            onClick={openEvent}
-                            aria-controls="example-collapse-text"
-                            aria-expanded={open}
-                            style={{width:'60px', fontSize:"12px", marginLeft:'35px'}}
-                        >
-                            {show}
-                        </Button>
-                        <Collapse in={open}>
-                            <div id="example-collapse-text">
-                                magna aliqua. Nisl tincidunt eget nullam non.
-                                Quis hendrerit dolor magna eget est lorem ipsum
-                                dolor sit. Volutpat odio facilisis mauris sit
-                                amet massa. Commodo odio aenean sed adipiscing
-                                diam donec adipiscing tristique. Mi eget mauris
-                                pharetra et. Non tellus orci ac auctor augue.
-                                Elit at imperdiet dui accumsan sit. Ornare arcu
-                                dui vivamus arcu felis. Egestas integer eget
-                                aliquet nibh praesent. In hac habitasse platea
-                                dictumst quisque sagittis purus. Pulvinar
-                                elementum integer enim neque volutpat ac.
+                                    {QuestionData[i].question}
+                                </h3>
                             </div>
-                        </Collapse>
-                </div>
-                <div
-                    style={{
-                        border: '1px solid',
-                        width: '90%',
-                        margin: '0 auto',
-                        marginTop: '20px',
-                    }}
-                >
-                    dd
-                </div>
-                <div
-                    style={{
-                        border: '1px solid',
-                        width: '90%',
-                        margin: '0 auto',
-                        marginTop: '20px',
-                    }}
-                >
-                    dd
-                </div>
-                <div
-                    style={{
-                        border: '1px solid',
-                        width: '90%',
-                        margin: '0 auto',
-                        marginTop: '20px',
-                    }}
-                >
-                    dd
-                </div>
+                            <div style={{ clear: 'both' }}>
+                                <div
+                                    style={{
+                                        marginTop: '20px',
+                                        width: '90%',
+                                        margin: '0 auto',
+                                    }}
+                                >
+                                    <div
+                                        style={{
+                                            display: 'flex',
+                                            float: 'left',
+                                            height: 'auto',
+                                            width: '7%',
+                                        }}
+                                    >
+                                        <div
+                                            style={{
+                                                width: '100px',
+                                                fontSize: '12px',
+                                            }}
+                                        >
+                                            {show[i] ? (
+                                                <FontAwesomeIcon
+                                                    onClick={() =>
+                                                        closeEvent(i)
+                                                    }
+                                                    aria-controls="example-collapse-text"
+                                                    aria-expanded={open[i]}
+                                                    icon={faCaretUp}
+                                                    size="3x"
+                                                    style={{
+                                                        color: '#34136f',
+                                                        float: 'right',
+                                                    }}
+                                                />
+                                            ) : (
+                                                <FontAwesomeIcon
+                                                    onClick={() => openEvent(i)}
+                                                    aria-controls="example-collapse-text"
+                                                    aria-expanded={open[i]}
+                                                    icon={faCaretDown}
+                                                    size="3x"
+                                                    style={{
+                                                        color: '#34136f',
+                                                        float: 'right',
+                                                    }}
+                                                />
+                                            )}
+                                        </div>
+                                    </div>
+                                    <div
+                                        style={{
+                                            display: 'flex',
+                                            float: 'left',
+                                            width: '90%',
+                                            height: 'auto',
+                                        }}
+                                    >
+                                        <Collapse
+                                            in={open[i]}
+                                            style={{
+                                                padding: '0 15px 15px 15px',
+                                                marginBottom: '56px',
+                                                backgroundColor: 'white',
+                                                borderRadius: '20px',
+                                            }}
+                                        >
+                                            <div id="example-collapse-text">
+                                                {QuestionData[i].answer}
+                                            </div>
+                                        </Collapse>
+                                    </div>
+                                </div>
+                            </div>
+                        </>
+                    )
+                })}
             </div>
         </div>
     )

@@ -49,13 +49,7 @@ const Header = (props) => {
                                 Projects
                             </Nav.Link>
 
-                            <Nav.Link
-                                className={[styles.navLink, styles.navBtn]}
-                                as={Link}
-                                to="/study"
-                            >
-                                Study
-                            </Nav.Link>
+                        
                             <Nav.Link
                                 className={[styles.navLink, styles.navBtn]}
                                 as={Link}
