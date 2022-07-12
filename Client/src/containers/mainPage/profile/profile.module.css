@@ -92,7 +92,7 @@ div.fg {
     justify-content: center;
     align-content: center;
 }
-  button {
+.aboutMore {
     position: relative;
     display: inline-block;
     cursor: pointer;

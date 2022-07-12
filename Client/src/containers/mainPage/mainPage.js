@@ -10,6 +10,7 @@ import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleUp} from '@fortawesome/free-regular-svg-icons';
 import {Container} from 'react-bootstrap'
+import Question from '../question/question'
 
 function MainPage() {
     const NavRef = useRef([])
@@ -74,10 +75,15 @@ const handleScroll = e => {
 
             </div>
             <div ref={el => (NavRef.current[1] = el)}>
+            <Question></Question>
+
+            </div>
+            
+            <div ref={el => (NavRef.current[2] = el)}>
             <TechStack></TechStack>
             </div>
 
-            <div ref={el => (NavRef.current[2] = el)}>
+            <div ref={el => (NavRef.current[3] = el)}>
                 <Project></Project>
             </div>
 

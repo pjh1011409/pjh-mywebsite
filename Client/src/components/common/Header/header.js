@@ -34,11 +34,17 @@ const Header = (props) => {
                                 className={[styles.navLink, styles.navBtn]}
                                 onClick={() => props.handleIndexClick(1)}
                             >
-                                TechStack
+                                Q&A
                             </Nav.Link>
                             <Nav.Link
                                 className={[styles.navLink, styles.navBtn]}
                                 onClick={() => props.handleIndexClick(2)}
+                            >
+                                TechStack
+                            </Nav.Link>
+                            <Nav.Link
+                                className={[styles.navLink, styles.navBtn]}
+                                onClick={() => props.handleIndexClick(3)}
                             >
                                 Projects
                             </Nav.Link>

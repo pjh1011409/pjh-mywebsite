@@ -64,9 +64,22 @@
     align-content: center;
   }
   
-  .part{
+  .part1 , .part2{
     margin:  120px 0px;
     font-size: 25px;
+    color: white;
+  }
+
+  .part3{
+    margin:  120px 0px;
+    font-size: 18px;
+    color: white;
+    text-align: center;
+  }
+
+  .part4{
+    margin:  120px 0px;
+    font-size: 17px;
     color: white;
   }
   

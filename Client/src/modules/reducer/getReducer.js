@@ -5,7 +5,7 @@ import {
     handleAsyncActions,
     createPromiseThunkById,
     handleAsyncActionsById
-} from '../../lib/asymcUtils'
+} from '../../lib/asyncUtils'
 import {
     GET_POSTS,
     GET_POSTS_SUCCESS,

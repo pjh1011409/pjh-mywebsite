@@ -27,7 +27,7 @@ function StudyDetail() {
         <div>
             <Header></Header>
             <div style={{ marginTop: '100px' }}>
-                <h1> {data.id}</h1>
+                <h1> {data.title}</h1>
                 <h2> {data.category}</h2>
                 <p> {data.content}</p>
             </div>
