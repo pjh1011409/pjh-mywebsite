@@ -31,7 +31,7 @@ const Question = () => {
         <div
             style={{
                 height: '1200px',
-                backgroundColor: '#c6fff7',
+                backgroundColor: '#d3eded',
             }}
         >
             <div
@@ -131,6 +131,7 @@ const Question = () => {
                                             in={open[i]}
                                             style={{
                                                 padding: '0 15px 15px 15px',
+                                                marginLeft:'10px',
                                                 marginBottom: '56px',
                                                 backgroundColor: 'white',
                                                 borderRadius: '20px',

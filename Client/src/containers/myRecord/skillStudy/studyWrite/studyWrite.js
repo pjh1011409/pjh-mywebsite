@@ -13,7 +13,7 @@ import axios from 'axios'
 import { Link, useNavigate } from 'react-router-dom'
 import { CKEditor } from '@ckeditor/ckeditor5-react'
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic'
-
+import Footer from '../../../../components/common/Footer/footer'
 function StudyWrite() {
     const [inputTitle, setInputTitle] = useState('')
     const [inputContent, setInputContent] = useState('')
@@ -49,7 +49,8 @@ function StudyWrite() {
 
     return (
         <div>
-            <Header></Header>
+            <div className={styles.writeBg}>
+            <div className={styles.writeText}>
             <Row className={styles.title}>
                 {/* -------------title-------------- */}
                 <Col sm style={{ marginBottom: '20px' }}>
@@ -57,12 +58,14 @@ function StudyWrite() {
                         type="text"
                         placeholder="제목을 작성하세요"
                         onChange={titleHandler}
+                        style={{border:'2px solid green'}}
                     />
                 </Col>
                 {/* -------------Category-------------- */}
 
                 <Col sm>
-                    <select onChange={(e) => categoryHandler(e)}>
+                    <select onChange={(e) => categoryHandler(e)}                         style={{border:'2px solid green'}}
+>
                         <option value="공부">필수선택</option>
                         <option value="React">React</option>
                         <option value="javaScript">JavaScript</option>
@@ -77,6 +80,8 @@ function StudyWrite() {
                     <Form.Control
                         type="text"
                         placeholder="한줄 설명을 작성하세요"
+                        style={{border:'2px solid green'}}
+
                     />
                 </Col>
             </Row>
@@ -89,7 +94,6 @@ function StudyWrite() {
                 >
                     <Form.Label>Text area</Form.Label>
                     <Row className={styles.Title}>
-                        <Form.Label></Form.Label>
                         <Col
                             sm
                             style={{ marginBottom: '20px', height: '300px' }}
@@ -98,15 +102,27 @@ function StudyWrite() {
                                 as="textarea"
                                 rows={6}
                                 onChange={contentHandler}
+                                style={{border:'2px solid green', height:'300px'}}
+
                             />
                         </Col>
                     </Row>
                 </Form.Group>
-                <Button variant="outline-primary" onClick={onClickHandler}>
-                    등록
-                </Button>
             </Row>
+            <div className={styles.buttonBg}>
+            <button className={styles.button} onClick={onClickHandler}>
+                 Post
+                </button>
+                <button className={styles.button} onClick={onClickHandler}>
+                 Cancel
+                </button>
+            </div>
+            
+            </div>
+            <Footer></Footer>
         </div>
+        </div>
+        
     )
 }
 
