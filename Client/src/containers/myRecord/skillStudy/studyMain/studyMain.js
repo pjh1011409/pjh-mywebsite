@@ -4,7 +4,7 @@ import StudyWrite from '../studyWrite/studyWrite'
 import StudyDetail from '../studyDetail/studyDetail'
 import { Route, Routes, Link, useParams } from 'react-router-dom'
 import axios from 'axios'
-import { useState, useEffect, useRef } from 'react'
+import { useEffect} from 'react'
 import { useNavigate } from 'react-router-dom'
 import { getPosts } from '../../../../modules/reducer/getReducer'
 import { useSelector, useDispatch } from 'react-redux'
@@ -23,57 +23,65 @@ function SKillStudyMain() {
     if (!data) return null
 
     return (
+        <div style={{backgroundColor:''}}>
+
+        
         <div className={styles.contentLayout}>
+            <div className={styles.tag}>
+                <button>#React</button>
+                <button>#JS</button>
+                <button>#Coding Test</button>
+                <button>#Django</button>
+
+            </div>
             {data.map((e) => (
-                <Card style={{ marginBottom: '20px' }} key={e.id}>
-                    <Card.Header as="h5">{e.category}</Card.Header>
-                    <Card.Body>
+                <Card style={{ marginBottom: '20px'}} key={e.id}>
+                    <Card.Header as="h5" className={styles.cardHead}>{e.category}</Card.Header>
+                    <Card.Body className={styles.cardBody}>
                         <Card.Title>{e.title}</Card.Title>
                         <Card.Text>
                             서버와의 데이터렌더링 GET, POST에 대하여 알아보자.
                         </Card.Text>
 
-                        <Button
-                            variant="primary"
+                        <button
+                        className={styles.goDetail}
                             onClick={() => {
                                 navigate(`/studyDetail/${e.id}`)
                             }}
                         >
                             Go Detail
-                        </Button>
+                        </button>
                     </Card.Body>
                 </Card>
             ))}
-
-            <Button
-                className={styles.goDetail}
-                variant="outline-primary"
-                as={Link}
-                to="/studyWrite"
+            <div className={styles.utility}> 
+            <button
+                onClick={()=>{navigate('/studyWrite')}}
             >
                 글 작성
-            </Button>
+            </button>
             <Form className="d-flex">
                 <FormControl
                     type="search"
                     placeholder="Search"
                     className="me-2"
                     aria-label="Search"
-                    style={{ width: '200px' }}
+                    style={{ width: '200px',marginTop:'20px' }}
                     onChange={(e) => {
                         setSearch(e.target.value)
                         console.log(search)
                     }}
                 />
-                <Button
-                    variant="outline-dark"
+                <button
                     onClick={() => {
                         setSearchBtn(search)
                     }}
                 >
                     Search
-                </Button>
-            </Form>
+                </button>
+            </Form></div>
+           
+        </div>
         </div>
     )
 }

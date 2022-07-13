@@ -4,8 +4,15 @@ import axios from 'axios'
 import { useParams, useNavigate } from 'react-router-dom'
 import { getPost } from '../../../../modules/reducer/getReducer'
 import { useSelector, useDispatch } from 'react-redux'
-
+import styles from './studyDetail.module.css'
+import { Col } from 'react-bootstrap'
+import Footer from '../../../../components/common/Footer/footer'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHouse } from '@fortawesome/free-solid-svg-icons'
+import { Link  } from 'react-router-dom'
 function StudyDetail() {
+    let navigate = useNavigate();
+
     const { id } = useParams()
     const postId = parseInt(id)
     const { data, loading, error } = useSelector(
@@ -24,14 +31,31 @@ function StudyDetail() {
     if (!data) return null
 
     return (
-        <div>
-            <Header></Header>
-            <div style={{ marginTop: '100px' }}>
-                <h1> {data.title}</h1>
-                <h2> {data.category}</h2>
-                <p> {data.content}</p>
+            <div className={styles.studyDetailBg}>
+                <div className={styles.top}>
+                    <div className={styles.titleGroup}>
+                        <div className={styles.title}>{data.title}</div>
+                        <div className={styles.subTitle}>{data.category}</div>
+                    </div>
+                </div>
+                <div className={styles.middle}>
+                    <div className={styles.content}>{data.content}</div>
+                </div>
+                <div className={styles.bottom}>
+                    <div className={styles.button}>
+                        <button>Change</button>
+                        <button onClick={()=>{confirm("정말로 삭제하시겠습니까?")}}>Delete</button>
+
+                        <button  onClick={() => {
+                                navigate(`/myRecord`)
+                            }}>
+                            <FontAwesomeIcon icon={faHouse}></FontAwesomeIcon>
+                        </button>
+                    </div>
+                </div>
+                <Footer></Footer>
+
             </div>
-        </div>
     )
 }
 

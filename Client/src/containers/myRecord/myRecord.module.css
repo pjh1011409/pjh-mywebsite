@@ -1,6 +1,46 @@
+.recordTop{
+    height: 100px;
+    width: 75%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.button{
+    width: auto;
+    margin: 20px 0px;
+    
+}
+
+.button button{
+    width:100px;
+    margin: 0px 10px;
+    height: 40px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color:  #ede090;
+    color: #242848;
+}
+.button button:hover{
+    background-color: #d7efe8;
+    color: #242848;
+
+}
+
 .tab{
     padding: 20px;
     text-align: center;
-    color: black;
+    border: 1px solid;
+    border-radius: 20px;
     font-weight: bolder;
+    margin: 10px 0px;
+    width: 100%;
+    background-color: #d7efe8;
+    color:black
 }
+
+.tab:hover{
+    background-color: #ede090;
+    color: black;
+}
+
