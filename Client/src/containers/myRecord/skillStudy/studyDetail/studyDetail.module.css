@@ -19,6 +19,13 @@
     bottom: 0px;
 }
 
+
+.category{
+    font-size: clamp(1.0em, 1.5vw, 5rem);
+
+}
+
+
 .title {
     width: 100%;
     height: auto;

@@ -16,7 +16,6 @@ import ClassicEditor from '@ckeditor/ckeditor5-build-classic'
 import Footer from '../../../../components/common/Footer/footer'
 function StudyWrite() {
     const [inputTitle, setInputTitle] = useState('')
-    const [inputSubTitle, setInputSubTitle] = useState('')
     const [inputContent, setInputContent] = useState('')
     const [inputCategory, setInputCategory] = useState('')
     const navigate = useNavigate()
@@ -24,20 +23,17 @@ function StudyWrite() {
     const titleHandler = (event) => {
         setInputTitle(event.target.value)
     }
-    const subTitleHandler = (event) => {
-        setInputSubTitle(event.target.value)
-    }
     const contentHandler = (event) => {
         setInputContent(event.target.value)
     }
     const categoryHandler = (event) => {
         setInputCategory(event.target.value)
     }
+
     const onClickHandler = (event) => {
         axios
-            .post('http://127.0.0.1:8000/notes/create', {
+            .post('http://127.0.0.1:8000/review/', {
                 category: inputCategory,
-                subtitle: inputSubTitle,
                 title: inputTitle,
                 content: inputContent,
             })
@@ -50,6 +46,7 @@ function StudyWrite() {
         navigate('/myRecord')
         window.location.reload(true)
     }
+
     return (
         <div>
             <div className={styles.writeBg}>
@@ -81,7 +78,6 @@ function StudyWrite() {
                 <Form.Label></Form.Label>
                 <Col sm style={{ marginBottom: '20px' }}>
                     <Form.Control
-                    onChange={(e) => subTitleHandler(e)}
                         type="text"
                         placeholder="한줄 설명을 작성하세요"
                         style={{border:'2px solid green'}}

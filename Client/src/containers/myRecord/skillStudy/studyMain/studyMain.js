@@ -40,7 +40,7 @@ function SKillStudyMain() {
                     <Card.Body className={styles.cardBody}>
                         <Card.Title>{e.title}</Card.Title>
                         <Card.Text>
-                            서버와의 데이터렌더링 GET, POST에 대하여 알아보자.
+                            {e.sub_title}
                         </Card.Text>
 
                         <button
