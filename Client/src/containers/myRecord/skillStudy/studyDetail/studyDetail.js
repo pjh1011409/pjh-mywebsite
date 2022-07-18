@@ -30,12 +30,27 @@ function StudyDetail() {
     if (error) return <div>에러 발생!</div>
     if (!data) return null
 
+    let deleteNote = async () =>{
+        confirm("정말로 삭제하시겠습니까?")
+        fetch(`/notes/${id}/delete`,{
+            method:'DELETE',
+            'headers':{
+                'Content-Type': 'application/json'
+            }
+        })
+                navigate('/myRecord')
+
+    }
+
+    
+
     return (
             <div className={styles.studyDetailBg}>
                 <div className={styles.top}>
                     <div className={styles.titleGroup}>
+                    <div className={styles.category}>{data.category}</div>
                         <div className={styles.title}>{data.title}</div>
-                        <div className={styles.subTitle}>{data.category}</div>
+                        <div className={styles.subTitle}>{data.sub_title}</div>
                     </div>
                 </div>
                 <div className={styles.middle}>
@@ -43,8 +58,8 @@ function StudyDetail() {
                 </div>
                 <div className={styles.bottom}>
                     <div className={styles.button}>
-                        <button>Change</button>
-                        <button onClick={()=>{confirm("정말로 삭제하시겠습니까?")}}>Delete</button>
+                        <button onClick={()=> {navigate(`/studyUpdate/${id}`)}}>Change</button>
+                        <button onClick={deleteNote}>Delete</button>
 
                         <button  onClick={() => {
                                 navigate(`/myRecord`)
