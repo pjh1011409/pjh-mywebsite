@@ -1,18 +1,16 @@
-import Header from '../../../../components/common/Header/header'
-import React, { useState, useEffect, useRef } from 'react'
-import axios from 'axios'
+import React, { useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { getPost } from '../../../../modules/reducer/getReducer'
 import { useSelector, useDispatch } from 'react-redux'
 import styles from './studyDetail.module.css'
-import { Col } from 'react-bootstrap'
 import Footer from '../../../../components/common/Footer/footer'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHouse } from '@fortawesome/free-solid-svg-icons'
-import { Link  } from 'react-router-dom'
-import {deletePost} from '../../../../modules/reducer/deleteReducer'
+import { deletePost } from '../../../../modules/reducer/deleteReducer'
+import { getPosts } from '../../../../modules/reducer/getReducer'
+
 function StudyDetail() {
-    let navigate = useNavigate();
+    let navigate = useNavigate()
 
     const { id } = useParams()
     const postId = parseInt(id)
@@ -31,47 +29,52 @@ function StudyDetail() {
     if (error) return <div>에러 발생!</div>
     if (!data) return null
 
+    let deleteNote = () => {
+        if (window.confirm('삭제하시겠습니까?')) dispatch(deletePost(data.id))
+        // dispatch(getPosts)
 
-    let deleteNote = () =>{
-            dispatch(deletePost(data.id))
-            alert("삭제되었습니다")
-      navigate('/myRecord')
-      
+        alert('삭제되었습니다')
+        navigate('/myRecord')
+        window.location.reload()
     }
 
-    
+    let goToUpdate = () => {
+        // dispatch({type: 'UPDATE_GO)', payload: data})
+        {
+            navigate(`/studyUpdate/${id}`)
+        }
+    }
 
     return (
-            <div className={styles.studyDetailBg}>
-                <div className={styles.top}>
-                    <div className={styles.titleGroup}>
+        <div className={styles.studyDetailBg}>
+            <div className={styles.top}>
+                <div className={styles.titleGroup}>
                     <div className={styles.category}>{data.category}</div>
-                        <div className={styles.title}>{data.title}</div>
-                        <div className={styles.subTitle}>{data.sub_title}</div>
-                    </div>
+                    <div className={styles.title}>{data.title}</div>
+                    <div className={styles.subTitle}>{data.sub_title}</div>
                 </div>
-                <div className={styles.middle}>
-                    <div className={styles.content}>{data.content}</div>
-
-                </div>
-                <div>{data.updated}</div>
-
-                <div className={styles.bottom}>
-
-                    <div className={styles.button}>
-                        <button onClick={()=> {navigate(`api/studyUpdate/${id}`)}}>Change</button>
-                        <button onClick={deleteNote}>Delete</button>
-
-                        <button  onClick={() => {
-                                navigate(`/myRecord`)
-                            }}>
-                            <FontAwesomeIcon icon={faHouse}></FontAwesomeIcon>
-                        </button>
-                    </div>
-                </div>
-                <Footer></Footer>
-
             </div>
+            <div className={styles.middle}>
+                <div className={styles.content}>{data.body}</div>
+            </div>
+            <div>{data.updated}</div>
+
+            <div className={styles.bottom}>
+                <div className={styles.button}>
+                    <button onClick={goToUpdate}>Edit</button>
+                    <button onClick={deleteNote}>Delete</button>
+
+                    <button
+                        onClick={() => {
+                            navigate(`/myRecord`)
+                        }}
+                    >
+                        <FontAwesomeIcon icon={faHouse}></FontAwesomeIcon>
+                    </button>
+                </div>
+            </div>
+            <Footer></Footer>
+        </div>
     )
 }
 

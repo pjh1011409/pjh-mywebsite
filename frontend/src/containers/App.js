@@ -5,6 +5,7 @@ import MainPage from './mainPage/mainPage'
 import Login from './login/login'
 import StudyWrite from './myRecord/skillStudy/studyWrite/studyWrite'
 import StudyDetail from './myRecord/skillStudy/studyDetail/studyDetail'
+import StudyUpdate from './myRecord/skillStudy/studyUpdate/studyUpdate'
 import { Routes, Switch, Route, Router } from 'react-router-dom'
 import MyRecord from './myRecord/myRecord'
 // smooth scroll 설정
@@ -27,9 +28,13 @@ function App() {
                     path="/studyDetail/:id"
                     element={<StudyDetail />}
                 />
+                <Route
+                    exact
+                    path="/studyUpdate/:id"
+                    element={<StudyUpdate />}
+                />
 
                 <Route exact path="/myRecord/*" element={<MyRecord />} />
-
             </Routes>
         </div>
     )

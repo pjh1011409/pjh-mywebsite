@@ -17,8 +17,16 @@ export const CREATE_POST = "CREATE_POST";
 export const CREATE_POST_SUCCESS = "CREATE_POST_SUCCESS";
 export const CREATE_POST_ERROR = "CREATE_POST_ERROR";
 
-
+// 포스트 하나 삭제하기
 export const DELETE_POST = "DELETE_POST";
 export const DELETE_POST_SUCCESS = "DELETE_POST_SUCCESS";
 export const DELETE_POST_ERROR = "DELETE_POST_ERROR";
 
+
+
+// 포스트 하나 수정하기
+export const UPDATE_GO = "UPDATE_GO"
+export const UPDATE_GET = "UPDATE_GET"
+export const UPDATE_POST = "UPDATE_POST";
+export const UPDATE_POST_SUCCESS = "UPDATE_POST_SUCCESS";
+export const UPDATE_POST_ERROR = "UPDATE_POST_ERROR";
