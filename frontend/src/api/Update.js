@@ -1,6 +1,8 @@
 import axios from 'axios'
 
-export const createPost = async (data) => {
+    
+
+export const updatePost = async (id, data) => {
 
     function getCookie(name) {
         let cookieValue = null;
@@ -19,14 +21,13 @@ export const createPost = async (data) => {
     }
 
     let csrftoken = getCookie('csrftoken');
-    let url = `http://127.0.0.1:8000/api/notes/`
+    let url = `http://127.0.0.1:8000/api/notes/${id}`
 
-
-    const response = await axios.post(url, data, {
+    const response = await axios.put(url, data,{
         headers: {
             'X-CSRFToken': csrftoken,
         },
-        data: data
+        data : data
     })
     return response.data
 }

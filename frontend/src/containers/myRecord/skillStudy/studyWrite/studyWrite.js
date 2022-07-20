@@ -108,7 +108,7 @@ function StudyWrite() {
                     <Row className={styles.Title}>
                         <Col
                             sm
-                            style={{ marginBottom: '20px', height: '300px' }}
+                            style={{ marginBottom: '20px', height: '400px' }}
                         >
                             <Form.Control
                                 as="textarea"

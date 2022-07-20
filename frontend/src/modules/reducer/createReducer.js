@@ -12,23 +12,22 @@ import {
    
 } from '../action/Action'
 
- export const createPost = createPromiseThunk(CREATE_POST, postsAPI.createPost)
 
-export const createPosting = (inputData) => {
+// export const createPosting = (inputData) => {
 
-    return {
-        type: CREATE_POST,
-        inputData: {
-            // id: inputData.id,
-            title: inputData.title,
-            sub_title: inputData.sub_title,
-            category: inputData.category,
-            body: inputData.body,
-        },
+//     return {
+//         type: CREATE_POST,
+//         inputData: {
+//             // id: inputData.id,
+//             title: inputData.title,
+//             sub_title: inputData.sub_title,
+//             category: inputData.category,
+//             body: inputData.body,
+//         },
     
-    }
+//     }
 
-}
+// }
 
 const initialState = {
     lastId: 0,
@@ -46,6 +45,8 @@ const initialState = {
 //         },
 //     ],
 // }
+
+export const createPost = createPromiseThunk(CREATE_POST, postsAPI.createPost)
 
 export const creates = (state = initialState, action) => {
     switch (action.type) {
