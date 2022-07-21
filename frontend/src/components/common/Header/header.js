@@ -10,7 +10,7 @@ const Header = (props) => {
             <Navbar bg="light" expand="lg" variant="light" className={styles.navBar}>
                 <Container>
                     <img
-                        src="assets/images/profile/developer.png"
+                        src="/assets/images/profile/developer.png"
                         className={styles.navImg}
                     ></img>
 

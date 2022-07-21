@@ -22,6 +22,8 @@ function StudyWrite() {
     const [SubTitle, setSubTitle] = useState('')
     const [Content, setContent] = useState('')
     const [Category, setCategory] = useState('')
+    const [Image, setImage] = useState('')
+    const [ImageUrl, setImageUrl] = useState('')
 
     const dispatch = useDispatch()
     const navigate = useNavigate()
@@ -45,6 +47,7 @@ function StudyWrite() {
             title: Title,
             sub_title: SubTitle,
             body: Content,
+            image: Image[0]
         }
         dispatch(createPost(_inputData))
         setTitle('')
@@ -58,6 +61,9 @@ function StudyWrite() {
     const goBack = () =>{
         navigate('/myRecord')
     }
+    
+
+    
     return (
         <div>
             <div className={styles.writeBg}>
@@ -70,17 +76,19 @@ function StudyWrite() {
                         placeholder="제목을 작성하세요"
                         onChange={titleHandler}
                         style={{border:'2px solid green'}}
+                        
                     />
                 </Col>
                 {/* -------------Category-------------- */}
 
                 <Col sm>
-                    <select onChange={categoryHandler}  style={{border:'2px solid green'}}
->
-                        <option value="공부">필수선택</option>
-                        <option value="React">React</option>
-                        <option value="javaScript">JavaScript</option>
-                    </select>
+                <Form.Control
+                        type="text"
+                        placeholder="카테고리를 작성하세요(10자 이내)"
+                        onChange={categoryHandler}
+                        style={{border:'2px solid green'}}
+                        maxLength='10'
+                    />
                 </Col>
             </Row>
             {/* -------------Subtitle-------------- */}
@@ -119,6 +127,8 @@ function StudyWrite() {
                             />
                         </Col>
                     </Row>
+                    <input type='file' onChange={(e) => setImage(URL.createObjectURL(e.target.files[0]))}></input>
+                    <image alt="sample" src={Image}></image>
                 </Form.Group>
             </Row>
             <div className={styles.buttonBg}>

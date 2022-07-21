@@ -26,18 +26,24 @@ function StudyUpdate() {
     } // 아예 데이터가 존재하지 않을 때가 있으므로, 비구조화 할당이 오류나지 않도록
 
 //  ----------------------해당 게시글 값들을 state값에 저장-----------------------
-    const [Title, setTitle] = useState(data.title)
-    const [SubTitle, setSubTitle] = useState(data.sub_title)
-    const [Content, setContent] = useState(data.body)
-    const [Category, setCategory] = useState(data.category)
+    const [Title, setTitle] = useState()
+    const [SubTitle, setSubTitle] = useState()
+    const [Content, setContent] = useState()
+    const [Category, setCategory] = useState()
 
 
     useEffect(() => {
         dispatch(getPost(postId))
+        setTitle(data.title)
+        setSubTitle(data.sub_title)
+        setContent(data.body)
+        setCategory(data.Category)
     }, [dispatch, postId])
     if (loading && !data) return <div>로딩중...</div> // 로딩중이고 데이터 없을때만
     if (error) return <div>에러 발생!</div>
     if (!data) return null
+
+  
 
 // ------------------------게시글 수정 로직(실시간 글입력)-------------------------
     const titleHandler = (e) => {
@@ -61,7 +67,7 @@ function StudyUpdate() {
     const updateData = () => {
         
         const _inputData = {
-            // id:'',
+            id: id,
             category: Category,
             title: Title,
             sub_title: SubTitle,
@@ -69,10 +75,7 @@ function StudyUpdate() {
         }
         console.log(_inputData, id)
         dispatch(updatePost(id, _inputData))
-        setTitle(data.title)
-        setSubTitle(data.sub_title)
-        setContent(data.body)
-        setCategory(data.Category)
+    
         navigate('/myRecord')
         dispatch(uriSave('/myRecord'))
 
@@ -101,14 +104,13 @@ function StudyUpdate() {
                         {/* -------------Category-------------- */}
 
                         <Col sm>
-                            <select
+                        <FormControl
+                                type="text"
+                                value={Category}
                                 onChange={categoryHandler}
                                 style={{ border: '2px solid green' }}
-                            >
-                                <option value="공부">{Category}</option>
-                                <option value="React">React</option>
-                                <option value="javaScript">JavaScript</option>
-                            </select>
+                                a
+                            ></FormControl>
                         </Col>
                     </Row>
                     {/* -------------Subtitle-------------- */}
