@@ -26,7 +26,6 @@ export const createPost = async (data) => {
         headers: {
             'X-CSRFToken': csrftoken,
         },
-        data: data
     })
     return response.data
 }

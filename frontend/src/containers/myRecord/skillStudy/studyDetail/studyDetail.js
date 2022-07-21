@@ -57,7 +57,7 @@ function StudyDetail() {
             <div className={styles.middle}>
                 <div className={styles.content}>{data.body}</div>
             </div>
-            <div>{data.updated}</div>
+            <img src={`http://localhost:8000${data.image}`} alt='이미지 업로드 실패'></img>
 
             <div className={styles.bottom}>
                 <div className={styles.button}>
