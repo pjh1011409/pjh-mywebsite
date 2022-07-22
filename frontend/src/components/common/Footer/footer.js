@@ -7,16 +7,16 @@ function Footer() {
       <div >
         <img
           className={styles.icon}
-          src="/assets/images/messenger/mail-icon.png"
-        ></img>
+          src={process.env.PUBLIC_URL + "./static/images/messenger/mail-icon.png"}
+          ></img>
         <img
           className={styles.icon}
-          src="/assets/images/icons/github-icon.png"
+          src={process.env.PUBLIC_URL + "./static/images/icons/github-icon.png"}
         ></img>
 
         <img
           className={styles.icon}
-          src="/assets/images/messenger/instagram-icon.png"
+          src={process.env.PUBLIC_URL + "./static/images/messenger/instagram-icon.png"}
         ></img>
       </div>
       <div className={styles.footerInfo}>2022. produced by ParkJeongHo</div>

@@ -27,7 +27,14 @@ function AboutMe() {
                             marginTop: '80px',
                         }}
                     >
-                        <img  style={{width:"100%", height:'100%', borderRadius:'30px 30px'}} src="assets/images/profile/park.png"></img>
+                        <img
+                            style={{
+                                width: '100%',
+                                height: '100%',
+                                borderRadius: '30px 30px',
+                            }}
+                            src={process.env.PUBLIC_URL + "./static/images/profile/park.png"}
+                            ></img>
                     </div>
                 </Col>
                 <Col
@@ -53,16 +60,15 @@ function AboutMe() {
                         >
                             Park Jeong Ho
                         </div>
-                        <div style={{fontSize:'18px'}}>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore
-                        magna aliqua. Nisl tincidunt eget nullam non. Quis
-                        hendrerit dolor magna eget est lorem ipsum dolor sit.
-                        Volutpat odio facilisis mauris sit amet massa. Commodo
-                        odio aenean sed adipiscing diam donec adipiscing
-                        tristique. Mi eget mauris pharetra et.
+                        <div style={{ fontSize: '18px' }}>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit, sed do eiusmod tempor incididunt ut labore et
+                            dolore magna aliqua. Nisl tincidunt eget nullam non.
+                            Quis hendrerit dolor magna eget est lorem ipsum
+                            dolor sit. Volutpat odio facilisis mauris sit amet
+                            massa. Commodo odio aenean sed adipiscing diam donec
+                            adipiscing tristique. Mi eget mauris pharetra et.
                         </div>
-                      
                     </div>
                 </Col>
                 <Col
@@ -77,17 +83,16 @@ function AboutMe() {
                             margin: '0 auto',
                         }}
                     >
-                        <div style={{fontSize:'18px'}}>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore
-                        magna aliqua. Nisl tincidunt eget nullam non. Quis
-                        hendrerit dolor magna eget est lorem ipsum dolor sit.
-                        Volutpat odio facilisis mauris sit amet massa. Commodo
-                        odio aenean sed adipiscing diam donec adipiscing
-                        tristique. Mi eget mauris pharetra et. Non tellus orci
-                        ac auctor augue.
+                        <div style={{ fontSize: '18px' }}>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit, sed do eiusmod tempor incididunt ut labore et
+                            dolore magna aliqua. Nisl tincidunt eget nullam non.
+                            Quis hendrerit dolor magna eget est lorem ipsum
+                            dolor sit. Volutpat odio facilisis mauris sit amet
+                            massa. Commodo odio aenean sed adipiscing diam donec
+                            adipiscing tristique. Mi eget mauris pharetra et.
+                            Non tellus orci ac auctor augue.
                         </div>
-                       
                     </div>
                 </Col>
                 <Col
@@ -107,23 +112,23 @@ function AboutMe() {
                         <div className={styles.messsengerDiv}>
                             <img
                                 className={styles.messenger}
-                                src="/assets/images/messenger/notion-icon.png"
+                                src={process.env.PUBLIC_URL + "./static/images/messenger/notion-icon.png"}
+                                ></img>
+                            <img
+                                className={styles.messenger}
+                                src={process.env.PUBLIC_URL + "./static/images/messenger/velog-icon.png"}
                             ></img>
                             <img
                                 className={styles.messenger}
-                                src="/assets/images/messenger/velog-icon.png"
+                                src={process.env.PUBLIC_URL + "./static/images/messenger/github-icon.png"}
                             ></img>
                             <img
                                 className={styles.messenger}
-                                src="/assets/images/messenger/github-icon.png"
+                                src={process.env.PUBLIC_URL + "./static/images/messenger/instagram-icon.png"}
                             ></img>
                             <img
                                 className={styles.messenger}
-                                src="/assets/images/messenger/instagram-icon.png"
-                            ></img>
-                            <img
-                                className={styles.messenger}
-                                src="/assets/images/messenger/mail-icon.png"
+                                src={process.env.PUBLIC_URL + "./static/images/messenger/mail-icon.png"}
                             ></img>
                         </div>
                     </div>

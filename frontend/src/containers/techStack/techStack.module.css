@@ -26,15 +26,15 @@
 }
 
   .card {
-    width: 460px;
-    height: 300px;
+    width: 500px;
+    height: 400px;
     background-color: #fff;
     background: linear-gradient(#f8f8f8, #fff);
     box-shadow: 0 8px 16px -8px rgba(0,0,0,0.4);
     border-radius: 6px;
     overflow: hidden;
     position: relative;
-    margin: 1.5rem;
+    margin: 30px 0px;
   }
 
   
@@ -65,7 +65,7 @@
   }
   
   .part1 , .part2{
-    margin:  120px 0px;
+    margin:  150px 0px;
     font-size: 25px;
     color: white;
   }
@@ -108,16 +108,21 @@
 }
   
   .card .general {
-    width: 300px;
+    width: 350px;
     height: 100%;
     position: absolute;
-    top: 0;
-    right: 0;
+    right: 0px;
     z-index: 1;
     box-sizing: border-box;
-    padding: 1rem;
-    padding-top: 0;
   }
+  
+  .card .general img{
+    width: 80px;
+    margin: 10px 3px;
+  
+  }
+  
+ 
   
  
   
