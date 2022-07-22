@@ -22,8 +22,8 @@ function StudyWrite() {
     const [SubTitle, setSubTitle] = useState('')
     const [Content, setContent] = useState('')
     const [Category, setCategory] = useState('')
-    const [Image, setImage] = useState('')
-    const [ImageUrl, setImageUrl] = useState('')
+    const [copy, setCopy] = useState("")
+
 
     const dispatch = useDispatch()
     const navigate = useNavigate()
@@ -40,23 +40,38 @@ function StudyWrite() {
     const categoryHandler = (e) => {
         setCategory(e.target.value)
     }
+    const imageHandler = (e) => {
+        console.log(e.target.files[0])
+        setCopy(e.target.files[0])
+        console.log(copy)
+      
+    }
+
     const createData = () => {
-        const _inputData = {
-            // id:'',
-            category: Category,
-            title: Title,
-            sub_title: SubTitle,
-            body: Content,
-            image: Image[0]
-        }
-        dispatch(createPost(_inputData))
-        setTitle('')
-        setSubTitle('')
-        setContent('')
-        setCategory('')
+        const inputData = new FormData();
+        
+        inputData.append('category', Category)
+        inputData.append('title', Title)
+        inputData.append('sub_title', SubTitle)
+        inputData.append('body', Content)
+        inputData.append('image', copy)
+        console.log(inputData)
+        dispatch(createPost(inputData))
+        // setTitle('')
+        // setSubTitle('')
+        // setContent('')
+        // setCategory('')
         navigate('/myRecord')
         dispatch(uriSave('/myRecord'))
     }
+      // const _inputData = {
+        //     // id:'',
+        //     category: Category,
+        //     title: Title,
+        //     sub_title: SubTitle,
+        //     body: Content,
+        //     image: Image[0]
+        // }
 
     const goBack = () =>{
         navigate('/myRecord')
@@ -116,7 +131,7 @@ function StudyWrite() {
                     <Row className={styles.Title}>
                         <Col
                             sm
-                            style={{ marginBottom: '20px', height: '400px' }}
+                            style={{ marginBottom: '0px', height: '350px' }}
                         >
                             <Form.Control
                                 as="textarea"
@@ -127,8 +142,7 @@ function StudyWrite() {
                             />
                         </Col>
                     </Row>
-                    <input type='file' onChange={(e) => setImage(URL.createObjectURL(e.target.files[0]))}></input>
-                    <image alt="sample" src={Image}></image>
+                    <input type='file' onChange={imageHandler}></input>
                 </Form.Group>
             </Row>
             <div className={styles.buttonBg}>

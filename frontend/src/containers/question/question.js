@@ -61,8 +61,8 @@ const Question = () => {
                                     }}
                                 >
                                     <img
-                                        src="/assets/images/question.png"
-                                        style={{ width: '45px', marginRight:'20px' }}
+                                src={process.env.PUBLIC_URL + "./static/images/question.png"}
+                                style={{ width: '45px', marginRight:'20px' }}
                                     ></img>
 
                                     {QuestionData[i].question}
