@@ -7,10 +7,18 @@ import styles from './header.module.css'
 const Header = (props) => {
     return (
         <div>
-            <Navbar bg="light" expand="lg" variant="light" className={styles.navBar}>
+            <Navbar
+                bg="light"
+                expand="lg"
+                variant="light"
+                className={styles.navBar}
+            >
                 <Container>
                     <img
-                        src={process.env.PUBLIC_URL + "./static/images/profile/developer.png"}
+                        src={
+                            process.env.PUBLIC_URL +
+                            './static/images/profile/developer.png'
+                        }
                         className={styles.navImg}
                     ></img>
 
@@ -30,26 +38,25 @@ const Header = (props) => {
                             >
                                 AboutMe
                             </Nav.Link>
+                          
+                            <Nav.Link
+                                className={[styles.navLink, styles.navBtn]}
+                                onClick={() => props.handleIndexClick(1)}
+                            >
+                                TechStack
+                            </Nav.Link>
+                            <Nav.Link
+                                className={[styles.navLink, styles.navBtn]}
+                                onClick={() => props.handleIndexClick(2)}
+                            >
+                                Projects
+                            </Nav.Link>
                             <Nav.Link
                                 className={[styles.navLink, styles.navBtn]}
                                 onClick={() => props.handleIndexClick(1)}
                             >
                                 Q&A
                             </Nav.Link>
-                            <Nav.Link
-                                className={[styles.navLink, styles.navBtn]}
-                                onClick={() => props.handleIndexClick(2)}
-                            >
-                                TechStack
-                            </Nav.Link>
-                            <Nav.Link
-                                className={[styles.navLink, styles.navBtn]}
-                                onClick={() => props.handleIndexClick(3)}
-                            >
-                                Projects
-                            </Nav.Link>
-
-                        
                             <Nav.Link
                                 className={[styles.navLink, styles.navBtn]}
                                 as={Link}
