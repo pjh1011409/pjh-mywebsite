@@ -31,7 +31,6 @@
   .cards {
     display: flex;
     flex-wrap: wrap;
-    align-items: flex-start;
     flex-wrap: wrap;
     justify-content: center;
     gap: 2.5rem;
@@ -156,9 +155,9 @@
     .pricing {
       position: absolute;
       top: 0;
-      right: 0;
+      left: 0;
       background-color: var(--c-apricot);
-      border-radius: 99em 0 0 99em;
+      border-radius: 0px 1px 20px;
       display: flex;
       align-items: center;
       padding: .625em .75em;

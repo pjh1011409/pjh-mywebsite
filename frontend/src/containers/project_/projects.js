@@ -2,24 +2,28 @@ import './projects.scss'
 
 import { Carousel, Row, Col } from 'react-bootstrap'
 import { useState, useEffect } from 'react'
-import Modal from './modal'
+import { Images } from './projectData'
+import { ProjectData } from './projectData'
+import './modal.css'
+import { Explain } from './projectData'
+import { useParams } from 'react-router-dom'
+
+
 function Projects() {
-  
-  
+    const [projectData, setProjectData] = useState(ProjectData)
+    const [images, setImages] = useState(Images)
     const [modalOpen, setModalOpen] = useState(false)
 
     const openModal = () => {
-        document.body.style.overflow = "hidden";
+        document.body.style.overflow = 'hidden'
         setModalOpen(true)
     }
     const closeModal = () => {
-        document.body.style.overflow = "unset";
+        document.body.style.overflow = 'unset'
         setModalOpen(false)
-
     }
 
     
-
     return (
         <div>
             <div
@@ -29,264 +33,175 @@ function Projects() {
                     height: 'auto',
                 }}
             >
-                <div>
-                    <Carousel>
-                        <Carousel.Item style={{ marginBottom: '50px' }}>
-                            <div>
-                                <article
-                                    class="plan [ card ]"
+                <Row style={{ margin: '0' }}>
+                    {projectData.map((data, i) => {
+                        return (
+                            <>
+                                <Col
+                                    sm={6}
                                     style={{
+                                        minWidth: '500px',
                                         margin: '0 auto',
-                                        marginBottom: '30px',
-                                        zIndex: '1',
                                     }}
                                 >
-                                    <div class="inner">
-                                        <span class="pricing">
-                                            <span>펫송완료</span>
-                                        </span>
+                                    <article
+                                        class="plan [ card ]"
+                                        style={{
+                                            margin: '0 auto',
+                                            marginBottom: '60px',
+                                        }}
+                                    >
+                                        <div class="inner">
+                                            <span class="pricing">
+                                                <span>{data.Name}</span>
+                                            </span>
 
-                                        <h2 class="title">애완패션 사이트</h2>
-                                        <p class="info">
-                                            Lorem ipsum dolor sit amet,
-                                            consectetur adipisc Quis hendrerit
-                                            dolor magna eget est lorem ipsum
-                                            dolor sit. Volutpat odio facilisis
-                                            mauris sit amet massa.
-                                        </p>
-                                        <Row
-                                            style={{
-                                                width: '95%',
-                                                margin: '0 auto',
-                                            }}
-                                        >
-                                            <Col
-                                                sm
+                                            <p
+                                                class="info"
                                                 style={{
-                                                    height: '400px',
-                                                    border: '1px solid',
+                                                    marginTop: '30px',
+                                                    fontSize:
+                                                        'clamp(1.2em, 1.5vw, 5rem)',
                                                 }}
                                             >
-                                                1
-                                            </Col>
-                                            <Col
-                                                sm
+                                                {data.Intro}
+                                            </p>
+                                            <Row
                                                 style={{
-                                                    height: '400px',
-                                                    border: '1px solid',
+                                                    width: '95%',
+                                                    margin: '0 auto',
                                                 }}
                                             >
-                                                1
-                                                <button class='modalBtn' onClick={openModal}>모달팝업</button>
-                            <Modal
-                                open={modalOpen}
-                                close={closeModal}
-                            >
-                             
-                               
-                            </Modal>{' '}
-                                            </Col>
-                                        </Row>
-                                    </div>
-                                    
-                                </article>
-                            </div>
-                          
-                            
-                        </Carousel.Item>
+                                                <Col
+                                                    sm
+                                                    style={{
+                                                        height: '400px',
+                                                        border: '1px solid',
+                                                        minWidth:'300px'
+                                                    }}
+                                                >
+                                                    {images[i].map((img) => {
+                                                        return (
+                                                            <>
+                                                                <img
+                                                                    src={img}
+                                                                    style={{
+                                                                        width: '100%',
+                                                                        height: '100%',
+                                                                    }}
+                                                                ></img>
+                                                            </>
+                                                        )
+                                                    })}
+                                                </Col>
+                                                <Col
+                                                    sm
+                                                    style={{
+                                                        height: '400px',
+                                                        border: '1px solid',
+                                                        fontSize:'30px'
+                                                    }}
+                                                >
+                                                    <li>{data.Period}</li>
+                                                    <li>{data.Team}</li>{' '}
+                                                    <li>{data.Stack}</li>
+                                                </Col>
+                                            </Row>
+                                            <div
+                                                style={{
+                                                    width: '100%',
+                                                    display: 'flex',
+                                                    ustifyContent: 'center',
+                                                    marginTop: '10px',
+                                                }}
+                                            >
+                                                <button
+                                                    class="modalBtn"
+                                                    onClick={()=>{
+                                                        openModal()
+                                                        console.log(data.id)
+                                                    }}
 
-                        <Carousel.Item style={{ marginBottom: '50px' }}>
-                            <div>
-                                <article
-                                    class="plan [ card ]"
-                                    style={{
-                                        margin: '0 auto',
-                                        marginBottom: '30px',
-                                        zIndex: '1',
-                                    }}
-                                >
-                                    <div class="inner">
-                                        <span class="pricing">
-                                            <span>펫송완료</span>
-                                        </span>
-
-                                        <h2 class="title">애완패션 사이트</h2>
-                                        <p class="info">
-                                            Lorem ipsum dolor sit amet,
-                                            consectetur adipisc Quis hendrerit
-                                            dolor magna eget est lorem ipsum
-                                            dolor sit. Volutpat odio facilisis
-                                            mauris sit amet massa.
-                                        </p>
-                                        <Row
-                                            style={{
-                                                width: '95%',
-                                                margin: '0 auto',
-                                            }}
-                                        >
-                                            <Col
-                                                sm
-                                                style={{
-                                                    height: '400px',
-                                                    border: '1px solid',
-                                                }}
-                                            >
-                                                1
-                                            </Col>
-                                            <Col
-                                                sm
-                                                style={{
-                                                    height: '400px',
-                                                    border: '1px solid',
-                                                }}
-                                            >
-                                                1
-                                            </Col>
-                                        </Row>
-                                    </div>
-                                </article>
-                            </div>
-                        </Carousel.Item>
-                        <Carousel.Item style={{ marginBottom: '50px' }}>
-                            <div>
-                                <article
-                                    class="plan [ card ]"
-                                    style={{
-                                        margin: '0 auto',
-                                        marginBottom: '30px',
-                                        zIndex: '1',
-                                    }}
-                                >
-                                    <div class="inner">
-                                        <span class="pricing">
-                                            <span>펫송완료</span>
-                                        </span>
-
-                                        <h2 class="title">애완패션 사이트</h2>
-                                        <p class="info">
-                                            Lorem ipsum dolor sit amet,
-                                            consectetur adipisc Quis hendrerit
-                                            dolor magna eget est lorem ipsum
-                                            dolor sit. Volutpat odio facilisis
-                                            mauris sit amet massa.
-                                        </p>
-                                        <Row
-                                            style={{
-                                                width: '95%',
-                                                margin: '0 auto',
-                                            }}
-                                        >
-                                            <Col
-                                                sm
-                                                style={{
-                                                    height: '400px',
-                                                    border: '1px solid',
-                                                }}
-                                            >
-                                                1
-                                            </Col>
-                                            <Col
-                                                sm
-                                                style={{
-                                                    height: '400px',
-                                                    border: '1px solid',
-                                                }}
-                                            >
-                                                1
-                                            </Col>
-                                        </Row>
-                                    </div>
-                                </article>
-                            </div>
-                        </Carousel.Item>
-                    </Carousel>
-                </div>
+                                                
+                                                >
+                                                    모달팝업
+                                                </button>
+                                                <Modal
+                                                    open={modalOpen}
+                                                    close={closeModal}
+                                                    openModal={openModal}
+                                                    modalOpen={modalOpen}
+                                                    closeModal={closeModal}
+                                                    id={data.id}
+                                                ></Modal>{' '}
+                                            </div>
+                                        </div>
+                                    </article>
+                                </Col>
+                            </>
+                        )
+                    })}
+                </Row>
             </div>
         </div>
     )
 }
 
-export default Projects
+function Modal(props){
+    // 열기, 닫기, 모달 헤더 텍스트를 부모로부터 받아옴
+    const { open, close } = props
+    const [explain, setExplain] = useState(Explain)
+    const {id} = useParams()
 
-{
-    /* <button onClick={openModal}>모달팝업</button>
-<Modal
-    open={modalOpen}
-    close={closeModal}
-    header="Modal heading"
->
-    리액트 함수형 모달 팝업창입니다. 쉽게 만들 수
-    있어요. 같이 만들어봐요!
-</Modal> */
-}
-
-{
-    /* <Slider {...settings}>
-                        <div>
-                            <article
-                                class="plan [ card ]"
+    return (
+        // 모달이 열릴때 openModal 클래스가 생성된다.
+        <div className={open ? 'openModal modal' : 'modal'}>
+            {open ? (
+                <section style={{ width: '95%' }}>
+                    <main style={{ height: 'auto' }}>
+                        {' '}
+                        <div
+                            style={{
+                                width: '100%',
+                                height: '700px',
+                                overflow: 'auto',
+                            }}
+                        >
+                            <div
                                 style={{
+                                    width: '95%',
+                                    border: '1px solid',
+                                    height: '1000px',
                                     margin: '0 auto',
-                                    marginBottom: '30px',
-                                    zIndex: '1',
+                                    marginTop: '30px',
                                 }}
                             >
-                                <div class="inner">
-                                    <span class="pricing">
-                                        <span>펫송완료</span>
-                                    </span>
-
-                                    <h2 class="title">애완패션 사이트</h2>
-                                    <p class="info">
-                                        Lorem ipsum dolor sit amet, consectetur
-                                        adipisc Quis hendrerit dolor magna eget
-                                        est lorem ipsum dolor sit. Volutpat odio
-                                        facilisis mauris sit amet massa.
-                                    </p>
-                                    <Row
-                                        style={{
-                                            width: '100%',
-                                            margin: '0 auto',
-                                        }}
-                                    >
-                                        <Col
-                                            sm
-                                            style={{
-                                                height: '400px',
-                                                border: '1px solid',
-                                            }}
-                                        >
-                                            1
-                                        </Col>
-                                        <Col
-                                            sm
-                                            style={{
-                                                height: '400px',
-                                                border: '1px solid',
-                                            }}
-                                        >
-                                            1
-                                        </Col>
-                                    </Row>
-                                </div>
-                            </article>
-                        
+                            {
+                                explain[props.id].map((data) => {
+                                    return(
+                                        <>
+                                        <div>{data}</div>
+                                        </>
+                                    )
+                                })   
+                            }
+                            {explain[props.id]}
+                            </div>
                         </div>
-                      
-                        <div>
-                            <h3>2</h3>
-                        </div>
-                        <div>
-                            <h3>3</h3>
-                        </div>
-                        <div>
-                            <h3>4</h3>
-                        </div>
-                        <div>
-                            <h3>5</h3>
-                        </div>
-                        <div>
-                            <h3>6</h3>
-                        </div>
-                    </Slider> */
+                    </main>
+                    <div></div>
+                    <button
+                        className="close"
+                        onClick={close}
+                        style={{ display: 'block', margin: '0 auto' }}
+                    >
+                        close{' '}
+                    </button>
+                </section>
+            ) : null}
+        </div>
+    )
 }
+
+
+export default Projects

@@ -1,5 +1,4 @@
-
-const TechStackData = [
+export const StackData = [
     {   
         id : 0,
         stackName: 'FrontEnd',
@@ -8,7 +7,7 @@ const TechStackData = [
     },
     {   
         id : 1,
-        stackName: 'FrontEnd',
+        stackName: 'BackEnd',
         stackAbout: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nisl tincidunt eget nullam non. Quis hendrerit dolor magna eget est lorem ipsum dolor sit. Volutpat odio facilisis mauris sit amet massa. Commodo odio aenean sed adipiscing diam donec adipiscing tristique. Mi eget mauris pharetra et. Non tellus orci ac auctor augue. Elit at imperdiet dui accumsan sit. Ornare arcu dui vivamus arcu felis. Egestas integer eget aliquet nibh praesent. In hac habitasse platea dictumst quisque sagittis purus. Pulvinar elementum integer enim neque volutpat ac.',
         image: "../../../static/images/profile/developer.png"
     },
@@ -25,4 +24,23 @@ const TechStackData = [
         image: process.env.PUBLIC_URL + "./static/images/profile/developer.png"
     },
 ]
-export default TechStackData
+
+export const Images = [
+    [
+        process.env.PUBLIC_URL + './static/images/icons/react-icon.png',
+        process.env.PUBLIC_URL + './static/images/icons/css-icon.png',
+    ],
+    [
+        process.env.PUBLIC_URL + './static/images/icons/vue-icon.png',
+        process.env.PUBLIC_URL + './static/images/icons/css-icon.png',
+    ],
+    [
+        process.env.PUBLIC_URL + './static/images/icons/js-icon.png',
+        process.env.PUBLIC_URL + './static/images/icons/css-icon.png',
+    ],
+    [
+        process.env.PUBLIC_URL + './static/images/icons/java-icon.png',
+        process.env.PUBLIC_URL + './static/images/icons/css-icon.png',
+    ],
+]
+
