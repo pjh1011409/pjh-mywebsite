@@ -12,7 +12,7 @@ import Pagination from './pagination'
 
 function SKillStudyMain() {
     let [search, setSearch] = useState('')
-    let [tagBtn, setTagBtn] = useState('')
+    let [tagBtn, setTagBtn] = useState([])
 
     const [limit, setLimit] = useState(3)
     const [page, setPage] = useState(1)
@@ -38,28 +38,7 @@ function SKillStudyMain() {
     return (
         <div style={{ backgroundColor: '' }}>
             <div className={styles.contentLayout}>
-                <div className={styles.tag}>
-                    <button
-                        onClick={() => {
-                            setTagBtn('')
-                        }}
-                    >
-                        #전체
-                    </button>
-
-                    {data.map((e, i) => {
-                        return (
-                            <button
-                                onClick={() => {
-                                    setTagBtn(e.category)
-                                    console.log(tagBtn)
-                                }}
-                            >
-                                #{e.category}
-                            </button>
-                        )
-                    })}
-                </div>
+               
                 {data
                     // eslint-disable-next-line array-callback-return
                     .filter((val) => {
@@ -97,7 +76,7 @@ function SKillStudyMain() {
                     .slice(offset, offset + limit)
                     .map((e, i) => (
                         <>
-                            <Card style={{ marginBottom: '20px' }} key={e.id}>
+                            <Card style={{ marginBottom: '20px'}} key={e.id}>
                                 <Card.Header
                                     as="h5"
                                     className={styles.cardHead}
@@ -105,8 +84,9 @@ function SKillStudyMain() {
                                     {e.category}
                                 </Card.Header>
                                 <Card.Body className={styles.cardBody}>
-                                    <Card.Title>{e.title}</Card.Title>
-                                    <Card.Text>{e.sub_title}</Card.Text>
+                                    <div style={{width:'40%', heigth:'230px', float:'left'}}>
+                                    <h5 style={{marginTop:'5px'}}>{e.title}</h5>
+                                    <h8>{e.sub_title}</h8>
                                     <button
                                         className={styles.goDetail}
                                         onClick={() => {
@@ -115,6 +95,12 @@ function SKillStudyMain() {
                                     >
                                         Go Detail
                                     </button>
+                                    </div>
+                                    <div style={{ border:'1px solid',width:'45%', heigth:'100%', float:'right'}}>
+                                    <img src={`http://localhost:8000${e.image}`} style={{width:'100%', height:'160px'}}></img>
+
+                                    </div>
+                                    
                                 </Card.Body>
                             </Card>
                         </>

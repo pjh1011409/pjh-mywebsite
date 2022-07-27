@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHouse } from '@fortawesome/free-solid-svg-icons'
 import { deletePost } from '../../../../modules/reducer/deleteReducer'
 import { getPosts } from '../../../../modules/reducer/getReducer'
+import Parser from 'html-react-parser'
 
 function StudyDetail() {
     let navigate = useNavigate()
@@ -55,9 +56,12 @@ function StudyDetail() {
                 </div>
             </div>
             <div className={styles.middle}>
-                <div className={styles.content}>{data.body}</div>
+                <div className={styles.content}>{Parser(data.body)}</div>
             </div>
-            <img src={`http://localhost:8000${data.image}`} alt='이미지 업로드 실패'></img>
+            <div style={{width:'80%', marginTop:'30px', display:'flex', justifyContent:'center'}}>
+            {/* <img src={`http://localhost:8000${data.image}`} style={{maxWidth:'300px'}} alt='이미지 업로드 실패'></img> */}
+
+            </div>
 
             <div className={styles.bottom}>
                 <div className={styles.button}>
