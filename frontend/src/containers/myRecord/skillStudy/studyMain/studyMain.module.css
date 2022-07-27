@@ -25,6 +25,7 @@
 }
 .cardBody{
     background-color: #fff;
+    height: auto;
 background-image:
 linear-gradient(#eee .1em, transparent .1em);
 background-size: 100% 1.2em;
@@ -33,8 +34,8 @@ background-size: 100% 1.2em;
 .goDetail{
     display: block;
     width: 100px;
-    margin: 0 auto;
-    margin: 20px;
+ 
+    margin-top: 40px;
     color: black;
     background-color: #ede090;
     border-radius: 5px ;
