@@ -2,7 +2,7 @@
 
 :root {
     // Basic
-    --c-white: white;
+    --c-white: #0f2b47;
     --c-black: #000;
   
     // Greys
@@ -11,7 +11,7 @@
     --c-void: #141b22;
   
     // Beige/Browns
-    --c-fair-pink: #0f2b47;
+    --c-fair-pink: white;
     --c-apricot: #FBC8BE;
     --c-coffee: #white;
     --c-del-rio: black;
@@ -20,9 +20,6 @@
     --c-java: #1FCAC5;
   
     // Purples
-    --c-titan-white: #f1eeff;
-    --c-cold-purple: #a69fd6;
-    --c-indigo: #6558d3;
     --c-governor: #4133B7;
   }
   
@@ -226,10 +223,32 @@
   
 
   .modalBtn{
-    width: 100px;
+    width: 150px;
+    height: 60px;
     margin: 0 auto;
+    margin-top: 30px;
+    background-color: rgb(255, 111, 0);
+    border-radius: 10px;
+    font-weight: bold;
   }
   
 
+  .modalBtn:hover{
+    background-color: #e4e129;
+  }
+  
 
+.close{
+  width: 100px;
+    height: 50px;
+    margin: 0 auto;
+    margin-top: 30px;
+    background-color: rgb(255, 111, 0);
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.close:hover{
+  background-color: #e4e129;
+}
   

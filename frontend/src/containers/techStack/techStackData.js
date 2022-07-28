@@ -1,46 +1,57 @@
 export const StackData = [
-    {   
-        id : 0,
+    {
+        id: 0,
         stackName: 'FrontEnd',
-        stackAbout: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nisl tincidunt eget nullam non. Quis hendrerit dolor magna eget est lorem ipsum dolor sit. Volutpat odio facilisis mauris sit amet massa. Commodo odio aenean sed adipiscing diam donec adipiscing tristique. Mi eget mauris pharetra et. Non tellus orci ac auctor augue. Elit at imperdiet dui accumsan sit. Ornare arcu dui vivamus arcu felis. Egestas integer eget aliquet nibh praesent. In hac habitasse platea dictumst quisque sagittis purus. Pulvinar elementum integer enim neque volutpat ac.',
-        image: "public/static/images/messenger/mail-icon.png"
+        stackAbout: '사용가능한 frontend stack에 대하여',
+        image: 'public/static/images/messenger/mail-icon.png',
     },
-    {   
-        id : 1,
+    {
+        id: 1,
         stackName: 'BackEnd',
-        stackAbout: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nisl tincidunt eget nullam non. Quis hendrerit dolor magna eget est lorem ipsum dolor sit. Volutpat odio facilisis mauris sit amet massa. Commodo odio aenean sed adipiscing diam donec adipiscing tristique. Mi eget mauris pharetra et. Non tellus orci ac auctor augue. Elit at imperdiet dui accumsan sit. Ornare arcu dui vivamus arcu felis. Egestas integer eget aliquet nibh praesent. In hac habitasse platea dictumst quisque sagittis purus. Pulvinar elementum integer enim neque volutpat ac.',
-        image: "../../../static/images/profile/developer.png"
+        stackAbout: '사용가능한 backend stack에 대하여',
+
+        image: '../../../static/images/profile/developer.png',
     },
-    {   
-        id : 2,
-        stackName: 'FrontEnd',
-        stackAbout: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nisl tincidunt eget nullam non. Quis hendrerit dolor magna eget est lorem ipsum dolor sit. Volutpat odio facilisis mauris sit amet massa. Commodo odio aenean sed adipiscing diam donec adipiscing tristique. Mi eget mauris pharetra et. Non tellus orci ac auctor augue. Elit at imperdiet dui accumsan sit. Ornare arcu dui vivamus arcu felis. Egestas integer eget aliquet nibh praesent. In hac habitasse platea dictumst quisque sagittis purus. Pulvinar elementum integer enim neque volutpat ac.',
-        image: process.env.PUBLIC_URL + "./static/images/profile/developer.png"
+    {
+        id: 2,
+        stackName: '   VersionControl & Deployment',
+        stackAbout: '사용가능한 정도에 대하여',
+
+        image: process.env.PUBLIC_URL + './static/images/profile/developer.png',
     },
-    {   
-        id : 3,
-        stackName: 'FrontEnd',
-        stackAbout: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nisl tincidunt eget nullam non. Quis hendrerit dolor magna eget est lorem ipsum dolor sit. Volutpat odio facilisis mauris sit amet massa. Commodo odio aenean sed adipiscing diam donec adipiscing tristique. Mi eget mauris pharetra et. Non tellus orci ac auctor augue. Elit at imperdiet dui accumsan sit. Ornare arcu dui vivamus arcu felis. Egestas integer eget aliquet nibh praesent. In hac habitasse platea dictumst quisque sagittis purus. Pulvinar elementum integer enim neque volutpat ac.',
-        image: process.env.PUBLIC_URL + "./static/images/profile/developer.png"
+    {
+        id: 3,
+        stackName: 'Cooperation & Certificate',
+        stackAbout: '사용가능한 frontend stack에 대하여',
+
+        image: process.env.PUBLIC_URL + './static/images/profile/developer.png',
     },
 ]
 
 export const Images = [
     [
-        process.env.PUBLIC_URL + './static/images/icons/react-icon.png',
-        process.env.PUBLIC_URL + './static/images/icons/css-icon.png',
-    ],
-    [
-        process.env.PUBLIC_URL + './static/images/icons/vue-icon.png',
-        process.env.PUBLIC_URL + './static/images/icons/css-icon.png',
-    ],
-    [
-        process.env.PUBLIC_URL + './static/images/icons/js-icon.png',
-        process.env.PUBLIC_URL + './static/images/icons/css-icon.png',
-    ],
-    [
-        process.env.PUBLIC_URL + './static/images/icons/java-icon.png',
-        process.env.PUBLIC_URL + './static/images/icons/css-icon.png',
-    ],
-]
+        'html-icon.png',
+        'css-icon.png',
+        'js-icon.png',
+        'typescript-icon.png',
+        'react-icon.png',
+        'toolkit-icon.png',
+        'saga-icon.png',
+        'redux-icon.png',
 
+        'bootstrap-icon.png',
+        'vue-icon.png',
+        'sass-icon.png',
+        'jquery.png',
+    ],
+    [
+        'python-icon.png',
+        'django-icon.png',
+        'java-icon.png',
+        'jsp-icon.png',
+        'node-icon.png',
+        'mysql-icon.png',
+    ],
+    ['git-icon.png', 'github-icon.png', 'amazon-icon.png', 'docker-icon.png'],
+    ['notion-icon.png', 'jira-icon.png', 'balsamiq-icon.png', 'figma-icon.png'],
+]

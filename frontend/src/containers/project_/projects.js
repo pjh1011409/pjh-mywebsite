@@ -1,13 +1,17 @@
 import './projects.scss'
 
-import { Carousel, Row, Col } from 'react-bootstrap'
+import { Carousel, Row, Col, CarouselItem } from 'react-bootstrap'
 import { useState, useEffect } from 'react'
 import { Images } from './projectData'
 import { ProjectData } from './projectData'
 import './modal.css'
 import { Explain } from './projectData'
 import { useParams } from 'react-router-dom'
-
+import Slider from 'react-slick'
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCircleCheck } from '@fortawesome/free-solid-svg-icons'
 
 function Projects() {
     const [projectData, setProjectData] = useState(ProjectData)
@@ -23,7 +27,6 @@ function Projects() {
         setModalOpen(false)
     }
 
-    
     return (
         <div>
             <div
@@ -61,7 +64,7 @@ function Projects() {
                                                 style={{
                                                     marginTop: '30px',
                                                     fontSize:
-                                                        'clamp(1.2em, 1.5vw, 5rem)',
+                                                        'clamp(1.2em, 1.0vw, 2rem)',
                                                 }}
                                             >
                                                 {data.Intro}
@@ -76,35 +79,64 @@ function Projects() {
                                                     sm
                                                     style={{
                                                         height: '400px',
-                                                        border: '1px solid',
-                                                        minWidth:'300px'
+                                                        minWidth: '300px',
                                                     }}
                                                 >
-                                                    {images[i].map((img) => {
-                                                        return (
-                                                            <>
-                                                                <img
-                                                                    src={img}
-                                                                    style={{
-                                                                        width: '100%',
-                                                                        height: '100%',
-                                                                    }}
-                                                                ></img>
-                                                            </>
-                                                        )
-                                                    })}
+                                                    <Slide
+                                                        images={images}
+                                                        i={i}
+                                                    ></Slide>
                                                 </Col>
                                                 <Col
                                                     sm
                                                     style={{
                                                         height: '400px',
-                                                        border: '1px solid',
-                                                        fontSize:'30px'
+                                                        fontSize: '25px',
+                                                        paddingTop: '50px',
                                                     }}
                                                 >
-                                                    <li>{data.Period}</li>
-                                                    <li>{data.Team}</li>{' '}
-                                                    <li>{data.Stack}</li>
+                                                    <div
+                                                        style={{
+                                                            margin: '10px 5px',
+                                                        }}
+                                                    >
+                                                        <FontAwesomeIcon
+                                                            icon={faCircleCheck}
+                                                            style={{
+                                                                marginRight:
+                                                                    '10px',
+                                                            }}
+                                                        />
+                                                        {data.Period}
+                                                    </div>
+                                                    <div
+                                                        style={{
+                                                            margin: '10px 5px',
+                                                        }}
+                                                    >
+                                                        <FontAwesomeIcon
+                                                            icon={faCircleCheck}
+                                                            style={{
+                                                                marginRight:
+                                                                    '10px',
+                                                            }}
+                                                        />
+                                                        {data.Team}
+                                                    </div>{' '}
+                                                    <div
+                                                        style={{
+                                                            margin: '10px 5px',
+                                                        }}
+                                                    >
+                                                        <FontAwesomeIcon
+                                                            icon={faCircleCheck}
+                                                            style={{
+                                                                marginRight:
+                                                                    '10px',
+                                                            }}
+                                                        />
+                                                        {data.Stack}
+                                                    </div>
                                                 </Col>
                                             </Row>
                                             <div
@@ -117,14 +149,12 @@ function Projects() {
                                             >
                                                 <button
                                                     class="modalBtn"
-                                                    onClick={()=>{
+                                                    onClick={() => {
                                                         openModal()
                                                         console.log(data.id)
                                                     }}
-
-                                                
                                                 >
-                                                    모달팝업
+                                                    Go To Detail{' '}
                                                 </button>
                                                 <Modal
                                                     open={modalOpen}
@@ -147,11 +177,10 @@ function Projects() {
     )
 }
 
-function Modal(props){
+function Modal(props) {
     // 열기, 닫기, 모달 헤더 텍스트를 부모로부터 받아옴
     const { open, close } = props
     const [explain, setExplain] = useState(Explain)
-    const {id} = useParams()
 
     return (
         // 모달이 열릴때 openModal 클래스가 생성된다.
@@ -169,23 +198,21 @@ function Modal(props){
                         >
                             <div
                                 style={{
-                                    width: '95%',
+                                    width: '80%',
                                     border: '1px solid',
                                     height: '1000px',
                                     margin: '0 auto',
                                     marginTop: '30px',
                                 }}
                             >
-                            {
-                                explain[props.id].map((data) => {
-                                    return(
+                                {explain[props.id].map((data) => {
+                                    return (
                                         <>
-                                        <div>{data}</div>
+                                            <div>{data}</div>
                                         </>
                                     )
-                                })   
-                            }
-                            {explain[props.id]}
+                                })}
+                                {explain[props.id]}
                             </div>
                         </div>
                     </main>
@@ -203,5 +230,42 @@ function Modal(props){
     )
 }
 
+function Slide(props) {
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+    }
+    return (
+        <>
+            <Slider {...settings} class="slick">
+                {props.images[props.i].map((img) => {
+                    return (
+                        <>
+                            <div
+                                style={{
+                                    width: '100%',
+                                    height: '400px',
+                                    margin: '0 auto',
+                                }}
+                            >
+                                <img
+                                    src={`./static/images/projectImage/${img}`}
+                                    style={{
+                                        width: '100%',
+                                        height: '100%',
+                                        marginTop: '0px',
+                                    }}
+                                ></img>
+                            </div>
+                        </>
+                    )
+                })}
+            </Slider>
+        </>
+    )
+}
 
 export default Projects

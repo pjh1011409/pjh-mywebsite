@@ -18,6 +18,7 @@
 
 .col{
   min-width: 540px;
+  margin: 0px 30px;
 }
 .icon{
   width: 85px;
@@ -26,10 +27,10 @@
 }
 
   .card {
-    width: 500px;
+    width: 520px;
     height: 400px;
-    background-color: #fff;
-    background: linear-gradient(#f8f8f8, #fff);
+    background-color: white;
+    background: linear-gradient(white, white);
     box-shadow: 0 8px 16px -8px rgba(0,0,0,0.4);
     border-radius: 6px;
     overflow: hidden;
@@ -40,10 +41,10 @@
   
   .card .additional {
     position: absolute;
-    width: 150px;
+    width: 155px;
     height: 100%;
     background: linear-gradient(#2d454a,#2d454a);
-    transition: width 0.4s;
+    transition: width 0.6s;
     overflow: hidden;
     z-index: 2;
   }
@@ -59,30 +60,20 @@
     height: 100%;
     position: relative;
     float: left;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-  }
-  
-  .part1 , .part2{
-    margin:  150px 0px;
-    font-size: 25px;
-    color: white;
-  }
-
-  .part3{
-    margin:  120px 0px;
-    font-size: 18px;
-    color: white;
     text-align: center;
   }
-
-  .part4{
-    margin:  120px 0px;
-    font-size: 17px;
-    color: white;
-  }
   
+  .part{
+    margin:  170px 0px;
+    font-size: 19px;
+    color: white;    
+    word-break: break-all;
+
+  }
+
+ 
+
+
   .card .additional .userCard::after {
     content: "";
     display: block;
@@ -94,9 +85,10 @@
   }
   
   .card .additional .moreInfo {
+    color: white;
     width: 300px;
     position: absolute;
-    left: 150px;
+    left: 160px;
     height: 100%;
   }
   
@@ -117,12 +109,35 @@
   }
   
   .card .general img{
-    width: 80px;
-    margin: 10px 3px;
-  
+     width: 75px;
+    height: 75px;
+    display: inline-block;
+    margin: 20px 5px;
+    
   }
-  
+
+
  
   
- 
+  .slick /*슬라이드 틀 조정*/
+  {
+      position:relative;
+      background: #fffff4;
+      display:inline-block;
+      width: 1000px;
+      height: 500px;
+      align-items: center;
+      justify-content: center;
+  
+      -webkit-user-select: none;
+         -moz-user-select: none;
+          -ms-user-select: none;
+              user-select: none;
+  
+      -webkit-touch-callout: none;
+      -khtml-user-select: none;
+      -ms-touch-action: pan-y;
+          touch-action: pan-y;
+      -webkit-tap-highlight-color: transparent;
+  }
   

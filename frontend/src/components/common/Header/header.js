@@ -53,7 +53,7 @@ const Header = (props) => {
                             </Nav.Link>
                             <Nav.Link
                                 className={[styles.navLink, styles.navBtn]}
-                                onClick={() => props.handleIndexClick(1)}
+                                onClick={() => props.handleIndexClick(3)}
                             >
                                 Q&A
                             </Nav.Link>

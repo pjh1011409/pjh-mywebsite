@@ -19,7 +19,7 @@ function TechStack() {
                                     <div className={styles.card}>
                                         <div className={styles.additional}>
                                             <div className={styles.userCard}>
-                                                <div className={styles.part2}>
+                                                <div className={styles.part}>
                                                     {data.stackName}
                                                 </div>
                                             </div>
@@ -31,7 +31,7 @@ function TechStack() {
                                             {images[i].map((img) => {
                                                 return (
                                                     <>
-                                                        <img src={img}></img>
+                                                        <img src={`./static/images/icons/${img}`}></img>
                                                     </>
                                                 )
                                             })}
