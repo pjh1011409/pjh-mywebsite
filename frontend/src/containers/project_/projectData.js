@@ -36,17 +36,23 @@ export const ProjectData = [
 
 export const Images = [
     [
-        process.env.PUBLIC_URL + './static/images/icons/react-icon.png',
+      'website-1.png',
+      'website-2.png',
+      'website-3.png',
+      'website-4.png',
+
+
     ],
     [
-        process.env.PUBLIC_URL + './static/images/icons/vue-icon.png',
+        'python-icon.png',
+        'django-icon.png',
+        'java-icon.png',
+        'jsp-icon.png',
+        'node-icon.png',
+        'mysql-icon.png',
     ],
-    [
-        process.env.PUBLIC_URL + './static/images/icons/js-icon.png',
-    ],
-    [
-        process.env.PUBLIC_URL + './static/images/icons/java-icon.png',
-    ],
+    ['git-icon.png', 'github-icon.png', 'amazon-icon.png', 'docker-icon.png'],
+    ['notion-icon.png', 'jira-icon.png', 'balsamiq-icon.png', 'figma-icon.png'],
 ]
 
 export const Explain = [
