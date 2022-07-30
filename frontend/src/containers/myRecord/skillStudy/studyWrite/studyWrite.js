@@ -130,6 +130,7 @@ function StudyWrite() {
                                         <CkEditor
                                             Content={Content}
                                             setContent={setContent}
+                                            imageHandler={imageHandler}
                                         ></CkEditor>
                                     </div>
                                 </Col>

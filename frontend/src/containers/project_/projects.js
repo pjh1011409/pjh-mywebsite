@@ -17,6 +17,7 @@ function Projects() {
     const [projectData, setProjectData] = useState(ProjectData)
     const [images, setImages] = useState(Images)
     const [modalOpen, setModalOpen] = useState(false)
+    const [modalId, setModalId] = useState('')
 
     const openModal = () => {
         document.body.style.overflow = 'hidden'
@@ -151,7 +152,7 @@ function Projects() {
                                                     class="modalBtn"
                                                     onClick={() => {
                                                         openModal()
-                                                        console.log(data.id)
+                                                        setModalId(data.id)
                                                     }}
                                                 >
                                                     Go To Detail{' '}
@@ -162,8 +163,7 @@ function Projects() {
                                                     openModal={openModal}
                                                     modalOpen={modalOpen}
                                                     closeModal={closeModal}
-                                                    id={data.id}
-                                                ></Modal>{' '}
+modalId= {modalId}                                                ></Modal>{' '}
                                             </div>
                                         </div>
                                     </article>
@@ -205,7 +205,7 @@ function Modal(props) {
                                     marginTop: '30px',
                                 }}
                             >
-                                {explain[props.id].map((data) => {
+                                {explain[props.modalId].map((data) => {
                                     return (
                                         <>
                                             <div>{data}</div>
