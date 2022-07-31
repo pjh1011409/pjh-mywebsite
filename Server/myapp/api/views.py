@@ -6,9 +6,14 @@ from rest_framework.serializers import Serializer
 from .models import Note
 from .serializers import NoteSerializer
 from api import serializers
+
+
+from django.views.decorators.csrf import csrf_exempt
+from django.utils.decorators import method_decorator
+
 from .utils import updateNote, getNoteDetail, deleteNote, getNotesList, createNote
 
-@api_view(['GET','POST','UPDATE', 'DELETE'])
+@api_view(['GET','POST','PUT', 'DELETE'])
 def getRoutes(request):
      routes = [
         {
@@ -52,6 +57,7 @@ def getRoutes(request):
 # /notes/<id> PUT
 # /notes/<id> DELETE
 
+@method_decorator(csrf_exempt,name='dispatch')
 @api_view(['GET', 'POST'])
 def getNotes(request):
 
@@ -61,7 +67,7 @@ def getNotes(request):
     if request.method == 'POST':
         return createNote(request)
 
-
+@method_decorator(csrf_exempt,name='dispatch')
 @api_view(['GET', 'PUT', 'DELETE'])
 def getNote(request, pk):
 
