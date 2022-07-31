@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import os
+from django.conf.locale.ko import formats as ko_formats
+ko_formats.DATATIME_FORMAT='Y-m-d G:i:s'
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -25,7 +28,7 @@ SECRET_KEY = 'django-insecure-+2_f$z^=0d-#ti9w02514&jj-&=&fmg&y%!9(#^9fke7op&v2-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['13.124.191.157']
 
 
 # Application definition
@@ -39,13 +42,19 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'corsheaders',
     'rest_framework',
-    'api.apps.ApiConfig'
+    'api.apps.ApiConfig',
+    'image.apps.ImageConfig',
 ]
 
 CORS_ALLOWED_ORIGINS = (
     'http://localhost:3000',
     'http://127.0.0.1:3000'
 )
+# CORS_ORIGIN_ALLOW_ALL = True
+# CORS_ALLOW_CREDENTIALS = True
+
+# CSRF_COOKIE_NAME = 'XSRF-TOKEN'
+# CSRF_HEADER_NAME = 'X-XSRF-TOKEN'
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
@@ -64,7 +73,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-           '/Users/houya/MyWebSite/Client/build'
+           '/Users/houya/MyWebSite/frontend/build'
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -84,12 +93,30 @@ WSGI_APPLICATION = 'myapp.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
+import pymysql
+
+pymysql.install_as_MySQLdb()
+
+
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql', #1
+        'NAME': 'mywebsite', #2
+        'USER': 'root', #3                      
+        'PASSWORD': '1409',  #4              
+        'HOST': '127.0.0.1',   #5                
+        'PORT': '0', #6
     }
 }
+
 
 
 # Password validation
@@ -114,9 +141,10 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+LANGUAGE_CODE = 'ko'
+
+TIME_ZONE = 'Asia/Seoul'
 
 USE_I18N = True
 
@@ -128,8 +156,13 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [
-           '/Users/houya/MyWebSite/Client/build/static'
+           os.path.join('/Users/houya/MyWebSite/frontend/build/static')
 ]
+
+MEDIA_URL = '/images/'
+
+MEDIA_ROOT = os.path.join('/Users/houya/MyWebSite/frontend/build/static/images')
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 

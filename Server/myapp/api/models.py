@@ -10,10 +10,10 @@ class Note(models.Model):
     title = models.CharField(max_length=50, default='')
     sub_title = models.CharField(max_length=50)
     body = models.TextField(null=True, blank=True)
+    image = models.ImageField(null = True, blank=True)
+    
     updated = models.DateTimeField(auto_now=True) # 수정시 업데이트 날짜 생성
     created = models.DateTimeField(auto_now_add=True) # 생성시 없데이트 날짜 생성
-
-
 
 
     def __str__(self):
@@ -28,6 +28,11 @@ class Note(models.Model):
     def __str__(self):
         return self.body[0:300]
     
+#     def __str__(self):
+#         return self.updated()
+
+#     def __str__(self):
+#         return self.created()
    
 #django framework 에서 데이터모델을 만들어주는 역할을 하고 있는 파일이다.
 # models.py 파일안에 클래스형으로 데이터 모델을 만들어주면 장고가 ORM(object-oriented-mapping)

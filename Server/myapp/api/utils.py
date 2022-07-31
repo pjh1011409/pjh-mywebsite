@@ -1,3 +1,5 @@
+from turtle import title
+from unicodedata import category
 from rest_framework.response import Response
 from .models import Note
 from .serializers import NoteSerializer
@@ -15,14 +17,20 @@ def getNoteDetail(request, pk):
     return Response(serializer.data)
 
 
-
 def createNote(request):
     data = request.data
     note = Note.objects.create(
-        body=data['body']
+        category=data['category'],
+        title=data['title'],
+        sub_title=data['sub_title'],
+        body=data['body'],
+        image=data['image']
+
+
     )
     serializer = NoteSerializer(note, many=False)
     return Response(serializer.data)
+
 
 def updateNote(request, pk):
     data = request.data
@@ -32,14 +40,10 @@ def updateNote(request, pk):
     if serializer.is_valid():
         serializer.save()
 
-    return serializer.data
+    return Response(serializer.data)
 
 
 def deleteNote(request, pk):
     note = Note.objects.get(id=pk)
     note.delete()
     return Response('Note was deleted!')
-
-
-
-
