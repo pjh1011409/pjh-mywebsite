@@ -6,6 +6,7 @@ from rest_framework.serializers import Serializer
 from .models import Note
 from .serializers import NoteSerializer
 from api import serializers
+from django.shortcuts import render, redirect, get_object_or_404
 
 
 from django.views.decorators.csrf import csrf_exempt
@@ -13,9 +14,10 @@ from django.utils.decorators import method_decorator
 
 from .utils import updateNote, getNoteDetail, deleteNote, getNotesList, createNote
 
-@api_view(['GET','POST','PUT', 'DELETE'])
+
+@api_view(['GET', 'POST', 'PUT', 'DELETE'])
 def getRoutes(request):
-     routes = [
+    routes = [
         {
             'Endpoint': '/notes/',
             'method': 'GET',
@@ -47,8 +49,7 @@ def getRoutes(request):
             'description': 'Deletes and exiting note'
         },
     ]
-     return Response(routes)
-
+    return Response(routes)
 
 
 # /notes GET
@@ -57,7 +58,7 @@ def getRoutes(request):
 # /notes/<id> PUT
 # /notes/<id> DELETE
 
-@method_decorator(csrf_exempt,name='dispatch')
+@method_decorator(csrf_exempt, name='dispatch')
 @api_view(['GET', 'POST'])
 def getNotes(request):
 
@@ -65,9 +66,24 @@ def getNotes(request):
         return getNotesList(request)
 
     if request.method == 'POST':
-        return createNote(request)
+       if request.method == 'POST':
+        category = request.POST['category']
+        title = request.POST['title']
+        sub_title = request.POST['sub_title']
+        body = request.POST['body']
+        image = request.FILES['image']
+        fileupload = Note(
+            title=title,
+            sub_title=sub_title,
+            category=category,
+            body=body,
+            image=image
+        )
+        fileupload.save()
+        return redirect('create-note')
 
-@method_decorator(csrf_exempt,name='dispatch')
+
+@method_decorator(csrf_exempt, name='dispatch')
 @api_view(['GET', 'PUT', 'DELETE'])
 def getNote(request, pk):
 
@@ -79,5 +95,3 @@ def getNote(request, pk):
 
     if request.method == 'DELETE':
         return deleteNote(request, pk)
-
-
