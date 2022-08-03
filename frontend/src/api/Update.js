@@ -35,7 +35,7 @@ export const updatePost = async (id, data) => {
     }
 
     let csrftoken = getCookie('csrftoken')
-    let url = `http://127.0.0.1:8000/api/notes/${id}/`
+    let url = `http://222.235.9.74:8000/api/notes/${id}/`
 
     const response = await axios.put(url, data, {
         headers: {

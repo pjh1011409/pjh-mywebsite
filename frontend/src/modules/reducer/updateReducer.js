@@ -8,7 +8,6 @@ import {
 } from '../../lib/asyncUtils'
 
 import {
-    UPDATE_GO,
     UPDATE_POST,
     UPDATE_POST_SUCCESS,
     UPDATE_POST_ERROR,
@@ -31,7 +30,6 @@ export const updateDataContents = createPromiseThunk(
 export const updates = (state = initialState, action) => {
     switch (action.type) {
         case UPDATE_POST_SUCCESS:
-        case UPDATE_GO:
         case UPDATE_POST:
         case UPDATE_POST_ERROR:
             return handleAsyncActions(

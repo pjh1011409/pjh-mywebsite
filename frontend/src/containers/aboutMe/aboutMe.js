@@ -7,21 +7,21 @@ function AboutMe() {
                 xs={1}
                 md={2}
                 style={{
-                    width: '85%',
-                    margin: ' 0 auto',
+                    width: '90%',
                     padding: '100px 0px',
+                    margin: '0 auto',
                     height: 'auto',
                 }}
             >
                 <Col
                     style={{
-                        minWidth: '430px',
+                        minWidth: '400px',
                         height: '450px',
                     }}
                 >
                     <div
                         style={{
-                            width: '70%',
+                            width: '80%',
                             height: '70%',
                             margin: '0 auto',
                             marginTop: '80px',
@@ -29,7 +29,7 @@ function AboutMe() {
                     >
                         <img
                             style={{
-                                width: '100%',
+                                width: '90%',
                                 height: '100%',
                                 borderRadius: '30px 30px',
                             }}
@@ -39,14 +39,13 @@ function AboutMe() {
                 </Col>
                 <Col
                     style={{
-                        minWidth: '430px',
                         height: 'auto',
                     }}
                 >
                     <div
                         style={{
-                            width: '400px',
-                            height: '450px',
+                            width: '100%',
+                            height: 'auto',
                             margin: '0 20px',
                             padding: ' 20px 20px',
                         }}
@@ -60,7 +59,7 @@ function AboutMe() {
                         >
                             Park Jeong Ho
                         </div>
-                        <div style={{ fontSize: '18px' }}>
+                        <div style={{ fontSize: '18px', wordBreak: 'break-all' }}>
                             Lorem ipsum dolor sit amet, consectetur adipiscing
                             elit, sed do eiusmod tempor incididunt ut labore et
                             dolore magna aliqua. Nisl tincidunt eget nullam non.
@@ -71,41 +70,19 @@ function AboutMe() {
                         </div>
                     </div>
                 </Col>
+               
                 <Col
                     style={{
                         height: 'auto',
-                        width: '1300px',
-                    }}
-                >
-                    <div
-                        style={{
-                            width: '86%',
-                            margin: '0 auto',
-                        }}
-                    >
-                        <div style={{ fontSize: '18px' }}>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore magna aliqua. Nisl tincidunt eget nullam non.
-                            Quis hendrerit dolor magna eget est lorem ipsum
-                            dolor sit. Volutpat odio facilisis mauris sit amet
-                            massa. Commodo odio aenean sed adipiscing diam donec
-                            adipiscing tristique. Mi eget mauris pharetra et.
-                            Non tellus orci ac auctor augue.
-                        </div>
-                    </div>
-                </Col>
-                <Col
-                    style={{
-                        height: 'auto',
-                        width: '1300px',
+                        width: '100%',
+                        margin: '0 auto'
                     }}
                 >
                     <div
                         style={{
                             width: '20%',
                             margin: '0 auto',
-                            padding: '30px 6px',
+                            padding: '30px 25px',
                             minWidth: '350px',
                         }}
                     >

@@ -1,7 +1,7 @@
 import './projects.scss'
 
 import { Carousel, Row, Col, CarouselItem } from 'react-bootstrap'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Images } from './projectData'
 import { ProjectData } from './projectData'
 import './modal.css'
@@ -44,7 +44,6 @@ function Projects() {
                                 <Col
                                     sm={6}
                                     style={{
-                                        minWidth: '500px',
                                         margin: '0 auto',
                                     }}
                                 >
@@ -72,7 +71,7 @@ function Projects() {
                                             </p>
                                             <Row
                                                 style={{
-                                                    width: '95%',
+                                                    width: '100%',
                                                     margin: '0 auto',
                                                 }}
                                             >
@@ -92,7 +91,8 @@ function Projects() {
                                                     sm
                                                     style={{
                                                         height: '400px',
-                                                        fontSize: '25px',
+                                                        fontSize:
+                                                            'clamp(1.5em, 1.0vw, 2rem)',
                                                         paddingTop: '50px',
                                                     }}
                                                 >
@@ -161,9 +161,11 @@ function Projects() {
                                                     open={modalOpen}
                                                     close={closeModal}
                                                     openModal={openModal}
+                                                    setModalOpen={setModalOpen}
                                                     modalOpen={modalOpen}
                                                     closeModal={closeModal}
-modalId= {modalId}                                                ></Modal>{' '}
+                                                    modalId={modalId}
+                                                ></Modal>{' '}
                                             </div>
                                         </div>
                                     </article>
@@ -181,12 +183,29 @@ function Modal(props) {
     // 열기, 닫기, 모달 헤더 텍스트를 부모로부터 받아옴
     const { open, close } = props
     const [explain, setExplain] = useState(Explain)
+    const wrapperRef = useRef()
+    useEffect(() => {
+        document.addEventListener('mousedown', handleClickOutside)
+
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside)
+        }
+    })
+    const handleClickOutside = (event) => {
+        if (wrapperRef && !wrapperRef.current.contains(event.target)) {
+            document.body.style.overflow = 'unset'
+
+            props.setModalOpen(false)
+        } else {
+            props.setModalOpen(true)
+        }
+    }
 
     return (
         // 모달이 열릴때 openModal 클래스가 생성된다.
-        <div className={open ? 'openModal modal' : 'modal'}>
+        <div className={open ? 'openModal modal' : 'modal'} ref = {wrapperRef}>
             {open ? (
-                <section style={{ width: '95%' }}>
+                <section  style={{ width: '100%' }}>
                     <main style={{ height: 'auto' }}>
                         {' '}
                         <div
@@ -198,11 +217,11 @@ function Modal(props) {
                         >
                             <div
                                 style={{
-                                    width: '80%',
+                                    width: '95%',
                                     border: '1px solid',
                                     height: '1000px',
                                     margin: '0 auto',
-                                    marginTop: '30px',
+                                    marginTop: '10px',
                                 }}
                             >
                                 {explain[props.modalId].map((data) => {

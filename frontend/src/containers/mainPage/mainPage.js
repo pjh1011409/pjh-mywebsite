@@ -79,7 +79,7 @@ function MainPage() {
 
             <PositionContainer>
                 <TopButton onClick={handleScroll}>
-                    <FontAwesomeIcon
+                    <FontAwesomeIcon 
                         icon={faCircleUp}
                         color='#efa212'
                         size="3x"

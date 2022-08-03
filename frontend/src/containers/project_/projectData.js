@@ -44,15 +44,10 @@ export const Images = [
 
     ],
     [
-        'python-icon.png',
-        'django-icon.png',
-        'java-icon.png',
-        'jsp-icon.png',
-        'node-icon.png',
-        'mysql-icon.png',
+      
     ],
-    ['git-icon.png', 'github-icon.png', 'amazon-icon.png', 'docker-icon.png'],
-    ['notion-icon.png', 'jira-icon.png', 'balsamiq-icon.png', 'figma-icon.png'],
+    [],
+    [],
 ]
 
 export const Explain = [
