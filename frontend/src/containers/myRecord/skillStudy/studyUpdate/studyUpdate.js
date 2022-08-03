@@ -199,7 +199,7 @@ function StudyUpdate() {
                                 >
                                     {originDelete === false ? (
                                         <img
-                                            src={`http://localhost:8000${data.image}`}
+                                            src={`http://222.235.9.74:8000${data.image}`}
                                             style={{ maxWidth: '300px' }}
                                             alt="이미지 업로드 실패"
                                         ></img>

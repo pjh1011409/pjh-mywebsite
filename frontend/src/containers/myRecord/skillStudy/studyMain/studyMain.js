@@ -97,7 +97,7 @@ function SKillStudyMain() {
                                     </button>
                                     </div>
                                     <div style={{ border:'1px solid',width:'45%', heigth:'100%', float:'right'}}>
-                                    <img src={`http://localhost:8000${e.image}`} style={{width:'100%', height:'160px'}}></img>
+                                    <img src={`http://222.235.9.74:8000${e.image}`} style={{width:'100%', height:'160px'}} alt="dd"></img>
 
                                     </div>
                                     

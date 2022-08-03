@@ -19,7 +19,7 @@ export const createPost = async (data) => {
     }
 
     let csrftoken = getCookie('csrftoken');
-    let url = `http://127.0.0.1:8000/api/notes/`
+    let url = `http://222.235.9.74:8000/api/notes/`
 
 
     const response = await axios.post(url, data, {

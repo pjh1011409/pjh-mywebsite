@@ -30,8 +30,9 @@ const Question = () => {
     return (
         <div
             style={{
-                height: '1200px',
+                height: 'auto',
                 backgroundColor: '#d3eded',
+                overflow: 'scroll'
             }}
         >
             <div

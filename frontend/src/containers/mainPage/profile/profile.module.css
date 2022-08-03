@@ -1,5 +1,5 @@
 .profileBackgr {
-
+    width: 100vw;
     background-color: #1a4d7a;
     background-size: 3px 3px;
     background-image:
@@ -51,12 +51,12 @@
 }
 
 .wrapper2 {
-    font-size: clamp(2em, 3.5vw, 10rem);
+    font-size: clamp(1.5em, 3.5vw, 10rem);
 
 }
 
 .wrapper3 {
-    font-size: clamp(2em, 3vw, 10rem);
+    font-size: clamp(1.5em, 3vw, 10rem);
 
 }
 

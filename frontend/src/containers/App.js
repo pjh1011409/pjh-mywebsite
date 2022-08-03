@@ -12,7 +12,7 @@ import MyRecord from './myRecord/myRecord'
 
 function App() {
     return (
-        <div>
+        <div style={{margin: '0', width:'100vm',overflowX:'hidden'}}>
             <Routes>
                 <Route exact path="/" element={<MainPage />} />
 

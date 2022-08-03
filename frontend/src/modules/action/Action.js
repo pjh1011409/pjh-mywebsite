@@ -1,6 +1,8 @@
 
 /* 액션 타입 */
 
+export const CLEAR_POST = 'CLEAR_POST';
+
 // 포스트 여러개 조회하기
 export const GET_POSTS = "GET_POSTS"; // 요청 시작
 export const GET_POSTS_SUCCESS = "GET_POSTS_SUCCESS"; // 요청 성공
@@ -25,8 +27,6 @@ export const DELETE_POST_ERROR = "DELETE_POST_ERROR";
 
 
 // 포스트 하나 수정하기
-export const UPDATE_GO = "UPDATE_GO"
-export const UPDATE_GET = "UPDATE_GET"
 export const UPDATE_POST = "UPDATE_POST";
 export const UPDATE_POST_SUCCESS = "UPDATE_POST_SUCCESS";
 export const UPDATE_POST_ERROR = "UPDATE_POST_ERROR";
