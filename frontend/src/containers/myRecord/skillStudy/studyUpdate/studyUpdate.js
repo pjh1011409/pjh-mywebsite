@@ -43,7 +43,7 @@ function StudyUpdate() {
     useEffect(() => {
         dispatch(getPost(postId))
         setTitle(data.title)
-        setSubTitle(data.sub_title)
+        setSubTitle(data.subTitle)
         setContent(data.body)
         setCategory(data.category)
         // setImage(data.image)
@@ -79,14 +79,12 @@ function StudyUpdate() {
         })
     }
 
-
-
     // -------------------------- 수정한 게시글 올리기----------------------
     const updateData = () => {
         const inputData = new FormData()
         inputData.append('category', Category)
         inputData.append('title', Title)
-        inputData.append('sub_title', SubTitle)
+        inputData.append('subTitle', SubTitle)
         inputData.append('body', Content)
         inputData.append('image', Image)
         console.log(inputData, id)
@@ -107,17 +105,13 @@ function StudyUpdate() {
                 <div className={styles.writeText}>
                     <Row className={styles.title}>
                         {/* -------------title-------------- */}
-                        <Col sm style={{ marginBottom: '20px' }}>
+                        <Col sm className={styles.form}>
                             Titile
                             <FormControl
                                 type="text"
-                                value={Title}
+                                value={Title||""}
                                 onChange={titleHandler}
-                                style={{
-                                    border: '2px solid green',
-                                    marginTop: '5px',
-                                }}
-                                a
+                                className={styles.formBorder}
                             ></FormControl>
                         </Col>
                         {/* -------------Category-------------- */}
@@ -126,13 +120,10 @@ function StudyUpdate() {
                             Category
                             <FormControl
                                 type="text"
-                                value={Category}
+                                value={Category||""}
                                 onChange={categoryHandler}
-                                style={{
-                                    border: '2px solid green',
-                                    marginTop: '5px',
-                                }}
-                                a
+                                className={styles.formBorder}
+                                ㅅ
                             ></FormControl>
                         </Col>
                     </Row>
@@ -140,16 +131,13 @@ function StudyUpdate() {
 
                     <Row className={styles.subTitle}>
                         <Form.Label></Form.Label>
-                        <Col sm style={{ marginBottom: '20px' }}>
+                        <Col sm className={styles.form}>
                             Sub Title
                             <FormControl
                                 onChange={subTitleHandler}
                                 type="text"
-                                value={SubTitle}
-                                style={{
-                                    border: '2px solid green',
-                                    marginTop: '5px',
-                                }}
+                                value={SubTitle||""}
+                                className={styles.formBorder}
                             />
                         </Col>
                     </Row>
@@ -161,46 +149,23 @@ function StudyUpdate() {
                             controlId="exampleForm.ControlTextarea1"
                         >
                             <Form.Label>Text area</Form.Label>
-                            <Row className={styles.Title}>
-                                <Col
-                                    sm
-                                    style={{
-                                        marginBottom: '20px',
-                                        height: 'auto',
-                                    }}
-                                >
-                                    <div style={{ border: '2px solid green' }}>
+                            <Row>
+                                <Col sm className={styles.form}>
+                                    <div className={styles.formBorder}>
                                         <CkEditor
-                                            Content={Content}
+                                            Content={Content||""}
                                             setContent={setContent}
                                         ></CkEditor>
                                     </div>
                                 </Col>
                             </Row>
-                            {/* <div style={{ width: '300px', margin: '0 auto' }}>
 
-                                {Image && (
-
-                                )}
-                            </div> */}
-                            <div
-                                style={{
-                                    border: '2px solid green',
-                                    width: '100%',
-                                    margin: ' 0 auto',
-                                }}
-                            >
-                                <div
-                                    style={{
-                                        width: '300px',
-                                        margin: '0 auto',
-                                        textAlign: 'center',
-                                    }}
-                                >
+                            <div className={styles.imageBg}>
+                                <div className={styles.imageLocation}>
                                     {originDelete === false ? (
                                         <img
                                             src={`http://222.235.9.74:8000${data.image}`}
-                                            style={{ maxWidth: '300px' }}
+                                            style={{ maxWidth: '400px' }}
                                             alt="이미지 업로드 실패"
                                         ></img>
                                     ) : (
@@ -210,8 +175,7 @@ function StudyUpdate() {
                                                 style={{ width: '100%' }}
                                             ></img>
                                         )
-                                    )} 
-                               
+                                    )}
                                 </div>
                                 <input
                                     type="file"

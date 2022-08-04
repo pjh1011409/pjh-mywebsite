@@ -29,67 +29,38 @@ const Question = () => {
     }
     return (
         <div
-            style={{
-                height: 'auto',
-                backgroundColor: '#d3eded',
-                overflow: 'scroll'
-            }}
+           className={styles.questionBg}
         >
             <div
-                style={{
-                    width: '90%',
-                    margin: '0 auto',
-                    padding: '15px 0px 30px 15px',
-                    height: 'auto',
-                }}
+               className={styles.questionInner}
             >
-                {questionData.map((a, i) => {
+                {questionData.map((data, i) => {
                     return (
-                        <>
+                        <div key={data.id}>
                             <div
-                                style={{
-                                    width: '90%',
-                                    margin: '0 auto',
-                                    marginTop: '150px',
-                                }}
+                               className={styles.questionMargin}
                             >
                                 <h3
-                                    className={styles.underline}
-                                    style={{
-                                        margin: '10px',
-                                        fontWeight: 'bolder',
-                                        color: '#2c3964',
-                                    }}
+                                    className={styles.question}
+                                   
                                 >
                                     <img
                                 src={process.env.PUBLIC_URL + "./static/images/question.png"}
-                                style={{ width: '45px', marginRight:'20px' }}
-                                    ></img>
+                                    className={styles.questionImg}
+></img>
 
                                     {QuestionData[i].question}
                                 </h3>
                             </div>
                             <div style={{ clear: 'both' }}>
                                 <div
-                                    style={{
-                                        marginTop: '20px',
-                                        width: '90%',
-                                        margin: '0 auto',
-                                    }}
+                                   className={styles.iconMargin}
                                 >
                                     <div
-                                        style={{
-                                            display: 'flex',
-                                            float: 'left',
-                                            height: 'auto',
-                                            width: '7%',
-                                        }}
+                                        className={styles.iconLocation}
                                     >
                                         <div
-                                            style={{
-                                                width: '100px',
-                                                fontSize: '12px',
-                                            }}
+                                           className={styles.iconWidth}
                                         >
                                             {show[i] ? (
                                                 <FontAwesomeIcon
@@ -100,10 +71,7 @@ const Question = () => {
                                                     aria-expanded={open[i]}
                                                     icon={faCaretUp}
                                                     size="3x"
-                                                    style={{
-                                                        color: '#34136f',
-                                                        float: 'right',
-                                                    }}
+                                                    className={styles.icon}
                                                 />
                                             ) : (
                                                 <FontAwesomeIcon
@@ -112,31 +80,18 @@ const Question = () => {
                                                     aria-expanded={open[i]}
                                                     icon={faCaretDown}
                                                     size="3x"
-                                                    style={{
-                                                        color: '#34136f',
-                                                        float: 'right',
-                                                    }}
+                                                    className={styles.icon}
+s
                                                 />
                                             )}
                                         </div>
                                     </div>
                                     <div
-                                        style={{
-                                            display: 'flex',
-                                            float: 'left',
-                                            width: '90%',
-                                            height: 'auto',
-                                        }}
+                                       className={styles.moreInfoBg}
                                     >
                                         <Collapse
                                             in={open[i]}
-                                            style={{
-                                                padding: '0 15px 15px 15px',
-                                                marginLeft:'10px',
-                                                marginBottom: '56px',
-                                                backgroundColor: 'white',
-                                                borderRadius: '20px',
-                                            }}
+                                           className={styles.moreInfo}
                                         >
                                             <div id="example-collapse-text">
                                                 {QuestionData[i].answer}
@@ -145,7 +100,7 @@ const Question = () => {
                                     </div>
                                 </div>
                             </div>
-                        </>
+                        </div>
                     )
                 })}
             </div>

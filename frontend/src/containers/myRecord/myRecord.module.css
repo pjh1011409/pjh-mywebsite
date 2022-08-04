@@ -20,6 +20,7 @@
     font-weight: bold;
     background-color:  #ede090;
     color: #242848;
+    border-radius: 10px;
 }
 .button button:hover{
     background-color: #d7efe8;

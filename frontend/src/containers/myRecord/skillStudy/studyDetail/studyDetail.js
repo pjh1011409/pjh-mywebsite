@@ -7,7 +7,6 @@ import Footer from '../../../../components/common/Footer/footer'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHouse } from '@fortawesome/free-solid-svg-icons'
 import { deletePost } from '../../../../modules/reducer/deleteReducer'
-import { getPosts } from '../../../../modules/reducer/getReducer'
 import Parser from 'html-react-parser'
 
 function StudyDetail() {
@@ -52,7 +51,7 @@ function StudyDetail() {
                 <div className={styles.titleGroup}>
                     <div className={styles.category}>{data.category}</div>
                     <div className={styles.title}>{data.title}</div>
-                    <div className={styles.subTitle}>{data.sub_title}</div>
+                    <div className={styles.subTitle}>{data.subTitle}</div>
                 </div>
             </div>
             <div className={styles.middle}>

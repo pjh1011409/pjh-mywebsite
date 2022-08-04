@@ -1,19 +1,72 @@
-.aboutMeBg{
+.aboutMeBg {
   height: auto;
   background-color: #1d698a;
   color: white;
 }
 
+.aboutMain {
+  width: 90%;
+  padding: 100px 0px;
+  margin: 0 auto;
+  height: auto;
+}
 
-.messenger{
+.aboutPart1 {
+  min-width: 400px;
+  height: 450px;
+}
+
+.aboutImg {
+  width: 80%;
+  height: 70%;
+  margin: 0 auto;
+}
+
+.aboutImg img {
+  width: 90%;
+  height: 100%;
+  border-radius: 30px;
+}
+
+.aboutPark2 {
+  height: auto;
+}
+
+.aboutIntro {
+  width: 100%;
+  height: auto;
+  margin: 0 20px;
+  padding: 20px 20px;
+}
+
+.aboutText {
+  font-size: 18px;
+  word-break: break-all;
+}
+
+.aboutFooter {
+  height: auto;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.aboutSns {
+  width: 20%;
+  margin: 0 auto;
+  padding: 30px 25px;
+  min-width: 350px;
+}
+
+.messenger {
   width: 40px;
   margin: 8px;
 }
 
-.messsengerDiv{
+.messsengerDiv {
   margin: 0 auto;
 
 }
+
 .messsengerDiv :hover {
   transform: scale(1.1);
 }

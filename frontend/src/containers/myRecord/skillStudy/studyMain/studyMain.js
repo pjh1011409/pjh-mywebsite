@@ -1,9 +1,6 @@
-import { Card, Button, Form, FormControl, Spinner } from 'react-bootstrap'
+import { Card, Form, FormControl, Spinner } from 'react-bootstrap'
 import styles from './studyMain.module.css'
-import StudyWrite from '../studyWrite/studyWrite'
-import StudyDetail from '../studyDetail/studyDetail'
-import { Route, Routes, Link, useParams } from 'react-router-dom'
-import axios from 'axios'
+
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { getPosts } from '../../../../modules/reducer/getReducer'
@@ -38,7 +35,6 @@ function SKillStudyMain() {
     return (
         <div style={{ backgroundColor: '' }}>
             <div className={styles.contentLayout}>
-               
                 {data
                     // eslint-disable-next-line array-callback-return
                     .filter((val) => {
@@ -75,8 +71,8 @@ function SKillStudyMain() {
                     })
                     .slice(offset, offset + limit)
                     .map((e, i) => (
-                        <>
-                            <Card style={{ marginBottom: '20px'}} key={e.id}>
+                        
+                            <Card key={e.id} className={styles.card}>
                                 <Card.Header
                                     as="h5"
                                     className={styles.cardHead}
@@ -84,26 +80,29 @@ function SKillStudyMain() {
                                     {e.category}
                                 </Card.Header>
                                 <Card.Body className={styles.cardBody}>
-                                    <div style={{width:'40%', heigth:'230px', float:'left'}}>
-                                    <h5 style={{marginTop:'5px'}}>{e.title}</h5>
-                                    <h8>{e.sub_title}</h8>
-                                    <button
-                                        className={styles.goDetail}
-                                        onClick={() => {
-                                            navigate(`/studyDetail/${e.id}`)
-                                        }}
-                                    >
-                                        Go Detail
-                                    </button>
+                                    <div className={styles.cardText}>
+                                        <h5 className={styles.cardTitle}>
+                                            {e.title}
+                                        </h5>
+                                        <h8>{e.subTitle}</h8>
+                                        <button
+                                            className={styles.goDetail}
+                                            onClick={() => {
+                                                navigate(`/studyDetail/${e.id}`)
+                                            }}
+                                        >
+                                            Go Detail
+                                        </button>
                                     </div>
-                                    <div style={{ border:'1px solid',width:'45%', heigth:'100%', float:'right'}}>
-                                    <img src={`http://222.235.9.74:8000${e.image}`} style={{width:'100%', height:'160px'}} alt="dd"></img>
-
+                                    <div className={styles.postImage}>
+                                        <img
+                                            src={`http://222.235.9.74:8000${e.image}`}
+                                            alt="dd"
+                                        ></img>
                                     </div>
-                                    
                                 </Card.Body>
                             </Card>
-                        </>
+                        
                     ))}
                 <Pagination
                     total={data.length}
