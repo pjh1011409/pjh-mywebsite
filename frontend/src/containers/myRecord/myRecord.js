@@ -14,7 +14,6 @@ function MyRecord() {
                         onClick={() => {
                             navigate('/')
                         }}
-                        style={{ borderRadius: '10px' }}
                     >
                         Home
                     </button>
@@ -23,7 +22,6 @@ function MyRecord() {
                         onClick={() => {
                             navigate('/login')
                         }}
-                        style={{ borderRadius: '10px' }}
                     >
                         Login
                     </button>

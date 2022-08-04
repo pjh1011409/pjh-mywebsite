@@ -1,59 +1,62 @@
-.tag{
+.tag {
     width: 100%;
     height: auto;
     margin: 30px 0px;
     max-width: 800px;
 }
-.tag button{
+
+.tag button {
     margin: 10px 10px;
     background-color: #f1a87d;
     width: auto;
     height: auto;
 }
-.tag button:hover{
+
+.tag button:hover {
     background-color: #ede090;
 }
 
-.contentLayout{
+.contentLayout {
     width: 80%;
     margin: 0 auto;
     padding: 10px;
 }
 
-.cardHead{
-   background-color:  #d7efe8;
-}
-.cardBody{
-    background-color: #fff;
-    height: auto;
-background-image:
-linear-gradient(#eee .1em, transparent .1em);
-background-size: 100% 1.2em;
+.cardHead {
+    background-color: #d7efe8;
 }
 
-.goDetail{
+.cardBody {
+    background-color: #fff;
+    height: auto;
+    background-image:
+        linear-gradient(#eee .1em, transparent .1em);
+    background-size: 100% 1.2em;
+}
+
+.goDetail {
     display: block;
     width: 100px;
- 
+
     margin-top: 40px;
     color: black;
     background-color: #ede090;
-    border-radius: 5px ;
+    border-radius: 5px;
 }
 
-.goDetail:hover{
- 
+.goDetail:hover {
+
     transform: scale(1.1);
 }
 
-.utility{
+.utility {
     display: flex;
-    justify-content:center;
+    justify-content: center;
     height: 70px;
     width: 90%;
 }
 
-.utility button{
+.utility button {
     display: flex;
     justify-content: center;
     height: 50px;
@@ -64,11 +67,37 @@ background-size: 100% 1.2em;
     margin: 20px;
     color: black;
     background-color: #ede090;
-    border-radius: 5px ;
+    border-radius: 5px;
 
 }
 
-.utility button:hover{
+.utility button:hover {
     background-color: #ede090;
     transform: scale(1.1);
+}
+
+.card {
+    margin-bottom: 20px;
+}
+
+.cardText {
+    width: 40%;
+    height: 150px;
+    float: left;
+}
+
+.cardTitle {
+    margin-top: 5px;
+}
+
+.postImage {
+    border: 1px solid;
+    width: 45%;
+    height: 100%;
+    float: right;
+}
+
+.postImage img {
+    width: 100%;
+    height: 160px;
 }

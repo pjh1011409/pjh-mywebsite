@@ -1,3 +1,5 @@
+import { icon } from "@fortawesome/fontawesome-svg-core"
+
 export const ProjectData = [
     {   
         id : 0,
@@ -44,10 +46,14 @@ export const Images = [
 
     ],
     [
-      
+     'amazon-icon.png' 
     ],
-    [],
-    [],
+    [
+        'bootstrap-icon.png'
+    ],
+    [
+        'css-icon.png'
+    ],
 ]
 
 export const Explain = [

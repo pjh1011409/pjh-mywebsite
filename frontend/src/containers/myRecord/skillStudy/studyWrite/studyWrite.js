@@ -30,25 +30,21 @@ function StudyWrite() {
     }
     const imageHandler = (e) => {
         let reader = new FileReader()
-            reader.readAsDataURL(e.target.files[0])
-            setImage(e.target.files[0]) 
-            return new Promise((resolve) => {
-                reader.onload = () =>{
-                    setImageFile(reader.result) 
-                    resolve();
-                }
-               
-            })
-          
-       
+        reader.readAsDataURL(e.target.files[0])
+        setImage(e.target.files[0])
+        return new Promise((resolve) => {
+            reader.onload = () => {
+                setImageFile(reader.result)
+                resolve()
+            }
+        })
     }
-  
 
     const createData = () => {
         const inputData = new FormData()
         inputData.append('category', Category)
         inputData.append('title', Title)
-        inputData.append('sub_title', SubTitle)
+        inputData.append('subTitle', SubTitle)
         inputData.append('body', Content)
         inputData.append('image', Image)
         console.log(inputData)
@@ -68,13 +64,13 @@ function StudyWrite() {
                 <div className={styles.writeText}>
                     <Row className={styles.title}>
                         {/* -------------title-------------- */}
-                        <Col sm style={{ marginBottom: '20px' }}>
+                        <Col sm className={styles.form}>
                             Title
                             <Form.Control
                                 type="text"
                                 placeholder="제목을 작성하세요"
                                 onChange={titleHandler}
-                                style={{ border: '2px solid green', marginTop:'5px' }}
+                                className={styles.formBorder}
                             />
                         </Col>
                         {/* -------------Category-------------- */}
@@ -85,7 +81,7 @@ function StudyWrite() {
                                 type="text"
                                 placeholder="카테고리를 작성하세요(10자 이내)"
                                 onChange={categoryHandler}
-                                style={{ border: '2px solid green' , marginTop:'5px'}}
+                                className={styles.formBorder}
                                 maxLength="10"
                             />
                         </Col>
@@ -94,13 +90,13 @@ function StudyWrite() {
 
                     <Row className={styles.subTitle}>
                         <Form.Label></Form.Label>
-                        <Col sm style={{ marginBottom: '20px' }}>
+                        <Col sm className={styles.form}>
                             Sub Title
                             <Form.Control
                                 onChange={subTitleHandler}
                                 type="text"
                                 placeholder="한줄 설명을 작성하세요"
-                                style={{ border: '2px solid green',marginTop:'5px' }}
+                                className={styles.formBorder}
                             />
                         </Col>
                     </Row>
@@ -113,20 +109,9 @@ function StudyWrite() {
                         >
                             <Form.Label>Text area</Form.Label>
 
-                            <Row className={styles.Title}>
-                                <Col
-                                    sm
-                                    style={{
-                                        marginBottom: '0px',
-                                        height: 'auto',
-                                    }}
-                                >
-                                    <div
-                                        style={{
-                                            border: '2px solid green',
-                                            marginBottom: '30px',
-                                        }}
-                                    >
+                            <Row>
+                                <Col sm className={styles.form}>
+                                    <div className={styles.formBorder}>
                                         <CkEditor
                                             Content={Content}
                                             setContent={setContent}
@@ -137,23 +122,14 @@ function StudyWrite() {
                             </Row>
                             <h4>Thumbnail</h4>
 
-                            <div
-                                style={{
-                                    border: '2px solid green',
-                                    width: '100%',
-                                    margin: ' 0 auto',
-                                }}
-                            >
-                                <div
-                                    style={{ width: '300px', margin: '0 auto', textAlign:'center' }}
-                                >
+                            <div className={styles.imageBg}>
+                                <div className={styles.imageLocation}>
                                     {Image && (
                                         <img
                                             src={ImageFile}
                                             style={{ width: '100%' }}
                                         ></img>
                                     )}
-                                   
                                 </div>
                                 <input
                                     type="file"

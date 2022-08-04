@@ -1,0 +1,110 @@
+
+.projectBg{
+  background-color:#72a1ec;
+  padding: 80px 0px;
+  height: auto;
+}
+
+.project{
+  margin: 0 auto;
+}
+
+.card {
+  margin: 0 auto;
+  margin-bottom: 60px;
+  border-radius: 16px;
+  box-shadow: 0 30px 30px -25px rgba(#4133B7, .25);
+  width: 800px;
+  max-width: 95%;
+  padding: 10px;
+  background-color: #0f2b47;
+  color: black;
+  height: auto;
+}
+
+.inner {
+  padding: 20px;
+  padding-top: 40px;
+  background-color: white;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+
+.projectTitle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #FBC8BE;
+  border-radius: 0px 1px 20px;
+  display: flex;
+  align-items: center;
+  padding: .625em .75em;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: black;
+}
+
+
+
+.intro{
+  margin-top: 30px;
+  font-size: clamp(1.2em, 1.0vw, 2rem);
+}
+
+.leftCol{
+  height: 400px;
+  min-width: 300px;
+}
+
+.rightCol{
+  height: 400px;
+  font-size: clamp(1.5em, 1.0vw, 2rem);
+  padding-top: 50px;
+}
+
+.rightInfo{
+  margin: 10px 5px;
+}
+.icon{
+  margin-right: 10px;
+}
+.innerRow{
+  width: 100%;
+  margin: 0 auto;
+}
+
+.modalBg{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+.modalBtn {
+  width: 150px;
+  height: 60px;
+  margin: 0 auto;
+  margin-top: 30px;
+  background-color: rgb(255, 111, 0);
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.modalBtn:hover {
+  background-color: #e4e129;
+}
+
+.close {
+  width: 100px;
+  height: 50px;
+  margin: 0 auto;
+  margin-top: 30px;
+  background-color: rgb(255, 111, 0);
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.close:hover {
+  background-color: #e4e129;
+}

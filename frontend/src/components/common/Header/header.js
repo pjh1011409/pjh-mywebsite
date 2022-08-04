@@ -38,7 +38,7 @@ const Header = (props) => {
                             >
                                 AboutMe
                             </Nav.Link>
-                          
+
                             <Nav.Link
                                 className={[styles.navLink, styles.navBtn]}
                                 onClick={() => props.handleIndexClick(1)}

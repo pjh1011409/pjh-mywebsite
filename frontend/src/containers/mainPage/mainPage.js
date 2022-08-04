@@ -3,7 +3,7 @@ import Footer from '../../components/common/Footer/footer'
 import Profile from './profile/profile'
 import Information from './information/information'
 import AboutMe from '../aboutMe/aboutMe'
-import Project from '../project_/projects'
+import Project from '../myProject/projects'
 import TechStack from '../techStack/techStack'
 import React, { useRef, useState } from 'react'
 import styled from 'styled-components'
@@ -11,6 +11,30 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleUp } from '@fortawesome/free-regular-svg-icons'
 import { Container } from 'react-bootstrap'
 import Question from '../question/question'
+
+const PositionContainer = styled.div`
+    position: fixed;
+    width: 100%;
+    bottom: 100px;
+    z-index: 0;
+
+    // 데스크탑
+    @media screen and (min-width: 480px) {
+        right: 5%;
+    }
+`
+
+const TopButton = styled.button.attrs(() => ({
+    type: 'button',
+    title: '맨 위로 가기',
+    'aria-label': '맨 위로 가기',
+}))`
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: none;
+    background-color: transparent;
+`
 
 function MainPage() {
     const NavRef = useRef([])
@@ -22,29 +46,6 @@ function MainPage() {
             block: 'start',
         })
 
-    const PositionContainer = styled.div`
-        position: fixed;
-        width: 100%;
-        bottom: 100px;
-        z-index: 0;
-
-        // 데스크탑
-        @media screen and (min-width: 480px) {
-            right: 5%;
-        }
-    `
-
-    const TopButton = styled.button.attrs(() => ({
-        type: 'button',
-        title: '맨 위로 가기',
-        'aria-label': '맨 위로 가기',
-    }))`
-        position: absolute;
-        top: 0;
-        right: 0;
-        border: none;
-        background-color: transparent;
-    `
     // handleScroll.js
     const handleScroll = (e) => {
         if (!window.scrollY) return
@@ -62,9 +63,12 @@ function MainPage() {
 
             <Profile handleIndexClick={handleIndexClick}></Profile>
             <Information></Information>
+
             <div ref={(el) => (NavRef.current[0] = el)}>
-                <AboutMe></AboutMe>
+            <AboutMe></AboutMe>
             </div>
+               
+            
 
             <div ref={(el) => (NavRef.current[1] = el)}>
                 <TechStack></TechStack>
@@ -78,10 +82,11 @@ function MainPage() {
             </div>
 
             <PositionContainer>
+            
                 <TopButton onClick={handleScroll}>
-                    <FontAwesomeIcon 
+                    <FontAwesomeIcon
                         icon={faCircleUp}
-                        color='#efa212'
+                        color="#efa212"
                         size="3x"
                     />
                 </TopButton>

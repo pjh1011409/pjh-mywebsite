@@ -1,17 +1,27 @@
-
-
-.writeText{
+.writeText {
     width: 100%;
     margin: 0 auto;
-    padding: 40px  10px;
+    padding: 40px 10px;
     background-color: #fff;
     background-image:
-    linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px),
-    linear-gradient(#eee .1em, transparent .1em);
-    background-size: 100% 1.2em;}
+        linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px),
+        linear-gradient(#eee .1em, transparent .1em);
+    background-size: 100% 1.2em;
+}
+
 .title {
     width: 80%;
     margin: 0 auto;
+}
+
+.form {
+    margin-bottom: 20px;
+    height: auto;
+}
+
+.formBorder {
+    border: 2px solid green;
+    margin-top: 5px;
 }
 
 .subTitle {
@@ -24,10 +34,23 @@
     margin: 0 auto;
 }
 
-.buttonBg{
+.imageBg {
+    border: 2px solid green;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.imageLocation {
+    width: 300px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.buttonBg {
     display: flex;
     justify-content: center;
 }
+
 .button {
 
     width: 100px;
@@ -38,7 +61,7 @@
 
 }
 
-.button:hover{
- 
+.button:hover {
+
     transform: scale(1.1);
 }
