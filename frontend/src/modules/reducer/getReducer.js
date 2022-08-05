@@ -13,6 +13,8 @@ import {
     GET_POST,
     GET_POST_SUCCESS,
     GET_POST_ERROR,
+    UPDATE_GO,
+
 } from '../action/Action'
 
 
@@ -42,3 +44,15 @@ export function posts(state = initialState, action) {
             return state
     }
 }
+
+// export const getUpdateData = (state = initialState, action) =>{
+//     switch(action.type){
+//         case UPDATE_GO:
+//             console.log(action.payload)
+//             console.log("dddd")
+//            return {...state, data: action.payload}
+//         default:
+//             return state
+//     }
+
+// }

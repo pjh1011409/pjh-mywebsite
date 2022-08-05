@@ -16,7 +16,6 @@ function CkEditor(props) {
       
     const onChange = (event, editor) => {
         props.setContent(editor.getData());
-        console.log(props.Content)
       
     }
 
@@ -34,7 +33,7 @@ function CkEditor(props) {
                 data= {props.Content}
                 onReady={(editor) => {
                     // You can store the "editor" and use when it is needed.
-                    console.log('Editor is ready to use!', editor)
+                    // console.log('Editor is ready to use!', editor)
                 }}
                 onChange={onChange}
                 onBlur={(event, editor) => {

@@ -10,24 +10,31 @@ import { useDispatch } from 'react-redux'
 import CkEditor from './textEditor'
 
 function StudyWrite() {
-    const [Title, setTitle] = useState('')
-    const [SubTitle, setSubTitle] = useState('')
-    const [Content, setContent] = useState('')
-    const [Category, setCategory] = useState('')
-    const [Image, setImage] = useState('')
-    const [ImageFile, setImageFile] = useState('')
     const dispatch = useDispatch()
     const navigate = useNavigate()
+// ------------------------------- 카테고리,제목,부제목,본문 state & 입력핸들러 ------------------------------  
+    // useState가 객체를 상태 관리 -> 반복적인 useState 해결
+    const [inputs, setInputs] = useState({
+        category: '',
+        title: '',
+        subTitle: '',
+    })
+    // body와 setBody를 textEditor.js에 props로 전달하기 위해 일반적인 useState 사용
+    const [body,setBody] = useState('')
+    // 쉽게 사용할 수 있도록 비구조화 할당을 통해 추출
+    const { category, title, subTitle } = inputs
+    const onChange = (e) => {
+        const { value, name } = e.target // 우선 e.target 에서 name 과 value 를 추출
+        setInputs({
+            ...inputs,
+            [name]: value, // name 키를 가진 값을 value 로 설정 (이때 [name]은 계산된 속성명 구문 사용)
+        })
+    }
+// ------------------------------- 이미지 state & 이미지핸들러 ------------------------------  
+    const [Image, setImage] = useState('')
+    const [ImageFile, setImageFile] = useState('')
 
-    const titleHandler = (e) => {
-        setTitle(e.target.value)
-    }
-    const subTitleHandler = (e) => {
-        setSubTitle(e.target.value)
-    }
-    const categoryHandler = (e) => {
-        setCategory(e.target.value)
-    }
+    
     const imageHandler = (e) => {
         let reader = new FileReader()
         reader.readAsDataURL(e.target.files[0])
@@ -39,20 +46,23 @@ function StudyWrite() {
             }
         })
     }
-
+// ------------------------------- 게시글 업로드------------------------------  
     const createData = () => {
+        // FormData에 게시글 담기
         const inputData = new FormData()
-        inputData.append('category', Category)
-        inputData.append('title', Title)
-        inputData.append('subTitle', SubTitle)
-        inputData.append('body', Content)
+        inputData.append('category', category)
+        inputData.append('title', title)
+        inputData.append('subTitle', subTitle)
+        inputData.append('body', body)
         inputData.append('image', Image)
-        console.log(inputData)
+        // inputData를 distpatch를 통해서 전송
         dispatch(createPost(inputData))
+        // 함수 실행 시 myRecord로 이동
         navigate('/myRecord')
+        // 새로운 데이터에 대한 랜더링이 필요하므로 새로고침 실행
         window.location.reload()
-        dispatch(uriSave('/myRecord'))
     }
+// ------------------------------- 뒤로 가기 ------------------------------  
 
     const goBack = () => {
         navigate('/myRecord')
@@ -67,9 +77,10 @@ function StudyWrite() {
                         <Col sm className={styles.form}>
                             Title
                             <Form.Control
+                                name="title"
                                 type="text"
                                 placeholder="제목을 작성하세요"
-                                onChange={titleHandler}
+                                onChange={onChange}
                                 className={styles.formBorder}
                             />
                         </Col>
@@ -78,9 +89,10 @@ function StudyWrite() {
                         <Col sm>
                             Category
                             <Form.Control
+                                name="category"
                                 type="text"
                                 placeholder="카테고리를 작성하세요(10자 이내)"
-                                onChange={categoryHandler}
+                                onChange={onChange}
                                 className={styles.formBorder}
                                 maxLength="10"
                             />
@@ -93,7 +105,8 @@ function StudyWrite() {
                         <Col sm className={styles.form}>
                             Sub Title
                             <Form.Control
-                                onChange={subTitleHandler}
+                                name="subTitle"
+                                onChange={onChange}
                                 type="text"
                                 placeholder="한줄 설명을 작성하세요"
                                 className={styles.formBorder}
@@ -113,8 +126,8 @@ function StudyWrite() {
                                 <Col sm className={styles.form}>
                                     <div className={styles.formBorder}>
                                         <CkEditor
-                                            Content={Content}
-                                            setContent={setContent}
+                                            Content={body}
+                                            setContent={setBody}
                                             imageHandler={imageHandler}
                                         ></CkEditor>
                                     </div>

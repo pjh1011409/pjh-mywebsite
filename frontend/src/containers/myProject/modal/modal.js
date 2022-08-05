@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from 'react'
 import styles from './modal.module.css'
 
 function Modal(props) {
+    console.log('dd')
     // 열기, 닫기, 모달 헤더 텍스트를 부모로부터 받아옴
     const { open, close } = props
     const [explain, setExplain] = useState(Explain)

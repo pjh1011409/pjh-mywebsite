@@ -39,10 +39,10 @@ function StudyDetail() {
     }
 
     let goToUpdate = () => {
-        // dispatch({type: 'UPDATE_GO)', payload: data})
-        {
+         dispatch({type: 'UPDATE_GO', payload: data})
+        
             navigate(`/studyUpdate/${id}`)
-        }
+        
     }
 
     return (

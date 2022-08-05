@@ -11,10 +11,11 @@ import {
     UPDATE_POST,
     UPDATE_POST_SUCCESS,
     UPDATE_POST_ERROR,
+    UPDATE_GO,
 } from '../action/Action'
 
 const initialState = {
-    lastId: 0,
+    
 }
 
 export const update = createPromiseThunk(UPDATE_POST, API.update)
@@ -37,8 +38,17 @@ export const updates = (state = initialState, action) => {
                 'updates',
                 true
             )(state, action)
-
         default:
             return state
     }
+}
+
+export const getUpdateData = (state = initialState, action) =>{
+    switch(action.type){
+        case UPDATE_GO:
+           return action.payload
+        default:
+            return state
+    }
+
 }
