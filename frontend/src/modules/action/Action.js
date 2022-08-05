@@ -27,6 +27,7 @@ export const DELETE_POST_ERROR = "DELETE_POST_ERROR";
 
 
 // 포스트 하나 수정하기
+export const UPDATE_GO = "UPDATE_GO";
 export const UPDATE_POST = "UPDATE_POST";
 export const UPDATE_POST_SUCCESS = "UPDATE_POST_SUCCESS";
 export const UPDATE_POST_ERROR = "UPDATE_POST_ERROR";

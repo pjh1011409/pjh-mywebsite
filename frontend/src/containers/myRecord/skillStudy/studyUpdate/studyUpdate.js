@@ -1,6 +1,6 @@
 import { Row, Col, Form, FormControl } from 'react-bootstrap'
 import styles from './studyUpdate.module.css'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback, useMemo } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 
 import Footer from '../../../../components/common/Footer/footer'
@@ -12,60 +12,56 @@ import {
     updatePost,
 } from '../../../../modules/reducer/updateReducer'
 import { updateDataId } from '../../../../modules/reducer/updateReducer'
-import { update } from '../../../../modules/reducer/updateReducer'
+import {
+    update,
+    getUpdateData,
+} from '../../../../modules/reducer/updateReducer'
 
 import CkEditor from '../studyWrite/textEditor'
 function StudyUpdate() {
+  
     const { id } = useParams()
+    const postId = parseInt(id)
     const dispatch = useDispatch()
     const navigate = useNavigate()
 
-    const postId = parseInt(id)
 
     // ----------------- 수정 원하는 해당 게시글 가저오기-----------------
-    const { data, loading, error } = useSelector(
-        (state) => state.posts.post[postId]
-    ) || {
-        loading: false,
-        data: null,
-        error: null,
-    } // 아예 데이터가 존재하지 않을 때가 있으므로, 비구조화 할당이 오류나지 않도록
+    const state = useSelector((state) => state.getUpdateData)
 
     //  ----------------------해당 게시글 값들을 state값에 저장-----------------------
-    const [Title, setTitle] = useState()
-    const [SubTitle, setSubTitle] = useState()
-    const [Content, setContent] = useState()
-    const [Category, setCategory] = useState()
+
+    const [inputs, setInputs] = useState({
+        category: '',
+        title: '',
+        subTitle: '',
+    })
+    const [body,setBody] = useState('')
+
     const [Image, setImage] = useState('')
     const [ImageFile, setImageFile] = useState('')
     const [originDelete, setOriginDelete] = useState(false)
 
     useEffect(() => {
-        dispatch(getPost(postId))
-        setTitle(data.title)
-        setSubTitle(data.subTitle)
-        setContent(data.body)
-        setCategory(data.category)
-        // setImage(data.image)
-        console.log(data)
-    }, [dispatch, postId])
-    if (loading && !data) return <div>로딩중...</div> // 로딩중이고 데이터 없을때만
-    if (error) return <div>에러 발생!</div>
-    if (!data) return null
+        setInputs({
+            title:state.title,
+            subTitle:state.subTitle,
+            category:state.category,
+        })
+        setBody(state.body)
+       
+    }, [])
 
     // ------------------------게시글 수정 로직(실시간 글입력)-------------------------
-    const titleHandler = (e) => {
-        console.log(e.target.value)
-        setTitle(e.target.value)
-    }
-    const subTitleHandler = (e) => {
-        console.log(e.target.value)
-        setSubTitle(e.target.value)
-    }
-
-    const categoryHandler = (e) => {
-        setCategory(e.target.value)
-    }
+    const {category,title, subTitle,  } = inputs;
+    const onChange = useCallback((e) => {
+        const { value, name } = e.target // 우선 e.target 에서 name 과 value 를 추출
+        setInputs({
+            ...inputs,
+            [name]: value, // name 키를 가진 값을 value 로 설정 (이때 [name]은 계산된 속성명 구문 사용)
+        })
+    },[inputs])
+   
     const imageHandler = (e) => {
         setOriginDelete(true)
         let reader = new FileReader()
@@ -82,12 +78,11 @@ function StudyUpdate() {
     // -------------------------- 수정한 게시글 올리기----------------------
     const updateData = () => {
         const inputData = new FormData()
-        inputData.append('category', Category)
-        inputData.append('title', Title)
-        inputData.append('subTitle', SubTitle)
-        inputData.append('body', Content)
+        inputData.append('category', category)
+        inputData.append('title', title)
+        inputData.append('subTitle', subTitle)
+        inputData.append('body', body)
         inputData.append('image', Image)
-        console.log(inputData, id)
         dispatch(updateDataId(id))
         dispatch(updateDataContents(inputData))
         dispatch(update())
@@ -108,9 +103,10 @@ function StudyUpdate() {
                         <Col sm className={styles.form}>
                             Titile
                             <FormControl
+                                name="title"
                                 type="text"
-                                value={Title||""}
-                                onChange={titleHandler}
+                                value={title || ''}
+                                onChange={onChange}
                                 className={styles.formBorder}
                             ></FormControl>
                         </Col>
@@ -119,11 +115,12 @@ function StudyUpdate() {
                         <Col sm>
                             Category
                             <FormControl
+                                name="category"
                                 type="text"
-                                value={Category||""}
-                                onChange={categoryHandler}
+                                value={category || ''}
+                                onChange={onChange}
                                 className={styles.formBorder}
-                                ㅅ
+                                
                             ></FormControl>
                         </Col>
                     </Row>
@@ -134,9 +131,10 @@ function StudyUpdate() {
                         <Col sm className={styles.form}>
                             Sub Title
                             <FormControl
-                                onChange={subTitleHandler}
+                                name="subTitle"
+                                onChange={onChange}
                                 type="text"
-                                value={SubTitle||""}
+                                value={subTitle || ''}
                                 className={styles.formBorder}
                             />
                         </Col>
@@ -153,8 +151,8 @@ function StudyUpdate() {
                                 <Col sm className={styles.form}>
                                     <div className={styles.formBorder}>
                                         <CkEditor
-                                            Content={Content||""}
-                                            setContent={setContent}
+                                            Content={body || ''}
+                                            setContent={setBody}
                                         ></CkEditor>
                                     </div>
                                 </Col>
@@ -164,8 +162,8 @@ function StudyUpdate() {
                                 <div className={styles.imageLocation}>
                                     {originDelete === false ? (
                                         <img
-                                            src={`http://222.235.9.74:8000${data.image}`}
-                                            style={{ maxWidth: '400px' }}
+                                            src={`http://222.235.9.74:8000${state.image}`}
+                                            style={{ maxWidth: '200px' }}
                                             alt="이미지 업로드 실패"
                                         ></img>
                                     ) : (
