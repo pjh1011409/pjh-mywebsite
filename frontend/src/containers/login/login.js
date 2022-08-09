@@ -1,10 +1,11 @@
 import React from 'react'
 import './login.css'
-import Header from '../../components/common/Header/header'
+import Footer from '../../components/common/Footer/footer'
+import LoginRecordHeader from '../../components/common/Header/loginRecordHeader/loginRecordHeader'
 function Fullpage() {
     return (
         <>
-            <Header></Header>
+            <LoginRecordHeader></LoginRecordHeader>
             <div class="login">
                 <div class="section">
                     <div class="container">
@@ -126,6 +127,7 @@ function Fullpage() {
                     </div>
                 </div>
             </div>
+            <Footer></Footer>
         </>
     )
 }

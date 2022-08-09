@@ -4,7 +4,6 @@
 .projectBg{
   padding: 80px 0px;
   height: auto;
-  
   max-width: 100rem;
   margin: 0 auto;
 }
@@ -15,6 +14,7 @@
   margin-bottom: 30px;
   font-family: 'Cairo', sans-serif;
   font-weight: bold;
+  color: #0f2b47;;
 }
 
 .projectHeadIcon{
@@ -29,7 +29,7 @@
   margin: 0 auto;
   margin-bottom: 60px;
   border-radius: 16px;
-  box-shadow: 0 30px 30px -25px rgba(#4133B7, .25);
+  box-shadow: 16px 16px 16px -5px rgba(0, 0, 0, 0.4);
   width: 900px;
   max-width: 95%;
   padding: 10px;
@@ -80,6 +80,10 @@
   background-color: rgb(153, 226, 243);
   border-radius: 5px;
   padding: 0 7px;
+}
+.projectStack:hover{
+  transform: scale(1.1);
+  cursor: pointer;
 }
 
 .projectPeriod{

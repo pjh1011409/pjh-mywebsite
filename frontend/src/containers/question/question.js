@@ -10,7 +10,7 @@ const Question = () => {
     const [questionData, setQuestionData] = [QuestionData]
    
     return (
-        <div style={{ backgroundColor: '#d3eded' }}>
+        <div style={{ backgroundColor: '#C4DFAA' }}>
             <div className={styles.questionBg}>
                 <div className={styles.questionHead}>
                     <FontAwesomeIcon

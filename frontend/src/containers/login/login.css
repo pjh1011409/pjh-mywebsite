@@ -8,8 +8,9 @@
   font-weight: 300;
   font-size: 15px;
   line-height: 1.7;
-  color: #c4c3ca;
-  background-color: #165d8d;
+  color: #256D85;
+  background-color: #9ED2C6;
+  
 }
 a {
   cursor: pointer;
@@ -110,7 +111,7 @@ h6 span{
 .card-front, .card-back {
   width: 100%;
   height: 100%;
-  background-color: #2a2b38;
+  background-color: #256D85;
   background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat.svg');
   background-position: bottom center;
   background-repeat: no-repeat;
@@ -125,6 +126,8 @@ h6 span{
   -moz-backface-visibility: hidden;
   -o-backface-visibility: hidden;
   backface-visibility: hidden;
+  box-shadow: 16px 16px 16px -5px rgba(0, 0, 0, 0.4);
+
 }
 .card-back {
   transform: rotateY(180deg);
@@ -161,8 +164,8 @@ h6 span{
   line-height: 22px;
   letter-spacing: 0.5px;
   outline: none;
-  color: #c4c3ca;
-  background-color: #1f2029;
+  color: #256D85;
+  background-color: #F5E8C7;
   border: none;
   -webkit-transition: all 200ms linear;
   transition: all 200ms linear;
@@ -182,31 +185,31 @@ h6 span{
   font-size: 24px;
   line-height: 48px;
   text-align: left;
-  color: #ffeba7;
+  color: #256D85;
   -webkit-transition: all 200ms linear;
     transition: all 200ms linear;
 }
 
 .form-group input:-ms-input-placeholder  {
-  color: #c4c3ca;
+  color: #256D85;
   opacity: 0.7;
   -webkit-transition: all 200ms linear;
     transition: all 200ms linear;
 }
 .form-group input::-moz-placeholder  {
-  color: #c4c3ca;
+  color:#256D85;
   opacity: 0.7;
   -webkit-transition: all 200ms linear;
     transition: all 200ms linear;
 }
 .form-group input:-moz-placeholder  {
-  color: #c4c3ca;
+  color: #256D85;
   opacity: 0.7;
   -webkit-transition: all 200ms linear;
     transition: all 200ms linear;
 }
 .form-group input::-webkit-input-placeholder  {
-  color: #c4c3ca;
+  color:#256D85;
   opacity: 0.7;
   -webkit-transition: all 200ms linear;
     transition: all 200ms linear;
@@ -238,6 +241,7 @@ h6 span{
   font-size: 13px;
   font-weight: 600;
   text-transform: uppercase;
+  text-decoration: none;
   -webkit-transition : all 200ms linear;
   transition: all 200ms linear;
   padding: 0 30px;
@@ -257,21 +261,15 @@ h6 span{
   text-align: center;
   border: none;
   background-color: #ffeba7;
-  color: #102770;
+  color: #256D85;
   box-shadow: 0 8px 24px 0 rgba(255,235,167,.2);
 }
 .loginBtn:active,
 .loginBtn:focus{  
-  background-color: #102770;
+  background-color: #256D85;
   color: #ffeba7;
   box-shadow: 0 8px 24px 0 rgba(16,39,112,.2);
 }
-.loginBtn:hover{  
-  background-color: #102770;
-  color: #ffeba7;
-  box-shadow: 0 8px 24px 0 rgba(16,39,112,.2);
-}
-
 
 
 
