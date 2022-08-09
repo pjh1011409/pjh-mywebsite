@@ -1,7 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@900&display=swap');
+
+
 .aboutMeBg {
   height: auto;
-  background-color: #1d698a;
   color: white;
+  max-width: 100rem;
+  margin: 0 auto;
+}
+
+.aboutMeHead{
+  text-align: center;
+  font-size: 50px;
+  padding-top: 70px;
+  font-family: 'Cairo', sans-serif;
+  font-weight: bold;
+}
+.aboutMeIcon{
+  width: 40px;
+  margin-right:10px;
+}
+
+
+.Icon{
+  width: 40px;
+  margin-right:10px;
 }
 
 .aboutMain {
@@ -12,8 +34,8 @@
 }
 
 .aboutPart1 {
-  min-width: 400px;
-  height: 450px;
+  min-width: 300px;
+  height: 400px;
 }
 
 .aboutImg {
@@ -45,16 +67,16 @@
 }
 
 .aboutFooter {
-  height: auto;
-  width: 100%;
-  margin: 0 auto;
+ margin: 0 auto;
+ text-align: center;
 }
 
 .aboutSns {
   width: 20%;
-  margin: 0 auto;
   padding: 30px 25px;
   min-width: 350px;
+  margin: 0 auto;
+  
 }
 
 .messenger {

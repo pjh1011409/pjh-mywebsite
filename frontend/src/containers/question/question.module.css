@@ -1,71 +1,60 @@
-
-.questionBg{
-    width: 105%;
+.questionBg {
     height: auto;
-    background-color: #d3eded;
-    overflow: scroll;
+    max-width: 100rem;
+    margin: 0 auto;
 
 }
 
-.questionInner{
+
+.questionHead{
+    text-align: center;
+    font-size: 50px;
+    padding-top: 70px;
+    font-family: 'Cairo', sans-serif;
+    font-weight: bold;
+  }
+  .questionIcon{
+    width: 40px;
+    margin-right:10px;
+  }
+
+.questionInner {
     width: 90%;
     margin: 0 auto;
     padding: 15px 0px 30px 15px;
-    margin-bottom: 60px;
     height: auto;
 }
 
-.questionMargin{
-    width: 90%;
+.questionMargin {
+    width: 100%;
     margin: 0 auto;
-    margin-top: 150px;
+    margin-top: 50px;
 }
 
-.question{
-  margin: 10px;
-  font-weight: bolder;
-  color: #2c3964
+.question {
+    font-weight: bolder;
+    color: #2c3964;
+    font-size: clamp(1.3em, 2vw, 2rem);
+
 }
 
-.questionImg{
+.questionImg {
     width: 45px;
     margin-right: 20px;
 }
 
-.iconMargin{
-    margin-top: 20px;
-    width: 90%;
-    margin: 0 auto;
-}
-
-.iconLocation{
-   display: flex;
-   float: left;
-   height: auto;
-   width: 7%;
-}
-
-.iconWidth{
-    width: 100px;
-    font-size: 12px;
-}
-
-.icon{
-    color: #34136f;
-    float: right;
-}
-
-.moreInfoBg{
+.moreInfoBg {
     display: flex;
     float: left;
     width: 90%;
     height: auto;
 }
 
-.moreInfo{
-    padding: 0px 15px 15px 15px;
+.moreInfo {
+    padding: 20px 15px;
     margin-left: 10px;
     margin-bottom: 56px;
+    margin-top: 30px;
     background-color: white;
     border-radius: 20px;
 }

@@ -1,8 +1,10 @@
 .footerMark{
     display: block;
     text-align: center;
-    background-color: #326d62;
     padding: 40px;
+    max-width: 60rem;
+    margin: 0 auto;
+
 }
 
 .footerInfo{
