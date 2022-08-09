@@ -1,7 +1,7 @@
 import './App.css'
 
 import MainPage from './mainPage/mainPage'
-
+import {Container} from 'react-bootstrap'
 import Login from './login/login'
 import StudyWrite from './myRecord/skillStudy/studyWrite/studyWrite'
 import StudyDetail from './myRecord/skillStudy/studyDetail/studyDetail'

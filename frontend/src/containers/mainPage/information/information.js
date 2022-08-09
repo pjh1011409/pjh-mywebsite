@@ -16,7 +16,7 @@ function Information() {
     const [icon, setIcon] = useState([
         faCakeCandles,
         faLocationDot,
-        faPhone,
+        // faPhone,
         faEnvelope,
         faGraduationCap,
         faFile,
@@ -24,12 +24,14 @@ function Information() {
     const [infoData, setInfoData] = useState([
         '1998.03.16',
         '수원시',
-        '010-2854-5794',
-        'pjh@naver.com',
+        // '010-2854-5794',
+        'pjh31208@naver.com',
         '컴퓨터공학전공',
         '이력서 보러가기',
     ])
     return (
+        <div style={{backgroundColor:'#ebf2ee'}}>
+
         <div className={styles.infoBg}>
             <Row className={styles.information}>
                 <Col sm>
@@ -54,6 +56,8 @@ function Information() {
                 </Col>
             </Row>
         </div>
+        </div>
+
     )
 }
 

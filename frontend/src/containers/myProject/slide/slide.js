@@ -19,17 +19,17 @@ function Slide(props) {
                             key={img}
                                 style={{
                                     width: '100%',
-                                    height: '400px',
                                     margin: '0 auto',
                                 }}
                             >
                                 <img
                                     src={`./static/images/projectImage/${img}`}
                                     style={{
-                                        width: '100%',
-                                        height: '100%',
-                                        marginTop: '0px',
+                                        width: '96%',
+                                        height: '400px',
+                                        margin: '0 auto'
                                     }}
+                                    alt='프로젝트 준비중'
                                 ></img>
                             </div>
                         

@@ -1,6 +1,20 @@
 .techBg {
-  background-color: #5798a1;
   height: auto;
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+
+.techStackHead{
+  text-align: center;
+  font-size: 50px;
+  padding-top: 70px;
+  font-family: 'Cairo', sans-serif;
+  font-weight: bold;
+}
+.techStackIcon{
+  width: 40px;
+  margin-right:10px;
 }
 
 
@@ -15,24 +29,48 @@
 .col {
 
   margin: 50px 30px;
-  height: 400px;
+  height: auto
 }
 
 
 .card {
   width: 90%;
   min-width: 100%;
-  height: 100%;
+  height: auto;
   background-color: white;
   background: linear-gradient(white, white);
   box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 0.4);
   border-radius: 6px;
   overflow: hidden;
   position: relative;
-  margin: 30px 0px;
 }
 
+.cardLeft{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #2d454a;
+  color: white;
+  font-size: clamp(1.3em, 1.2vw, 1.5rem);
 
+}
+
+.stackName{
+  display: flex;
+  text-align: center;
+  padding: 20px;
+}
+.cardRight{
+  height: auto
+
+}
+
+.cardRight img {
+  width: 80px;
+  display: inline-block;
+  margin: 20px 10px;
+}
+/* 
 .additional {
   position: absolute;
   width: 25%;
@@ -53,7 +91,7 @@
   margin: 150px 0px;
   color: white;
   word-break: break-all;
-  font-size: 18px;
+  font-size: clamp(1.3em, 2.3vw, 5rem);
 }
 
 .general {
@@ -66,9 +104,8 @@
 }
 
 .general img {
-  width: 17%;
-  height: 21%;
+  width: 60px;
   display: inline-block;
   margin: 20px 5px;
 
-}
+} */

@@ -1,23 +1,30 @@
-.profileBackgr {
-    width: 100vw;
+.profileBg{
     background-color: #1a4d7a;
     background-size: 3px 3px;
     background-image:
         linear-gradient(0deg, hsla(0, 0%, 0%, 0) 0, hsla(0, 0%, 10%, 1) 3px),
         linear-gradient(90deg, hsla(0, 0%, 0%, 0) 0, hsla(0, 0%, 10%, 1) 5px);
+        color: white;
+}
+:root {
+    --white: rgb(164, 147, 147);
+    --light-shadow: #efa212;
+    --dark-shadow: #ae720b;
+}
 
-    color: white;
+.profileMain {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 60rem;
+    padding: 2rem 1rem;
+    margin: 0 auto;   
     height: 700px;
     padding-top: 100px;
 }
 
 
 
-:root {
-    --white: rgb(164, 147, 147);
-    --light-shadow: #efa212;
-    --dark-shadow: #ae720b;
-}
+
 
 
 
@@ -46,17 +53,17 @@
 }
 
 .wrapper1 {
-    font-size: clamp(2.5em, 4.5vw, 10rem);
+    font-size: clamp(2.5em, 4.5vw, 5rem);
 
 }
 
 .wrapper2 {
-    font-size: clamp(1.5em, 3.5vw, 10rem);
+    font-size: clamp(1.5em, 3.5vw, 5rem);
 
 }
 
 .wrapper3 {
-    font-size: clamp(1.5em, 3vw, 10rem);
+    font-size: clamp(1.5em, 3vw, 5rem);
 
 }
 
@@ -91,6 +98,7 @@ div.fg {
     display: flex;
     justify-content: center;
     align-content: center;
+    padding-bottom: 2rem;
 }
 .aboutMore {
     position: relative;
@@ -147,42 +155,3 @@ div.fg {
     transform: translate3d(0, 0, -1em);
   }
 
-
-
-/* 
-.aboutMe{
-    width: 80%;
-    padding: 50px 60px;
-    margin: 0 auto;
-    background-color:bisque;
-
-    
-}
-
-
-.profile{
-    display: block;
-    margin-top: 100px;
-    text-align: center;
-    font-size: 10px;
-
-}
-
-.icons{
-    list-style: none;
-    display: block;
-}
-
-.icon:hover{
-    transform: scale(1.1);
-}
-
-.icon{
-    width: 40px;
-    margin: 5px;
-}
-
-.introduce{
-    margin-top: 50px;
-    text-align: center;
-} */

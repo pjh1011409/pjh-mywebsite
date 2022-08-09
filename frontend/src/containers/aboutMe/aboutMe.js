@@ -2,11 +2,20 @@ import styles from './aboutMe.module.css'
 import { Row, Col } from 'react-bootstrap'
 import { useState } from 'react'
 import {AboutMeData, AboutMeImage} from './aboutMeData'
+
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCircleCheck } from '@fortawesome/free-regular-svg-icons'
 function AboutMe() {
     const [image, setImage] = useState(AboutMeImage)
     const [data, setData] = useState(AboutMeData)
     return (
+        <div style={{backgroundColor:'#1d698a'}}>
         <div className={styles.aboutMeBg}>
+        <div className={styles.aboutMeHead}>
+                    <FontAwesomeIcon icon={faCircleCheck} className={styles.aboutMeIcon}></FontAwesomeIcon>
+                    ABOUT ME
+                </div>
             <Row xs={1} md={2} className={styles.aboutMain}>
                 <Col className={styles.aboutPart1}>
                     <div className={styles.aboutImg}>
@@ -28,7 +37,7 @@ function AboutMe() {
                     </div>
                 </Col>
 
-                <Col className={styles.aboutFooter}>
+                <div className={styles.aboutFooter}>
                     <div className={styles.aboutSns}>
                         <div className={styles.messsengerDiv}>
                             {image.map(img => {
@@ -47,9 +56,11 @@ function AboutMe() {
                             })}
                         </div>
                     </div>
-                </Col>
+                </div>
             </Row>
         </div>
+        </div>
+
     )
 }
 

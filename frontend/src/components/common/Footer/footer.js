@@ -3,6 +3,9 @@ import styles from './footer.module.css'
 
 function Footer() {
   return (
+    <div style={{backgroundColor:'#326d62'}}> 
+
+
     <div className={styles.footerMark}>
       <div >
         <img
@@ -21,6 +24,8 @@ function Footer() {
       </div>
       <div className={styles.footerInfo}>2022. produced by ParkJeongHo</div>
     </div>
+    </div>
+
   );
 }
 
