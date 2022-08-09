@@ -25,7 +25,7 @@ function Slide(props) {
                                 <img
                                     src={`./static/images/projectImage/${img}`}
                                     style={{
-                                        width: '96%',
+                                        width: '90%',
                                         height: '400px',
                                         margin: '0 auto'
                                     }}

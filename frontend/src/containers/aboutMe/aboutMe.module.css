@@ -3,7 +3,7 @@
 
 .aboutMeBg {
   height: auto;
-  color: white;
+  color: black;
   max-width: 100rem;
   margin: 0 auto;
 }
@@ -14,6 +14,7 @@
   padding-top: 70px;
   font-family: 'Cairo', sans-serif;
   font-weight: bold;
+  color: white
 }
 .aboutMeIcon{
   width: 40px;
@@ -57,13 +58,22 @@
 .aboutIntro {
   width: 100%;
   height: auto;
-  margin: 0 20px;
   padding: 20px 20px;
+  background-color: #fff;
+  height: auto;
+  background-image:
+      linear-gradient(#eee .1em, transparent .1em);
+  background-size: 100% 1.2em;
+  opacity: 1.0;
+  border-radius: 10px;
+  box-shadow: 16px 16px 16px -5px rgba(0, 0, 0, 0.4);
+
 }
 
 .aboutText {
   font-size: 18px;
   word-break: break-all;
+  
 }
 
 .aboutFooter {

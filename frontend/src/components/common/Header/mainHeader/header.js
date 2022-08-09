@@ -1,10 +1,16 @@
 import { Navbar, Nav, Container } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import * as React from 'react'
-
+import { useState } from 'react'
 import styles from './header.module.css'
 
 const Header = (props) => {
+    const [menu, setMenu] = useState([
+        'AboutMe',
+        'TechStack',
+        'Projects',
+        'Q&A',
+    ])
     return (
         <div>
             <Navbar
@@ -32,31 +38,22 @@ const Header = (props) => {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className={styles.navMenu}>
-                            <Nav.Link
-                                className={[styles.navLink, styles.navBtn]}
-                                onClick={() => props.handleIndexClick(0)}
-                            >
-                                AboutMe
-                            </Nav.Link>
-
-                            <Nav.Link
-                                className={[styles.navLink, styles.navBtn]}
-                                onClick={() => props.handleIndexClick(1)}
-                            >
-                                TechStack
-                            </Nav.Link>
-                            <Nav.Link
-                                className={[styles.navLink, styles.navBtn]}
-                                onClick={() => props.handleIndexClick(2)}
-                            >
-                                Projects
-                            </Nav.Link>
-                            <Nav.Link
-                                className={[styles.navLink, styles.navBtn]}
-                                onClick={() => props.handleIndexClick(3)}
-                            >
-                                Q&A
-                            </Nav.Link>
+                            {menu.map((menu, i) => {
+                                return (
+                                    <Nav.Link
+                                        key={menu}
+                                        className={[
+                                            styles.navLink,
+                                            styles.navBtn,
+                                        ]}
+                                        onClick={() =>
+                                            props.handleIndexClick(i)
+                                        }
+                                    >
+                                        {menu}
+                                    </Nav.Link>
+                                )
+                            })}
                             <Nav.Link
                                 className={[styles.navLink, styles.navBtn]}
                                 as={Link}

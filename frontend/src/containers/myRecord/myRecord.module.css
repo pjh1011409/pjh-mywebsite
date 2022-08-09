@@ -1,3 +1,13 @@
+.myRecordBg{
+    background-color:#f0ecd6;
+}
+
+.myRecordMain{
+    max-width: 100rem;
+    margin: 0 auto;
+    padding: 80px 0px;
+}
+
 .recordTop{
     height: 100px;
     width: 75%;
@@ -36,7 +46,7 @@
     font-weight: bolder;
     margin: 10px 0px;
     width: 100%;
-    background-color: #d7efe8;
+    background-color:  #aae2d1;
     color:black
 }
 

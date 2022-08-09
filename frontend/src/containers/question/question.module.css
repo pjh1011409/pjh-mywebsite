@@ -1,6 +1,6 @@
 .questionBg {
     height: auto;
-    max-width: 100rem;
+    max-width: 80rem;
     margin: 0 auto;
 
 }
@@ -12,6 +12,7 @@
     padding-top: 70px;
     font-family: 'Cairo', sans-serif;
     font-weight: bold;
+    color: #1c453e;
   }
   .questionIcon{
     width: 40px;
@@ -33,7 +34,7 @@
 
 .question {
     font-weight: bolder;
-    color: #2c3964;
+    color: #1c453e;
     font-size: clamp(1.3em, 2vw, 2rem);
 
 }
@@ -57,4 +58,6 @@
     margin-top: 30px;
     background-color: white;
     border-radius: 20px;
+    box-shadow: 16px 16px 16px -5px rgba(0, 0, 0, 0.4);
+
 }

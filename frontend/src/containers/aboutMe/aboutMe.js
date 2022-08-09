@@ -10,7 +10,7 @@ function AboutMe() {
     const [image, setImage] = useState(AboutMeImage)
     const [data, setData] = useState(AboutMeData)
     return (
-        <div style={{backgroundColor:'#1d698a'}}>
+        <div style={{backgroundColor:'#0078AA'}}>
         <div className={styles.aboutMeBg}>
         <div className={styles.aboutMeHead}>
                     <FontAwesomeIcon icon={faCircleCheck} className={styles.aboutMeIcon}></FontAwesomeIcon>
@@ -29,8 +29,8 @@ function AboutMe() {
                 </Col>
                 <Col className={styles.aboutPart2}>
                     <div className={styles.aboutIntro}>
-                        <h1>{data.name}</h1>
-                        <h2>{data.englishName}</h2>
+                        <h2>{data.name}</h2>
+                        <h3>{data.englishName}</h3>
                         <div className={styles.aboutText}>
                             {data.text}
                         </div>

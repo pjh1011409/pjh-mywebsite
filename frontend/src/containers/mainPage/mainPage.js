@@ -1,4 +1,4 @@
-import Header from '../../components/common/Header/header'
+import Header from '../../components/common/Header/mainHeader/header'
 import Footer from '../../components/common/Footer/footer'
 import Profile from './profile/profile'
 import Information from './information/information'

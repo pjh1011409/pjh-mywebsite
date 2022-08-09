@@ -1,32 +1,16 @@
 import { Tab, Row, Col, Nav } from 'react-bootstrap'
 import styles from './myRecord.module.css'
-
+import LoginRecordHeader from '../../components/common/Header/loginRecordHeader/loginRecordHeader'
+import Footer from '../../components/common/Footer/footer'
 import SKillStudyMain from './skillStudy/studyMain/studyMain'
 import { useNavigate } from 'react-router-dom'
 function MyRecord() {
     let navigate = useNavigate()
 
     return (
-        <div>
-            <div className={styles.recordTop}>
-                <div className={styles.button}>
-                    <button
-                        onClick={() => {
-                            navigate('/')
-                        }}
-                    >
-                        Home
-                    </button>
-
-                    <button
-                        onClick={() => {
-                            navigate('/login')
-                        }}
-                    >
-                        Login
-                    </button>
-                </div>
-            </div>
+        <div className={styles.myRecordBg}>
+            <LoginRecordHeader></LoginRecordHeader>
+        <div className={styles.myRecordMain}>
             <Tab.Container id="left-tabs-example" defaultActiveKey="first">
                 <Row>
                     <RecordMenu></RecordMenu>
@@ -34,13 +18,16 @@ function MyRecord() {
                 </Row>
             </Tab.Container>
         </div>
+        <Footer></Footer>
+        </div>
+
     )
 }
 
 function RecordMenu() {
     return (
         <Col sm={3} style={{ backgroundColor: '' }}>
-            <Nav variant="" className="flex-column">
+            <Nav variant="" className='flex-column'>
                 <Nav.Item>
                     <Nav.Link eventKey="first" className={styles.tab}>
                         Skills Study
