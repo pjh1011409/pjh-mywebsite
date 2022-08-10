@@ -1,7 +1,7 @@
 import { Navbar, Nav, Container } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import * as React from 'react'
-import { useState } from 'react'
+import { useState, useEffect, useMemo, useCallback } from 'react'
 import styles from './header.module.css'
 
 const Header = (props) => {
@@ -11,9 +11,22 @@ const Header = (props) => {
         'Projects',
         'Q&A',
     ])
+
+    const [nav, setNav] = useState(true)
+    const [navfilter, setNavFilter] = useState(false)
+
+    const onClickNav = (i) => {
+        props.handleIndexClick(i)
+    }
+
+    const navChange = () => {
+        setNav(true)
+    }
+
     return (
         <div>
             <Navbar
+                collapseOnSelect
                 bg="light"
                 expand="lg"
                 variant="light"
@@ -35,40 +48,48 @@ const Header = (props) => {
                     >
                         PJH's WebSite
                     </Navbar.Brand>
-                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                    <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className={styles.navMenu}>
-                            {menu.map((menu, i) => {
-                                return (
-                                    <Nav.Link
-                                        key={menu}
-                                        className={[
-                                            styles.navLink,
-                                            styles.navBtn,
-                                        ]}
-                                        onClick={() =>
-                                            props.handleIndexClick(i)
-                                        }
-                                    >
-                                        {menu}
-                                    </Nav.Link>
-                                )
-                            })}
-                            <Nav.Link
-                                className={[styles.navLink, styles.navBtn]}
-                                as={Link}
-                                to="/myRecord"
-                            >
-                                MyRecord
-                            </Nav.Link>
-                            <Nav.Link
-                                className={[styles.navLink, styles.navBtn]}
-                                as={Link}
-                                to="/login"
-                            >
-                                Login
-                            </Nav.Link>
-                        </Nav>
+                    <Navbar.Toggle
+                        aria-controls="responsive-navbar-nav"
+                        onClick={navChange}
+                    />
+
+                    <Navbar.Collapse id="responsive-navbar-nav">
+                        {nav === true ? (
+                            <Nav className="me-auto">
+                                {/* <Nav className={styles.navMenu}> */}
+                                {menu.map((menu, i) => {
+                                    return (
+                                        <Nav.Link
+                                            key={menu}
+                                            className={[
+                                                styles.navLink,
+                                                styles.navBtn,
+                                            ]}
+                                            onClick={() => {
+                                                onClickNav(i)
+                                            }}
+                                        >
+                                            {menu}
+                                        </Nav.Link>
+                                    )
+                                })}
+                                <Nav.Link
+                                    className={[styles.navLink, styles.navBtn]}
+                                    as={Link}
+                                    to="/myRecord"
+                                >
+                                    MyRecord
+                                </Nav.Link>
+                                <Nav.Link
+                                    className={[styles.navLink, styles.navBtn]}
+                                    as={Link}
+                                    to="/login"
+                                >
+                                    Login
+                                </Nav.Link>
+                                {/* </Nav> */}
+                            </Nav>
+                        ) : null}
                     </Navbar.Collapse>
                 </Container>
             </Navbar>

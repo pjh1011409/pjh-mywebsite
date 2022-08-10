@@ -8,7 +8,7 @@ from django.db import models
 class Note(models.Model):
     category = models.CharField(max_length=50)
     title = models.CharField(max_length=50, default='')
-    sub_title = models.CharField(max_length=50)
+    subTitle = models.CharField(max_length=50)
     body = models.TextField(null=True, blank=True)
     image = models.ImageField(null = True, blank=True)
     
@@ -23,7 +23,7 @@ class Note(models.Model):
             return self.title()
         
     def __str__(self):
-            return self.sub_title()
+            return self.subTitle()
         
     def __str__(self):
         return self.body[0:300]
