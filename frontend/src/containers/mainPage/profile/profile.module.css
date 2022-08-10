@@ -105,11 +105,10 @@ div.fg {
     display: inline-block;
     cursor: pointer;
     outline: none;
-    border: 0;
     vertical-align: middle;
     text-decoration: none;
-    font-size: inherit;
-    font-family: inherit;
+    font-family: 'Secular One', sans-serif;
+    font-weight: bolder;
     transform-style: preserve-3d;
     transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1);
 }

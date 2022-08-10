@@ -92,7 +92,8 @@ function Projects() {
                                                 <div>
                                                     {stack[i].map((stack) => {
                                                         return (
-                                                            <div
+                                                            <div 
+                                                                key={stack}
                                                                 className={
                                                                     styles.projectStack
                                                                 }
