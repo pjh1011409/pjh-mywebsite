@@ -1,10 +1,11 @@
 import { Explain } from '.././projectData'
 import { useState, useEffect, useRef } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCircleXmark } from '@fortawesome/free-regular-svg-icons'
 
 import styles from './modal.module.css'
 
 function Modal(props) {
-    console.log('dd')
     // 열기, 닫기, 모달 헤더 텍스트를 부모로부터 받아옴
     const { open, close } = props
     const [explain, setExplain] = useState(Explain)
@@ -36,10 +37,16 @@ function Modal(props) {
         >
             {open ? (
                 <section className={styles.modalSection}>
+                     <div className={styles.close} onClick={close}>
+                     <FontAwesomeIcon
+                        icon={faCircleXmark}
+                        size= '2x'
+                    ></FontAwesomeIcon>
+                    </div>
                     <main className={styles.modalMain}>
                         {' '}
                         <div className={styles.inner1}>
-                            <div className={styles.inner1}>
+                            <div className={styles.inner2}>
                                 {explain[props.modalId].map((data) => {
                                     return (
                                         
@@ -51,10 +58,7 @@ function Modal(props) {
                             </div>
                         </div>
                     </main>
-                    <div></div>
-                    <button className={styles.close} onClick={close}>
-                        close{' '}
-                    </button>
+                   
                 </section>
             ) : null}
         </div>

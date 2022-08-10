@@ -71,9 +71,9 @@
 }
 
 .aboutText {
-  font-size: 18px;
+  font-size: 23px;
   word-break: break-all;
-  
+  line-height: 50px;
 }
 
 .aboutFooter {

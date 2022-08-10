@@ -66,8 +66,16 @@
 
 }
 
+.cardSkill{
+  margin: 10px;
+  font-weight: bolder;
+  font-size: 18px;
+}
+
 .cardRight img {
   width: 80px;
+  height: 80px;
   display: inline-block;
-  margin: 20px 10px;
+  margin: 20px 15px;
+
 }
