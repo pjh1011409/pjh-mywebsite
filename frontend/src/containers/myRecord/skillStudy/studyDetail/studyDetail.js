@@ -39,27 +39,60 @@ function StudyDetail() {
     }
 
     let goToUpdate = () => {
-         dispatch({type: 'UPDATE_GO', payload: data})
-        
-            navigate(`/studyUpdate/${id}`)
-        
+        dispatch({ type: 'UPDATE_GO', payload: data })
+
+        navigate(`/studyUpdate/${id}`)
     }
 
     return (
         <div className={styles.studyDetailBg}>
             <div className={styles.top}>
                 <div className={styles.titleGroup}>
-                    <div className={styles.category}>{data.category}</div>
-                    <div className={styles.title}>{data.title}</div>
-                    <div className={styles.subTitle}>{data.subTitle}</div>
+                    <div className={styles.category}>
+                        {' '}
+                        <img
+                            src={
+                                process.env.PUBLIC_URL +
+                                './static/images/study/category-icon.png'
+                            }
+                            className={styles.studyImg}
+                        ></img>
+                        [ {data.category} ]
+                    </div>
+                    <div className={styles.title}>
+                        <img
+                            src={
+                                process.env.PUBLIC_URL +
+                                './static/images/study/title-icon.png'
+                            }
+                            className={styles.studyImg}
+                        ></img>
+                        {data.title}
+                    </div>
+                    <div className={styles.subTitle}>
+                        <img
+                            src={
+                                process.env.PUBLIC_URL +
+                                './static/images/study/about-icon.png'
+                            }
+                            className={styles.studyImg}
+                        ></img>
+                        :   {data.subTitle}
+                    </div>
                 </div>
             </div>
             <div className={styles.middle}>
                 <div className={styles.content}>{Parser(data.body)}</div>
             </div>
-            <div style={{width:'80%', marginTop:'30px', display:'flex', justifyContent:'center'}}>
-            {/* <img src={`http://localhost:8000${data.image}`} style={{maxWidth:'300px'}} alt='이미지 업로드 실패'></img> */}
-
+            <div
+                style={{
+                    width: '80%',
+                    marginTop: '30px',
+                    display: 'flex',
+                    justifyContent: 'center',
+                }}
+            >
+                {/* <img src={`http://localhost:8000${data.image}`} style={{maxWidth:'300px'}} alt='이미지 업로드 실패'></img> */}
             </div>
 
             <div className={styles.bottom}>
