@@ -13,15 +13,19 @@
 }
 
 .titleGroup {
-    width: 80%;
+    width: 85%;
     height: 60%;
     position: absolute;
     bottom: 0px;
 }
 
 
+.studyImg{
+    width: 35px;
+    margin: 3px 10px 10px 0px;
+}
 .category{
-    font-size: clamp(1.0em, 1.5vw, 5rem);
+    font-size: clamp(1.3em, 1.8vw, 5rem);
 
 }
 
@@ -62,11 +66,13 @@
     height: auto;
     border: 1px solid;
     margin: 0 auto;
-    padding: 30px 40px;
+    margin-top: 15px;
+    padding: 30px 10px;
     background-color: #fff;
     background-image:
         linear-gradient(#eee .1em, transparent .1em);
     background-size: 100% 1.2em;
+    overflow-x: scroll;
 
 }
 

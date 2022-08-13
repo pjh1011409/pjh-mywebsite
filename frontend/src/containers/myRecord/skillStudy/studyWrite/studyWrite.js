@@ -1,18 +1,37 @@
 import { Row, Col, Form } from 'react-bootstrap'
 import styles from './studyWrite.module.css'
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import Footer from '../../../../components/common/Footer/footer'
 import { createPost } from '../../../../modules/reducer/createReducer'
 import { uriSave } from '../../../../modules/reducer/urlReducer'
-import { useDispatch } from 'react-redux'
+import { useDispatch, batch } from 'react-redux'
 import CkEditor from './textEditor'
+import TextEditor from './textEditor'
 
 function StudyWrite() {
     const dispatch = useDispatch()
     const navigate = useNavigate()
-// ------------------------------- 카테고리,제목,부제목,본문 state & 입력핸들러 ------------------------------  
+    const inputRef = useRef([])
+    // ------------------------------- 입력칸에 커서 ------------------------------
+    useEffect(() => {
+        inputRef.current[0].focus()
+        
+    }, [])
+
+    // ------------------------------- 입력하지 않은 input으로 이동 + focus------------------------------
+    const handleIndexClick = (index) => {
+        inputRef.current[index].scrollIntoView({
+            behavior: 'smooth',
+            block: 'end',
+        })
+        setTimeout(() => {
+            inputRef.current[index].focus()
+        }, 100)
+    }
+
+    // ------------------------------- 카테고리,제목,부제목,본문 state & 입력핸들러 ------------------------------
     // useState가 객체를 상태 관리 -> 반복적인 useState 해결
     const [inputs, setInputs] = useState({
         category: '',
@@ -20,7 +39,7 @@ function StudyWrite() {
         subTitle: '',
     })
     // body와 setBody를 textEditor.js에 props로 전달하기 위해 일반적인 useState 사용
-    const [body,setBody] = useState('')
+    const [body, setBody] = useState('')
     // 쉽게 사용할 수 있도록 비구조화 할당을 통해 추출
     const { category, title, subTitle } = inputs
     const onChange = (e) => {
@@ -30,11 +49,10 @@ function StudyWrite() {
             [name]: value, // name 키를 가진 값을 value 로 설정 (이때 [name]은 계산된 속성명 구문 사용)
         })
     }
-// ------------------------------- 이미지 state & 이미지핸들러 ------------------------------  
+    // ------------------------------- 이미지 state & 이미지핸들러 ------------------------------
     const [Image, setImage] = useState('')
     const [ImageFile, setImageFile] = useState('')
 
-    
     const imageHandler = (e) => {
         let reader = new FileReader()
         reader.readAsDataURL(e.target.files[0])
@@ -46,9 +64,25 @@ function StudyWrite() {
             }
         })
     }
-// ------------------------------- 게시글 업로드------------------------------  
+    // ------------------------------- 게시글 업로드------------------------------
     const createData = () => {
-        // FormData에 게시글 담기
+        if (title === '') {
+            alert('제목을 작성해주세요')
+            handleIndexClick(0)
+            return
+        } else if (category === '') {
+            alert('카테고리를 작성해주세요')
+            handleIndexClick(1)
+            return
+        } else if (subTitle === '') {
+            alert('부제목을 작성해주세요')
+            handleIndexClick(2)
+            return
+        } else if (body === '') {
+            alert('본문을 작성해주세요')
+            handleIndexClick(3)
+            return
+        }
         const inputData = new FormData()
         inputData.append('category', category)
         inputData.append('title', title)
@@ -57,12 +91,19 @@ function StudyWrite() {
         inputData.append('image', Image)
         // inputData를 distpatch를 통해서 전송
         dispatch(createPost(inputData))
+
+       
         // 함수 실행 시 myRecord로 이동
         navigate('/myRecord')
         // 새로운 데이터에 대한 랜더링이 필요하므로 새로고침 실행
         window.location.reload()
     }
-// ------------------------------- 뒤로 가기 ------------------------------  
+
+    const goToTag = () =>{
+            dispatch({ type: 'ADD_TAG', payload: '안녕' })
+            console.log("제발")
+    }
+    // ------------------------------- 뒤로 가기 ------------------------------
 
     const goBack = () => {
         navigate('/myRecord')
@@ -77,11 +118,13 @@ function StudyWrite() {
                         <Col sm className={styles.form}>
                             Title
                             <Form.Control
+                                ref={(el) => (inputRef.current[0] = el)}
                                 name="title"
                                 type="text"
                                 placeholder="제목을 작성하세요"
                                 onChange={onChange}
                                 className={styles.formBorder}
+                                maxLength="20"
                             />
                         </Col>
                         {/* -------------Category-------------- */}
@@ -89,13 +132,15 @@ function StudyWrite() {
                         <Col sm>
                             Category
                             <Form.Control
+                                ref={(el) => (inputRef.current[1] = el)}
                                 name="category"
                                 type="text"
                                 placeholder="카테고리를 작성하세요(10자 이내)"
                                 onChange={onChange}
                                 className={styles.formBorder}
-                                maxLength="10"
-                            />
+                                maxLength="20"
+                                required
+                            ></Form.Control>
                         </Col>
                     </Row>
                     {/* -------------Subtitle-------------- */}
@@ -105,11 +150,13 @@ function StudyWrite() {
                         <Col sm className={styles.form}>
                             Sub Title
                             <Form.Control
+                                ref={(el) => (inputRef.current[2] = el)}
                                 name="subTitle"
                                 onChange={onChange}
                                 type="text"
                                 placeholder="한줄 설명을 작성하세요"
                                 className={styles.formBorder}
+                                maxLength="30"
                             />
                         </Col>
                     </Row>
@@ -125,15 +172,15 @@ function StudyWrite() {
                             <Row>
                                 <Col sm className={styles.form}>
                                     <div className={styles.formBorder}>
-                                        <CkEditor
+                                        <TextEditor
                                             Content={body}
                                             setContent={setBody}
                                             imageHandler={imageHandler}
-                                        ></CkEditor>
+                                        ></TextEditor>
                                     </div>
                                 </Col>
                             </Row>
-                            <h4>Thumbnail</h4>
+                            <h4 className={styles.imageTitle}>Thumbnail</h4>
 
                             <div className={styles.imageBg}>
                                 <div className={styles.imageLocation}>
@@ -153,7 +200,11 @@ function StudyWrite() {
                         </Form.Group>
                     </Row>
                     <div className={styles.buttonBg}>
-                        <button className={styles.button} onClick={createData}>
+                        <button
+                            className={styles.button}
+                            type="submit"
+                            onClick={()=>{goToTag();createData();}}
+                        >
                             Post
                         </button>
                         <button className={styles.button} onClick={goBack}>

@@ -31,3 +31,6 @@ export const UPDATE_GO = "UPDATE_GO";
 export const UPDATE_POST = "UPDATE_POST";
 export const UPDATE_POST_SUCCESS = "UPDATE_POST_SUCCESS";
 export const UPDATE_POST_ERROR = "UPDATE_POST_ERROR";
+
+
+export const ADD_TAG = "ADD_TAG";

@@ -1,23 +1,25 @@
-.tag {
-    width: 100%;
+.tagLayout{
+    border: 1px solid;
+    width: 90%;
+    margin: 0 auto;
+    padding: 10px;
     height: auto;
-    margin: 30px 0px;
-    max-width: 800px;
 }
 
-.tag button {
+
+.tagLayout button {
     margin: 10px 10px;
     background-color: #f1a87d;
     width: auto;
     height: auto;
 }
 
-.tag button:hover {
+.tagLayout button:hover {
     background-color: #ede090;
 }
 
 .contentLayout {
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
     padding: 10px;
     
@@ -38,8 +40,8 @@
 .goDetail {
     display: block;
     width: 100px;
-
-    margin-top: 40px;
+    height: auto;
+    margin-top: 30px;
     color: black;
     background-color: #ede090;
     border-radius: 5px;

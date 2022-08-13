@@ -4,23 +4,27 @@ import styles from './studyMain.module.css'
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { getPosts } from '../../../../modules/reducer/getReducer'
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector, useDispatch , batch } from 'react-redux'
 import Pagination from './pagination'
 
 function SKillStudyMain() {
     let [search, setSearch] = useState('')
-    let [tagBtn, setTagBtn] = useState([])
+    let [tagBtn, setTagBtn] = useState([1,2])
+    let [tag, setTag] = useState('')
 
     const [limit, setLimit] = useState(3)
     const [page, setPage] = useState(1)
     const offset = (page - 1) * limit
 
     let navigate = useNavigate()
-    const { data, loading, error } = useSelector((state) => state.posts.posts)
+    const { data, loading, error } = useSelector((state) => state.posts.posts);
+    const {state}= useSelector((state) => state.addTag);
+
     const dispatch = useDispatch()
 
     useEffect(() => {
         dispatch(getPosts())
+        
     }, [dispatch])
 
     if (loading)
@@ -32,8 +36,19 @@ function SKillStudyMain() {
     if (error) return <div>에러 발생!</div>
     if (!data) return null
 
+
+    
     return (
         <div style={{ backgroundColor: '' }}>
+            {/* <div className={styles.tagLayout}>
+                {data.map(data=>{
+                    return(
+                        
+                        <button >{data.cat}</button>
+                    )
+                })}
+            </div> */}
+            {state}
             <div className={styles.contentLayout}>
                 {data
                     // eslint-disable-next-line array-callback-return

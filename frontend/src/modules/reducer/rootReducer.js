@@ -4,6 +4,7 @@ import {creates} from '../reducer/createReducer'
 import {deletes} from '../reducer/deleteReducer'
 import {updates} from '../reducer/updateReducer'
 import {getUpdateData} from '../reducer/updateReducer'
+import {addTag} from '../reducer/tagReducer'
 
 import {persistReducer} from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
@@ -18,6 +19,6 @@ const persistConfig = {
   };
   
 
-const rootReducer = combineReducers({posts, creates, deletes, updates, getUpdateData});
+const rootReducer = combineReducers({posts, creates, deletes, updates, getUpdateData, addTag});
 
 export default persistReducer(persistConfig, rootReducer);

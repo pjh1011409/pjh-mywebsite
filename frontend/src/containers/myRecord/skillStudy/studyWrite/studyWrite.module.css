@@ -6,39 +6,49 @@
     padding: 40px  10px;
     background-color: #fff;
     background-image:
-    linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px),
     linear-gradient(#eee .1em, transparent .1em);
-    background-size: 100% 1.2em;}
+    background-size: 100% 1.2em;
+
+}
 .title {
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
 }
 
 .form {
     margin-bottom: 20px;
     height: auto;
+    
 }
 
 .formBorder {
     border: 2px solid green;
     margin-top: 5px;
+    box-shadow: 11px 16px 16px -10px rgba(0, 0, 0, 0.4);
+
 }
 
 
 .subTitle {
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
 }
 
 .content {
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
 }
 
+.imageTitle{
+    margin-top: 30px;
+
+}
 .imageBg {
     border: 2px solid green;
     width: 100%;
     margin: 0 auto;
+    box-shadow: 11px 16px 16px -10px rgba(0, 0, 0, 0.4);
+
 }
 
 .imageLocation {

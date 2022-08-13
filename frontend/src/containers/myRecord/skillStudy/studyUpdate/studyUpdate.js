@@ -17,7 +17,7 @@ import {
     getUpdateData,
 } from '../../../../modules/reducer/updateReducer'
 
-import CkEditor from '../studyWrite/textEditor'
+import TextEditor from '../studyWrite/textEditor'
 function StudyUpdate() {
   
     const { id } = useParams()
@@ -88,7 +88,6 @@ function StudyUpdate() {
         dispatch(update())
         navigate('/myRecord')
         window.location.reload()
-        dispatch(uriSave('/myRecord'))
     }
 
     const goBack = () => {
@@ -150,13 +149,14 @@ function StudyUpdate() {
                             <Row>
                                 <Col sm className={styles.form}>
                                     <div className={styles.formBorder}>
-                                        <CkEditor
+                                        <TextEditor
                                             Content={body || ''}
                                             setContent={setBody}
-                                        ></CkEditor>
+                                        ></TextEditor>
                                     </div>
                                 </Col>
                             </Row>
+                            <h4 className={styles.imageTitle}>Thumbnail</h4>
 
                             <div className={styles.imageBg}>
                                 <div className={styles.imageLocation}>
@@ -182,6 +182,7 @@ function StudyUpdate() {
                             </div>
                         </Form.Group>
                     </Row>
+                    
                     <div className={styles.buttonBg}>
                         <button className={styles.button} onClick={updateData}>
                             Update
