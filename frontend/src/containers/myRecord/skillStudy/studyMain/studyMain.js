@@ -18,7 +18,7 @@ function SKillStudyMain() {
 
     let navigate = useNavigate()
     const { data, loading, error } = useSelector((state) => state.posts.posts);
-    const {state}= useSelector((state) => state.addTag);
+    // const {state}= useSelector((state) => state.addTag);
 
     const dispatch = useDispatch()
 
