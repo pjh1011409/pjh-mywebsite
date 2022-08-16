@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
-import App from './containers/App'
+import App from './pages/App'
 import reportWebVitals from './test/reportWebVitals'
 import { HashRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'

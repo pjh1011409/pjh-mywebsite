@@ -35,7 +35,7 @@ export function posts(state = initialState, action) {
         case GET_POSTS:
         case GET_POSTS_SUCCESS:
         case GET_POSTS_ERROR:
-            return handleAsyncActions(GET_POSTS, 'posts', true)(state, action)
+            return handleAsyncActions(GET_POSTS, 'posts', true)(state, action) 
         case GET_POST:
         case GET_POST_SUCCESS:
         case GET_POST_ERROR:
