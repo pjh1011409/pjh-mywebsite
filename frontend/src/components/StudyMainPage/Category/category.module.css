@@ -1,0 +1,17 @@
+
+.tab{
+                padding: 20px;
+                text-align: center;
+                border: 1px solid;
+                border-radius: 20px;
+                font-weight: bolder;
+                margin: 10px 0px;
+                width: 100%;
+                background-color:  #aae2d1;
+                color:black
+            }
+            
+            .tab:hover{
+                background-color: #ede090;
+                color: black;
+            }

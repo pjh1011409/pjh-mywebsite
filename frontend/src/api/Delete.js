@@ -21,7 +21,7 @@ export const deletePost = async (id) => {
     }
 
     let csrftoken = getCookie('csrftoken');
-    let url = `http://222.235.9.74:8000/api/notes/${id}/`
+    let url = `http://127.0.0.1:8000/api/notes/${id}/`
 
     const response = await axios.delete(url,{
         headers: {

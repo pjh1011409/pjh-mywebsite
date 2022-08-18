@@ -1,19 +1,20 @@
 from pyexpat import model
 from unicodedata import category
 from django.db import models
+from datetime import datetime    
 
 # Create your models here.
-
-
+# python manage.py makemigrations
+# python manage.py migrate
 class Note(models.Model):
-    category = models.CharField(max_length=50)
-    title = models.CharField(max_length=50, default='')
-    sub_title = models.CharField(max_length=50)
+    category = models.CharField(max_length=20)
+    title = models.CharField(max_length=20, default='')
+    subTitle = models.CharField(max_length=30)
     body = models.TextField(null=True, blank=True)
     image = models.ImageField(null = True, blank=True)
     
-    updated = models.DateTimeField(auto_now=True) # 수정시 업데이트 날짜 생성
-    created = models.DateTimeField(auto_now_add=True) # 생성시 없데이트 날짜 생성
+    updated = models.DateTimeField(default=datetime.now) # 수정시 업데이트 날짜 생성
+    created = models.DateTimeField(default=datetime.now) # 생성시 없데이트 날짜 생성
 
 
     def __str__(self):
@@ -23,7 +24,7 @@ class Note(models.Model):
             return self.title()
         
     def __str__(self):
-            return self.sub_title()
+            return self.subTitle()
         
     def __str__(self):
         return self.body[0:300]

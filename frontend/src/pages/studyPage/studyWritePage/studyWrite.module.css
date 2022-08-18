@@ -28,6 +28,31 @@
 
 }
 
+.formTitle {
+    display: block;
+    border: 2px solid green;
+    margin-top: 5px;
+    box-shadow: 11px 16px 16px -10px rgba(0, 0, 0, 0.4);
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+}
+
+.categoryLayout{
+    margin-bottom: 20px;
+}
+.selectCategory {
+    display: block;
+    border: 2px solid green;
+    margin-top: 5px;
+    box-shadow: 11px 16px 16px -10px rgba(0, 0, 0, 0.4);
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+
 
 .subTitle {
     width: 90%;

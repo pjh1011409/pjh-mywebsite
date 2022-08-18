@@ -33,7 +33,7 @@ export const ProjectData = [
 
 export const Images = [
     ['website-1.png', 'website-2.png', 'website-3.png', 'website-4.png'],
-    ['amazon-icon.png','x','s','s'],
+    ['amazon-icon.png'],
     ['bootstrap-icon.png'],
     ['css-icon.png'],
 ]

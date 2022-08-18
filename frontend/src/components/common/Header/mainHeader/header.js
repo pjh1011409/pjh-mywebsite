@@ -1,10 +1,12 @@
 import { Navbar, Nav, Container, NavLink } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-import * as React from 'react'
-import { useState, useRef, useEffect } from 'react'
+import React, { useState, useContext } from 'react'
 import styles from './header.module.css'
+import AuthContext from 'context/AuthContext'
 
 const Header = (props) => {
+    let { user, logoutUser } = useContext(AuthContext)
+
     const [menu, setMenu] = useState([
         'AboutMe',
         'TechStack',
@@ -18,9 +20,6 @@ const Header = (props) => {
         setMenuToggle(false)
     }
 
-    
-
-  
     return (
         <div>
             <nav className={styles.navBar}>
@@ -38,7 +37,6 @@ const Header = (props) => {
 
                 {/* 토글을 클릭하게되면 x가 뜨게되고, 그렇지 않으면 버거모양유지 */}
                 <div
-
                     className={
                         !menuToggle ? `${styles.burgerMenu}` : `${styles.xMenu}`
                     }
@@ -78,17 +76,43 @@ const Header = (props) => {
                         <NavLink
                             className={styles.menuItem}
                             as={Link}
-                            to="/myRecord"
+                            to="/studyMain"
                         >
-                            MyRecord
+                            Dev-Log
                         </NavLink>
-                        <NavLink
-                            className={styles.menuItem}
-                            as={Link}
-                            to="/login"
-                        >
-                            Login
+                        <NavLink className={styles.menuItem}>
+                            {user ? (
+                                <div
+                                    onClick={logoutUser}
+                                    className={styles.logoutMenu}
+                                >
+                                    Logout
+                                </div>
+                            ) : (
+                                <Link to="/login" className={styles.loginMenu}>
+                                    Login
+                                </Link>
+                            )}
                         </NavLink>
+                        <div className={styles.userLayout}>
+
+                        {user && (
+                            <div >
+                                <img
+                                    src={
+                                        process.env.PUBLIC_URL +
+                                        '/static/images/hello.png'
+                                    }
+                                    className={styles.helloImg}
+                                ></img>
+                                <div className={styles.userName}>
+                                    {' '}
+                                    {user.username}님 환영합니다
+                                </div>
+                            </div>
+                        )}
+                        </div>
+                       
                     </div>
                 </div>
             </nav>

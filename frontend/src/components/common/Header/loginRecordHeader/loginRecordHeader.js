@@ -1,18 +1,16 @@
 import { Navbar, Nav, Container, NavLink } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-import * as React from 'react'
-import { useState, useRef, useEffect } from 'react'
+import React, { useState, useContext } from 'react'
 import styles from './loginRecordHeader.module.css'
+import AuthContext from 'context/AuthContext'
 
 const LoginRecordHeader = () => {
     const [menuToggle, setMenuToggle] = useState(false)
+    let { user, logoutUser } = useContext(AuthContext)
 
-
- 
     return (
         <div>
-            <nav 
-                className={styles.navBar}>
+            <nav className={styles.navBar}>
                 <img
                     src={
                         process.env.PUBLIC_URL +
@@ -54,17 +52,41 @@ const LoginRecordHeader = () => {
                         <NavLink
                             className={styles.menuItem}
                             as={Link}
-                            to="/myRecord"
+                            to="/studyMain"
                         >
-                            MyRecord
+                            Dev-Log
                         </NavLink>
-                        <NavLink
-                            className={styles.menuItem}
-                            as={Link}
-                            to="/login"
-                        >
-                            Login
+                        <NavLink className={styles.menuItem}>
+                            {user ? (
+                                <div
+                                    onClick={logoutUser}
+                                    className={styles.logoutMenu}
+                                >
+                                    Logout
+                                </div>
+                            ) : (
+                                <Link to="/login" className={styles.loginMenu}>
+                                    Login
+                                </Link>
+                            )}
                         </NavLink>
+                        <div className={styles.userLayout}>
+                            {user && (
+                                <div>
+                                    <img
+                                        src={
+                                            process.env.PUBLIC_URL +
+                                            '/static/images/hello.png'
+                                        }
+                                        className={styles.helloImg}
+                                    ></img>
+                                    <div className={styles.userName}>
+                                        {' '}
+                                        {user.username}님 환영합니다
+                                    </div>
+                                </div>
+                            )}
+                        </div>
                     </div>
                 </div>
             </nav>

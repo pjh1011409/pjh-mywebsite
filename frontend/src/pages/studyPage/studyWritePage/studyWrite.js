@@ -6,7 +6,7 @@ import { useDispatch, batch } from 'react-redux'
 import styles from './studyWrite.module.css'
 import { Row, Col, Form } from 'react-bootstrap'
 // ----------------components & data---------------------------------
-import {Footer,TextEditor} from 'components/common'
+import { Footer, TextEditor } from 'components/common'
 // ----------------reducer-------------------------------------------
 import { createPost } from 'modules/reducer'
 
@@ -17,7 +17,6 @@ function StudyWrite() {
     // ------------------------------- 입력칸에 커서 ------------------------------
     useEffect(() => {
         inputRef.current[0].focus()
-        
     }, [])
 
     // ------------------------------- 입력하지 않은 input으로 이동 + focus------------------------------
@@ -66,7 +65,6 @@ function StudyWrite() {
     }
     // ------------------------------- 게시글 업로드------------------------------
     const createData = () => {
-        
         if (title === '') {
             alert('제목을 작성해주세요')
             handleIndexClick(0)
@@ -93,17 +91,16 @@ function StudyWrite() {
         // inputData를 distpatch를 통해서 전송
         dispatch(createPost(inputData))
         // 함수 실행 시 myRecord로 이동
-        navigate('/myRecord')
+        navigate('/studyMain')
 
         // 새로운 데이터에 대한 랜더링이 필요하므로 새로고침 실행
-         window.location.reload()
+        window.location.reload()
     }
 
-  
     // ------------------------------- 뒤로 가기 ------------------------------
 
     const goBack = () => {
-        navigate('/myRecord')
+        navigate('/studyMain')
     }
 
     return (
@@ -112,7 +109,7 @@ function StudyWrite() {
                 <div className={styles.writeText}>
                     <Row className={styles.title}>
                         {/* -------------title-------------- */}
-                        <Col sm className={styles.form}>
+                        <Col sm={8} className={styles.form}>
                             Title
                             <Form.Control
                                 ref={(el) => (inputRef.current[0] = el)}
@@ -120,24 +117,29 @@ function StudyWrite() {
                                 type="text"
                                 placeholder="제목을 작성하세요"
                                 onChange={onChange}
-                                className={styles.formBorder}
+                                className={styles.formTitle}
                                 maxLength="20"
                             />
                         </Col>
                         {/* -------------Category-------------- */}
 
-                        <Col sm>
+                        <Col sm={4} className={styles.categoryLayout}>
                             Category
-                            <Form.Control
+                            <select
                                 ref={(el) => (inputRef.current[1] = el)}
                                 name="category"
-                                type="text"
                                 placeholder="카테고리를 작성하세요(10자 이내)"
                                 onChange={onChange}
-                                className={styles.formBorder}
-                                maxLength="20"
+                                className={styles.selectCategory}
                                 required
-                            ></Form.Control>
+                            >
+                                <option>선택</option>
+
+                                <option>Skill Study</option>
+                                <option>Interview & CS</option>
+                                <option>Coding Test</option>
+                                <option>Project Log</option>
+                            </select>
                         </Col>
                     </Row>
                     {/* -------------Subtitle-------------- */}

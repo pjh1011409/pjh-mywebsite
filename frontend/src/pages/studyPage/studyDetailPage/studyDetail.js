@@ -12,6 +12,7 @@ import {Footer} from 'components/common'
 // ----------------reducer---------------------------------
 import { getPost, deletePost } from 'modules/reducer'
 
+
 function StudyDetail() {
     let navigate = useNavigate()
 
@@ -37,7 +38,7 @@ function StudyDetail() {
         // dispatch(getPosts)
 
         alert('삭제되었습니다')
-        navigate('/myRecord')
+        navigate('/studyMain')
         window.location.reload()
     }
 
@@ -47,6 +48,7 @@ function StudyDetail() {
         navigate(`/studyUpdate/${id}`)
     }
 
+    
     return (
         <div className={styles.studyDetailBg}>
             <div className={styles.top}>
@@ -55,8 +57,8 @@ function StudyDetail() {
                         {' '}
                         <img
                             src={
-                                process.env.PUBLIC_URL +
-                                './static/images/study/category-icon.png'
+                                
+                                `/static/images/study/category-icon.png`
                             }
                             className={styles.studyImg}
                         ></img>
@@ -66,7 +68,7 @@ function StudyDetail() {
                         <img
                             src={
                                 process.env.PUBLIC_URL +
-                                './static/images/study/title-icon.png'
+                                '/static/images/study/title-icon.png'
                             }
                             className={styles.studyImg}
                         ></img>
@@ -76,7 +78,7 @@ function StudyDetail() {
                         <img
                             src={
                                 process.env.PUBLIC_URL +
-                                './static/images/study/about-icon.png'
+                                '/static/images/study/about-icon.png'
                             }
                             className={styles.studyImg}
                         ></img>
@@ -105,7 +107,7 @@ function StudyDetail() {
 
                     <button
                         onClick={() => {
-                            navigate(`/myRecord`)
+                            navigate(`/studyMain`)
                         }}
                     >
                         <FontAwesomeIcon icon={faHouse}></FontAwesomeIcon>

@@ -1,23 +1,47 @@
 from django.http import response
 from django.shortcuts import render
 from rest_framework.response import Response
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, permission_classes
+from rest_framework.permissions import IsAuthenticated
+
 from rest_framework.serializers import Serializer
 from .models import Note
 from .serializers import NoteSerializer
 from api import serializers
-from django.shortcuts import render, redirect, get_object_or_404
 
+from django.http import JsonResponse
 
 from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
 
 from .utils import updateNote, getNoteDetail, deleteNote, getNotesList, createNote
 
+from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
+from rest_framework_simplejwt.views import TokenObtainPairView
 
-@api_view(['GET', 'POST', 'PUT', 'DELETE'])
+
+class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
+    @classmethod
+    def get_token(cls, user):
+        token = super().get_token(user)
+
+        # Add custom claims
+        token['username'] = user.username
+        # ...
+
+        return token
+
+
+class MyTokenObtainPairView(TokenObtainPairView):
+    serializer_class = MyTokenObtainPairSerializer
+
+
+@api_view(['GET','POST','PUT', 'DELETE'])
+@permission_classes([IsAuthenticated])
 def getRoutes(request):
-    routes = [
+     routes = [
+         '/api/token',
+         '/api/token/refresh',
         {
             'Endpoint': '/notes/',
             'method': 'GET',
@@ -49,7 +73,10 @@ def getRoutes(request):
             'description': 'Deletes and exiting note'
         },
     ]
-    return Response(routes)
+     return Response(routes)
+
+
+
 
 
 # /notes GET
@@ -58,7 +85,7 @@ def getRoutes(request):
 # /notes/<id> PUT
 # /notes/<id> DELETE
 
-@method_decorator(csrf_exempt, name='dispatch')
+@method_decorator(csrf_exempt,name='dispatch')
 @api_view(['GET', 'POST'])
 def getNotes(request):
 
@@ -66,24 +93,9 @@ def getNotes(request):
         return getNotesList(request)
 
     if request.method == 'POST':
-       if request.method == 'POST':
-        category = request.POST['category']
-        title = request.POST['title']
-        sub_title = request.POST['sub_title']
-        body = request.POST['body']
-        image = request.FILES['image']
-        fileupload = Note(
-            title=title,
-            sub_title=sub_title,
-            category=category,
-            body=body,
-            image=image
-        )
-        fileupload.save()
-        return redirect('create-note')
+        return createNote(request)
 
-
-@method_decorator(csrf_exempt, name='dispatch')
+@method_decorator(csrf_exempt,name='dispatch')
 @api_view(['GET', 'PUT', 'DELETE'])
 def getNote(request, pk):
 

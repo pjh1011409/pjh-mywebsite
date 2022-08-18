@@ -1,42 +1,84 @@
 // ----------------react & hooks-------------------------------------
-import { Routes,Route} from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 
 // ----------------style & css---------------------------------------
 import './App.css'
 
 // ----------------components & data---------------------------------
 import MainPage from './mainPage/mainPage'
-import Login from './loginPage/login'
-import {MyRecord} from './myRecordPage'
-import {StudyDetail, StudyWrite, StudyUpdate} from  './studyPage'
-
-
+import LoginPage from './loginPage/loginPage'
+import { StudyDetail, StudyWrite, StudyUpdate, StudyMain } from './studyPage'
+import { Header, LoginRecordHeader } from 'components/common'
+//------------------authentication(utils & context)---------------------------
+import PrivateRoute from 'utils/PrivateRoute'
+import { AuthProvider } from 'context/AuthContext'
 
 function App() {
     return (
-        <div style={{margin: '0', width:'100vm',overflowX:'hidden'}}>
+        <div style={{ margin: '0', width: '100vm', overflowX: 'hidden' }}>
             <Routes>
-                <Route exact path="/" element={<MainPage />} />
-
-                <Route exact path="/login" element={<Login />} />
-
-                {/* 위의 라우트들은 헤더에 있는 메인 페이지들에 대한 이동.
-      하지만, 밑의 경우 myrecord페이지 하위 폴더인 skillStudy에서 글작성 눌렀을때 보이는 studyWrite페이지
-      그렇다면 App에서 라우트하는 것이 아니라 skillStudy에서는 라우팅을 못시키나? */}
-                <Route exact path="/studyWrite" element={<StudyWrite />} />
+                <Route
+                    exact
+                    path="/studyMain/*"
+                    element={
+                        <AuthProvider>
+                            <StudyMain>
+                                <Header></Header>
+                            </StudyMain>
+                        </AuthProvider>
+                    }
+                />
 
                 <Route
                     exact
                     path="/studyDetail/:id"
-                    element={<StudyDetail />}
+                    element={<StudyDetail></StudyDetail>}
+                />
+
+                <Route
+                    exact
+                    path="/"
+                    element={
+                        <AuthProvider>
+                            <MainPage>
+                                <Header></Header>
+                            </MainPage>
+                        </AuthProvider>
+                    }
+                ></Route>
+                <Route
+                    exact
+                    path="/login"
+                    element={
+                        <AuthProvider>
+                            <LoginPage>
+                                <LoginRecordHeader></LoginRecordHeader>
+                            </LoginPage>
+                        </AuthProvider>
+                    }
+                />
+                <Route
+                    exact
+                    path="/studyWrite"
+                    element={
+                        <AuthProvider>
+                            <PrivateRoute>
+                                <StudyWrite />
+                            </PrivateRoute>
+                        </AuthProvider>
+                    }
                 />
                 <Route
                     exact
                     path="/studyUpdate/:id"
-                    element={<StudyUpdate />}
+                    element={
+                        <AuthProvider>
+                            <PrivateRoute>
+                                <StudyUpdate />
+                            </PrivateRoute>
+                        </AuthProvider>
+                    }
                 />
-
-                <Route exact path="/myRecord/*" element={<MyRecord />} />
             </Routes>
         </div>
     )

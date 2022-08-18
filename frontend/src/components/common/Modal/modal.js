@@ -47,13 +47,15 @@ function Modal(props) {
                         {' '}
                         <div className={styles.inner1}>
                             <div className={styles.inner2}>
-                                {explain[props.modalId].map((data) => {
+                                <h1>PJH MyWebSite</h1>
+                                <p>개인 포트폴리오 사이트입니다. 필자에 대한 개인적인 정보와 커리어가 담긴 사이트이며, 더하여 개발스택, CS지식, 면접, 회고 등의 여러 글들을 게시할 수 있는 개인 블로그를 탑재하고 있습니다.</p>
+                                {/* {explain[props.modalId].map((data) => {
                                     return (
                                         
                                             <div key={data}>{data}</div>
                                         
                                     )
-                                })}
+                                })} */}
                                 {explain[props.id]}
                             </div>
                         </div>

@@ -1,5 +1,4 @@
 import { useMemo, useRef } from 'react'
-
 import './textEditor.css'
 import 'react-quill/dist/quill.snow.css'
 import ReactQuill, { Quill } from 'react-quill'
@@ -8,27 +7,62 @@ Quill.register('modules/ImageResize', ImageResize)
 
 const TextEditor = (props) => {
 
-    const modules = {
-        toolbar: [
-            //[{ 'font': [] }],
-            [{ header: [1, 2, false] }],
-            ['bold', 'italic', 'underline', 'strike', 'blockquote'],
-            [
-                { list: 'ordered' },
-                { list: 'bullet' },
-                { indent: '-1' },
-                { indent: '+1' },
-            ],
-            ['link', 'image'],
-            [{ align: [] }, { color: [] }, { background: [] }], // dropdown with defaults from theme
-            ['clean'],
-        ],
-
-        ImageResize: {
-            parchment: Quill.import('parchment'),
-        },
-        
-    }
+    const quillRef = useRef(); // 에디터 접근을 위한 ref return
+//     // 이미지 처리를 하는 핸들러
+// const imageHandler = () => {
+//     console.log('에디터에서 이미지 버튼을 클릭하면 이 핸들러가 시작됩니다!');
+  
+//     // 1. 이미지를 저장할 input type=file DOM을 만든다.
+//     const input = document.createElement('input');
+//     // 속성 써주기
+//     input.setAttribute('type', 'file');
+//     input.setAttribute('accept', 'image/*');
+//     input.click(); 
+   
+//     input.addEventListener('change', async () => {
+//       console.log('온체인지');
+//       const file = input.files[0];
+//       const formData = new FormData();
+//       formData.append('img', file); 
+//       try {
+//         const result = await axios.post('http://222.235.9.74:8000/api/notes/', formData);
+//         console.log('성공 시, 백엔드가 보내주는 데이터', result.data.url);
+//         const IMG_URL = result.data.url;
+//         const editor = quillRef.current.getEditor(); 
+//         const range = editor.getSelection();
+//         editor.insertEmbed(range.index, 'image', IMG_URL);
+//       } catch (error) {
+//         console.log('실패했어요ㅠ');
+//       }
+//     });
+//   };
+    const modules = useMemo(()=>{
+        return{
+            toolbar: {
+                //[{ 'font': [] }],
+                container: [ [{ header: [1, 2, false] }],
+                ['bold', 'italic', 'underline', 'strike', 'blockquote'],
+                [
+                    { list: 'ordered' },
+                    { list: 'bullet' },
+                    { indent: '-1' },
+                    { indent: '+1' },
+                ],
+                ['link', 'image'],
+                [{ align: [] }, { color: [] }, { background: [] }], // dropdown with defaults from theme
+                ['clean'],],
+                // handlers: {
+                //     // 이미지 처리는 우리가 직접 imageHandler라는 함수로 처리할 것이다.
+                //     image: imageHandler,
+                //   },
+                },
+    
+            ImageResize: {
+                parchment: Quill.import('parchment'),
+            },
+         
+        }
+    },[]);
 
     const formats = [
         'header',
@@ -42,12 +76,12 @@ const TextEditor = (props) => {
 
     const onChange = (editor) => {
         props.setContent(editor)
-        console.log(props.Content)
     }
 
     return (
         <div style={{ height: 'auto'}}>
             <ReactQuill
+                ref = {quillRef}
                 theme="snow"
                 modules={modules}
                 formats={formats}

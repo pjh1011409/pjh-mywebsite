@@ -57,7 +57,7 @@ function MainPage() {
 
     return (
         <div style={{width:'100%'}}>
-            <Header handleIndexClick={handleIndexClick}></Header>
+            // <Header handleIndexClick={handleIndexClick}></Header>
 
             <Profile handleIndexClick={handleIndexClick}></Profile>
             <Information></Information>

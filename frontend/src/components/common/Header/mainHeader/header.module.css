@@ -29,15 +29,17 @@
 /* ----------------------- 메뉴바 속 메뉴폰트에 대한 설정 ----------------- */
 .menuList {
     display: flex;
-    margin: 20px 80px;
+    margin: 20px 40px;
   }
 .menuItem {
-    margin: 10px 40px;
+    margin: 10px 20px;
     padding: 0px;
+    min-width: 90px;
     font-size: 20px;
     cursor: pointer;
     text-decoration: none;
-    color: black
+    color: black;
+    text-align: center;
   }
 
 .menuItem:hover {
@@ -98,10 +100,7 @@
   }
   /* -------------------메뉴바 속 메뉴 하나씩의 위치 및 폰트------------------------ */
 
-  .menuItem {
-    margin: 10px 20px;
-    font-size: 20px;
-  }
+  
 }
 
 @media (min-width: 1100px) {
@@ -125,6 +124,34 @@
     }
   }
 
+  .loginMenu{
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+
+  }
+
+  .userLayout{
+    margin: 10px 60px;
+    padding: 0px;
+    min-width: 170px;
+    font-size: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    color: black
+  
+  }
+  .userName{
+    font-size: 15px;
+    display: inline-block;
+    margin:  0px 10px;
+  }
 
 
+  .helloImg{
+    width: 20px;
+    margin-right: 0px 10px;
+  }
 
+
+ 

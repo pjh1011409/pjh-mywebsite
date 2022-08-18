@@ -1,7 +1,13 @@
+.footerLayout{
+    background-color: #326d62;
+    width: 100%;
+    position: relative;
+}
+
 .footerMark{
     display: block;
     text-align: center;
-    padding: 40px;
+    padding: 25px;
     max-width: 60rem;
     margin: 0 auto;
 
