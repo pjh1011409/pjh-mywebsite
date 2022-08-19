@@ -68,11 +68,12 @@ const handleCategory = (e) => {
 
 
 
+         
 
   
 
     return (
-        <>
+        <div className={styles.fullLayout}>
        
         <LoginRecordHeader></LoginRecordHeader>
 
@@ -187,7 +188,7 @@ const handleCategory = (e) => {
         </div>
         <Footer></Footer>
 
-        </>
+        </div>
     )
 }
 

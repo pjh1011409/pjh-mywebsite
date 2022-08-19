@@ -1,8 +1,12 @@
+
+.fullLayout{
+    background-color:  #f0ecd6;
+ }
+ 
+
 .studyMainBg{
-    background-color:#f0ecd6;
-    min-height: 700px;
-    height: auto;
-    padding: 80px 0px;
+    height: 70em;
+    padding: 90px 0px;
     max-width: 100rem;
     margin: 0 auto;
 }

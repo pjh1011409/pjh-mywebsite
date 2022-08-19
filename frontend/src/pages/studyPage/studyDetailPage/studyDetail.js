@@ -50,6 +50,9 @@ function StudyDetail() {
 
     
     return (
+        <div className={styles.fullLayout}>
+
+     
         <div className={styles.studyDetailBg}>
             <div className={styles.top}>
                 <div className={styles.titleGroup}>
@@ -115,6 +118,7 @@ function StudyDetail() {
                 </div>
             </div>
             <Footer></Footer>
+        </div>
         </div>
     )
 }

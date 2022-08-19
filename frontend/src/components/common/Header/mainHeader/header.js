@@ -80,7 +80,7 @@ const Header = (props) => {
                         >
                             Dev-Log
                         </NavLink>
-                        <NavLink className={styles.menuItem}>
+                        <div className={styles.menuItem}>
                             {user ? (
                                 <div
                                     onClick={logoutUser}
@@ -89,11 +89,11 @@ const Header = (props) => {
                                     Logout
                                 </div>
                             ) : (
-                                <Link to="/login" className={styles.loginMenu}>
+                                <Link  to="/login" className={styles.loginMenu}>
                                     Login
                                 </Link>
                             )}
-                        </NavLink>
+                        </div>
                         <div className={styles.userLayout}>
 
                         {user && (
