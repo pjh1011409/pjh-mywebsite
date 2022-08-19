@@ -1,7 +1,12 @@
+.fullLayout{
+   background-color:  #f0ecd6;
+}
+
 .studyDetailBg {
     width: 100%;
     margin: 0 auto;
-    background-color: #faf7e7
+    max-width: 100rem;
+    margin: 0 auto;
 }
 
 .top {
@@ -25,7 +30,7 @@
     margin: 3px 10px 10px 0px;
 }
 .category{
-    font-size: clamp(1.3em, 1.8vw, 5rem);
+    font-size: clamp(1.3em, 1.8vw, 2rem);
 
 }
 
@@ -38,7 +43,7 @@
 }
 
 .title {
-    font-size: clamp(1.5em, 2vw, 5rem);
+    font-size: clamp(1.5em, 2vw, 2rem);
 
 }
 
@@ -52,12 +57,11 @@
 }
 
 .subTitle {
-    font-size: clamp(1.2em, 1.5vw, 5rem);
+    font-size: clamp(1.2em, 1.5vw, 2rem);
 }
 
 .middle {
     height: auto;
-    background-color: #faf7e7
 
 }
 
@@ -83,7 +87,6 @@
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-    background-color: #faf7e7
 
 }
 

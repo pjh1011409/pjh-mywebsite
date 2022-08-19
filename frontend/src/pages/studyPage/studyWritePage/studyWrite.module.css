@@ -1,13 +1,21 @@
+.fullLayout{
+    background-color: #fff;
+    background-image:
+    linear-gradient(#eee .1em, transparent .1em);
+    background-size: 100% 1.2em;
+}
+
+.writeBg{
+    max-width: 100rem;
+    margin: 0 auto;
+}
 
 
 .writeText{
     width: 100%;
     margin: 0 auto;
     padding: 40px  10px;
-    background-color: #fff;
-    background-image:
-    linear-gradient(#eee .1em, transparent .1em);
-    background-size: 100% 1.2em;
+   
 
 }
 .title {

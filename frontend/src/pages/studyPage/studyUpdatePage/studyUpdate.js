@@ -117,7 +117,7 @@ function StudyUpdate() {
         navigate('/studyMain')
     }
     return (
-        <div>
+        <div className={styles.fullLayout}>
             <div className={styles.writeBg}>
                 <div className={styles.writeText}>
                     <Row className={styles.title}>
