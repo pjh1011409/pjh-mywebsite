@@ -1,4 +1,5 @@
 import axios from 'axios'
+import axiosInstance from 'utils/axiosInstance'
 axios.defaults.xsrfCookieName = 'csrftoken';
 axios.defaults.xsrfHeaderName = 'X-CSRFTOEKN';
 export const createPost = async (data) => {
@@ -20,10 +21,10 @@ export const createPost = async (data) => {
     }
 
     let csrftoken = getCookie('csrftoken');
-    let url = `http://127.0.0.1:8000/api/notes/`
+    let url = `/api/notes/`
 
 
-    const response = await axios.post(url, data, {
+    const response = await axiosInstance.post(url, data, {
         headers: {
             'X-CSRFToken': csrftoken,
         },

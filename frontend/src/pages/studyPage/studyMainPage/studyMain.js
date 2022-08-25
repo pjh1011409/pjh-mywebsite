@@ -1,5 +1,5 @@
 // ----------------react & hooks-------------------------------------
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 // ----------------style & css---------------------------------------
@@ -9,9 +9,9 @@ import { Card, Form, FormControl, Spinner,Tab, Row, Col, Nav } from 'react-boots
 // ----------------components & data---------------------------------
 import { LoginRecordHeader, Footer,Pagination } from 'components/common'
 import { Category } from 'components/StudyMainPage'
-import Loading from 'pages/Shimmer'
 // ----------------reducer---------------------------------
 import { getPosts } from 'modules/reducer'
+import AuthContext from 'context/AuthContext'
 
 function StudyMain() {
     //----------------------------------------------- search: 검색내용저장 state, filterData: 카테고리 state--------------------------------
@@ -50,6 +50,7 @@ const handleCategory = (e) => {
         : setFilterData(getData())
 }
 
+// let { authTokens } = useContext(AuthContext)
 
     useEffect(() => {
         dispatch(getPosts())
@@ -67,7 +68,6 @@ const handleCategory = (e) => {
 
 
 
-
          
 
   
@@ -78,7 +78,7 @@ const handleCategory = (e) => {
         <LoginRecordHeader></LoginRecordHeader>
 
         <div className={styles.studyMainBg}>
-           
+           <button onClick={()=>{navigate('/test')}}>d</button>
 
 <Tab.Container id="left-tabs-example">
                         <Row>

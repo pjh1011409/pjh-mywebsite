@@ -1,5 +1,5 @@
 import axios from 'axios'
-
+import axiosInstance from 'utils/axiosInstance';
     
 
 export const deletePost = async (id) => {
@@ -21,9 +21,9 @@ export const deletePost = async (id) => {
     }
 
     let csrftoken = getCookie('csrftoken');
-    let url = `http://127.0.0.1:8000/api/notes/${id}/`
+    let url = `/api/notes/${id}/`
 
-    const response = await axios.delete(url,{
+    const response = await axiosInstance.delete(url,{
         headers: {
             'X-CSRFToken': csrftoken,
         },

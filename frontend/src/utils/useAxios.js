@@ -10,7 +10,6 @@ const baseURL = 'http://127.0.0.1:8000'
 
 const useAxios = () => {
     const {authTokens, setUser, setAuthTokens} = useContext(AuthContext)
-
     const axiosInstance = axios.create({
         baseURL,
         headers:{Authorization: `Bearer ${authTokens?.access}`}
@@ -18,7 +17,12 @@ const useAxios = () => {
 
 
     axiosInstance.interceptors.request.use(async req => {
+        if(!authTokens){
+            authTokens = localStorage.getItem('authTokens') ? JSON.parse(localStorage.getItem('authTokens')) : null
+            req.headers.Authorization = `Bearer ${authTokens?.access}`
+        }
     
+
         const user = jwt_decode(authTokens.access)
         const isExpired = dayjs.unix(user.exp).diff(dayjs()) < 1;
     
