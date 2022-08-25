@@ -9,6 +9,7 @@ import MainPage from './mainPage/mainPage'
 import LoginPage from './loginPage/loginPage'
 import { StudyDetail, StudyWrite, StudyUpdate, StudyMain } from './studyPage'
 import { Header, LoginRecordHeader } from 'components/common'
+import Test from 'test'
 //------------------authentication(utils & context)---------------------------
 import PrivateRoute from 'utils/PrivateRoute'
 import { AuthProvider } from 'context/AuthContext'
@@ -32,7 +33,13 @@ function App() {
                 <Route
                     exact
                     path="/studyDetail/:id"
-                    element={<StudyDetail></StudyDetail>}
+                    element={
+                        <AuthProvider>
+                            <PrivateRoute>
+                                <StudyDetail></StudyDetail>
+                            </PrivateRoute>
+                        </AuthProvider>
+                    }
                 />
 
                 <Route
@@ -79,6 +86,17 @@ function App() {
                         </AuthProvider>
                     }
                 />
+                <Route
+                    exact
+                    path="/test"
+                    element={
+                        <AuthProvider>
+                            <PrivateRoute>
+                                <Test />
+                            </PrivateRoute>
+                        </AuthProvider>
+                    }
+                ></Route>
             </Routes>
         </div>
     )

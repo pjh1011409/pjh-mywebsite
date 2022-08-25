@@ -1,5 +1,5 @@
 // ----------------react & hooks-------------------------------------
-import React, { useEffect } from 'react'
+import React, { useEffect, useContext} from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import Parser from 'html-react-parser'
@@ -11,7 +11,7 @@ import { faHouse } from '@fortawesome/free-solid-svg-icons'
 import {Footer} from 'components/common'
 // ----------------reducer---------------------------------
 import { getPost, deletePost } from 'modules/reducer'
-
+import AuthContext from 'context/AuthContext'
 
 function StudyDetail() {
     let navigate = useNavigate()
@@ -25,10 +25,15 @@ function StudyDetail() {
         data: null,
         error: null,
     } // 아예 데이터가 존재하지 않을 때가 있으므로, 비구조화 할당이 오류나지 않도록
+
+
+    // let { authTokens } = useContext(AuthContext)
+
+
     const dispatch = useDispatch()
     useEffect(() => {
         dispatch(getPost(postId))
-    }, [dispatch, postId])
+    }, [dispatch,postId])
     if (loading && !data) return <div>로딩중...</div> // 로딩중이고 데이터 없을때만
     if (error) return <div>에러 발생!</div>
     if (!data) return null
@@ -91,6 +96,7 @@ function StudyDetail() {
             </div>
             <div className={styles.middle}>
                 <div className={styles.content}>{Parser(data.body)}</div>
+                
             </div>
             <div
                 style={{
@@ -111,6 +117,7 @@ function StudyDetail() {
                     <button
                         onClick={() => {
                             navigate(`/studyMain`)
+                            window.location.reload()
                         }}
                     >
                         <FontAwesomeIcon icon={faHouse}></FontAwesomeIcon>

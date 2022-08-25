@@ -7,7 +7,7 @@ const AuthContext = createContext()
 export default AuthContext
 
 export const AuthProvider = ({ children }) => {
-    let [authTokens, setAuthTokens] = useState(() =>
+    let [authTokens, setAuthTokens] = useState(() => //최신 토큰 확인 가능
         localStorage.getItem('authTokens')
             ? JSON.parse(localStorage.getItem('authTokens'))
             : null
@@ -30,8 +30,8 @@ export const AuthProvider = ({ children }) => {
             },
             // 실시간으로 입력한 아이디, 비번을 JSON형식으로 담는다.
             body: JSON.stringify({
-                username: e.target.username.value,
-                password: e.target.password.value,
+                'username': e.target.username.value,
+                'password': e.target.password.value,
             }),
         })
         let data = await response.json()
@@ -42,7 +42,7 @@ export const AuthProvider = ({ children }) => {
             localStorage.setItem('authTokens', JSON.stringify(data))
             navigate('/')
         } else {
-            alert('Please enter your ID or password')
+            alert('Please enter your correct ID or password')
         }
     }
 
