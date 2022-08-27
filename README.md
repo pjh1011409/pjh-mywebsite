@@ -132,12 +132,14 @@
 
 # 🔥 Issue & TroubleShooting
   
-<details>
-<summary> ➡️  </summary>
-👉 
+### 👉 CORS(Cross-Origin Resource Sharing)
 
-</details>
+### 👉 CSRF(Cross Site Request Forgery)
+  
+### 👉 새로고침 시 state값 날아가는 
 
+📎 상세내용 : https://velog.io/@pjh1011409/%EC%9D%B4%EC%8A%88-%ED%8A%B8%EB%9F%AC%EB%B8%94-%EC%8A%88%ED%8C%85
+  
 # ⚒ Refectoring
 
 ### 👉 중복되는 useState, onChange
