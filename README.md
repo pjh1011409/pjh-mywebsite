@@ -1,9 +1,12 @@
-[# PJH WebSite
-
+# PJH WebSite
+😀 개인 포트폴리오 사이트입니다. 저에 대한 개인적인 정보와 커리어가 담긴 사이트이며, 더하여 개발스택 공부, CS지식, 면접준비, 회고 등의 글을 게시할 수 있는 개발 블로그를 탑재하고 있습니다.
 
 ## 🗓 프로젝트 기간
 
-2022.06.20 ~ 2022. 
+- 2022.06.20 ~ 2022. 
+-  1차 배포: 
+-  2차 배포:
+
 
 
 
@@ -55,11 +58,16 @@
 
 ## 🛠 Tools
 
+### Front-end Tools
 <p>
   <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=white">
     <img src="https://img.shields.io/badge/Typescript-3178C6?style=for-the-badge&logo=Typescript&logoColor=white"> 
   <img src="https://img.shields.io/badge/html-E34F26?style=for-the-badge&logo=html5&logoColor=white">
   <img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white">
+  <br>
+   <img src="https://img.shields.io/badge/1bootstrap-7952B3?style=for-the-badge&logo=bootstrap
+   <img src="https://img.shields.io/badge/fontawesome-339AF0?style=for-the-badge&logo=fontawesome&logoColor=white">
+
   <br>
   <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=black">
   <img src="https://img.shields.io/badge/redux-764ABC?style=for-the-badge&logo=redux&logoColor=black">
@@ -72,11 +80,21 @@
 </p>
 
 
+### Back--end Tools
+<p> 
+   <img src="https://img.shields.io/badge/django-092E20?style=for-the-badge&logo=django&logoColor=white">
+   <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=MySQL&logoColor=white">
+   <img src="https://img.shields.io/badge/NGINX-009639?style=for-the-badge&logo=NGINX3&logoColor=white">
+   <img src="https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=Redis&logoColor=white"> 
+   <img src="https://img.shields.io/badge/JSON Web Tokens-000000?style=for-the-badge&logo=JSON Web Tokens&logoColor=white">   
+   <img src="https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=Ubuntu&logoColor=white">
 
+</p>
 
 #### Dev tools
 
 <p> 
+  
   <img src="https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white">
   <img src="https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white">
   <img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white">
