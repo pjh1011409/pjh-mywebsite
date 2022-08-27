@@ -18,7 +18,7 @@
 </details>
 
 
-### 🔧 프로젝트 구현사항
+## 🔧 프로젝트 구현사항
 
 👉 필자의 이력 및 자기소개와 개발 프로젝트를 소개하는 페이지 구성
 </br>
@@ -82,8 +82,9 @@
   <img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white">
 
 <br>
+## DB & API 설계
 
-### 💖 Front-end 기술선정 
+## 💖 ERD
 
 #### React + Typescript
 
@@ -107,13 +108,19 @@
 
 
 
-# ⚓️ Links
-- Project homepage: https://goodjobcalendar.com
-- BackEnd github : https://github.com/Magiof/goodjob_BE
-- FrontEnd github : https://github.com/YoujungSon/Good-Job-Calender
+# ⚓ Links
+- Project homepage: 
 
 
 # 🔥이슈 및 트러블슈팅
   
-  - CO
-](url)
+<details>
+<summary>💡 </summary>
+
+- 메인 프로필 창(profile) 및 세부 신상사항(information)
+- 자기소개(aboutMe)
+- 기술스택(techStack)
+- 프로젝트 소개(project)
+- Q&A (question)
+
+</details>
