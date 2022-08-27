@@ -11,10 +11,11 @@
 
 
 
-## 🍀 Service Architecture
+## 💻 Service Architecture
 <img width="744" alt="아키텍처" src="https://user-images.githubusercontent.com/81337674/187020302-211d9d27-3eb9-49ad-b5db-63f709f4c234.png">
 
-## Project Architecture
+## 📄 Project Architecture
+<img width="700" alt="Project Architecture" src="https://user-images.githubusercontent.com/81337674/187020503-d955158b-c110-482f-a4e0-ac3619d708ae.png">
 
 
 
@@ -125,19 +126,34 @@
 
 
 
-# ⚓ Links
+# 📎 Links
 - Project homepage: 
 
 
-# 🔥이슈 및 트러블슈팅
+# 🔥 Issue & TroubleShooting
   
 <details>
-<summary>💡 </summary>
-
-- 메인 프로필 창(profile) 및 세부 신상사항(information)
-- 자기소개(aboutMe)
-- 기술스택(techStack)
-- 프로젝트 소개(project)
-- Q&A (question)
+<summary> ➡️  </summary>
+👉 
 
 </details>
+
+# ⚒ Refectoring
+
+<details>
+<summary> ➡️ 중복되는 useState, onChange</summary>
+👉 Before: 
+👉 After: 
+
+</details>
+
+
+<details>
+<summary>💡 Barrel Structure & 절대경로</summary>
+👉 Before: 
+👉 After: 
+
+</details>
+
+👍 상세내용 : https://velog.io/@pjh1011409/Code-Refactoring
+
