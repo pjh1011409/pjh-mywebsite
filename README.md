@@ -1,4 +1,4 @@
-# PJH WebSite
+[# PJH WebSite
 
 
 ## 🗓 프로젝트 기간
@@ -11,9 +11,11 @@
 ## 🍀 Service Architecture
 
 
-## FrontEnd Architecture
 
+<details>
+<summary>## FrontEnd Architecture</summary>
 ![image](https://user-images.githubusercontent.com/81337674/187014975-7e6f01ee-aa64-4b98-a3eb-1986bc194cc8.png)
+</details>
 
 
 ### 🔧 프로젝트 구현사항
@@ -108,3 +110,4 @@
 # 🔥이슈 및 트러블슈팅
   
   - CO
+](url)
