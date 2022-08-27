@@ -8,37 +8,13 @@
 
 
 
-### 🔧 주요 기능
-
-<details>
-<summary>🗨️ 게임 로비 실시간 채팅과 내 전적 확인하기!</summary>
-
-- 여러 유저가 함께 대화할 수 있도록 게임 로비에서 다대다 채팅을 구현했습니다.
-- 나만의 게임 전적을 게임 로비화면에서 확인할 수 있습니다.
-
-</details>
-<details>
-<summary>🎮 게임방에 입장해, 내 팀을 정해보자!</summary>
-
-- 유저는 게임방을 직접 개설할 수도 있고, 다른 유저가 만든 방에 입장해도 됩니다!
-- 원하는 팀을 선택해 게임을 플레이할 수도 있답니다!
-
-</details>
-<details>
-<summary>🧙 실시간 2:2 마법사 카드 대전게임!</summary>
-
-- 공격, 보조, 아이템, 저주 등 4가지 타입의 다양한 카드를 이용한 2:2 카드 게임을 구현했습니다.
-- 각 캐릭터마다의 고유 특성이 있어, 직업에 따른 다양한 전략을 구상할 수 있습니다.
-</details>
-
-
 ### 🔧 프로젝트 구현사항
 
-- 필자의 이력 및 자기소개와 개발 프로젝트를 소개하는 페이지 구성
-- CRUD(입력,조회,수정,삭제)기능과 검색 및 필터 기능이 포함된 게시판 
+👉 필자의 이력 및 자기소개와 개발 프로젝트를 소개하는 페이지 구성
+👉 CRUD(입력,조회,수정,삭제)기능과 검색 및 필터 기능이 포함된 게시판 
 
 <details>
-<summary>🗨️ MainPage</summary>
+<summary>MainPage</summary>
 
 - 메인 프로필 창(profile) 및 세부 신상사항(information)
 - 자기소개(aboutMe)
@@ -48,7 +24,7 @@
 
 </details>
 <details>
-<summary> Dev Log</summary>
+<summary>Dev Log</summary>
 
 
 - 글 목록(StudyMainPage)
@@ -59,7 +35,7 @@
 
 </details>
 <details>
-<summary>🧙 navigationBar & footerBar</summary>
+<summary>navigationBar & footerBar</summary>
 
 - 메뉴바(header)
 - 하단바(footer)
