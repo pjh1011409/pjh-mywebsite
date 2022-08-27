@@ -1,11 +1,19 @@
 # PJH WebSite
 
-## 🍀 Service Architecture
 
 ## 🗓 프로젝트 기간
 
 2022.06.20 ~ 2022. 
 
+
+
+
+## 🍀 Service Architecture
+
+
+## FrontEnd Architecture
+
+![image](https://user-images.githubusercontent.com/81337674/187014975-7e6f01ee-aa64-4b98-a3eb-1986bc194cc8.png)
 
 
 ### 🔧 프로젝트 구현사항
@@ -98,3 +106,5 @@
 
 
 # 🔥이슈 및 트러블슈팅
+  
+  - CO
