@@ -14,6 +14,14 @@
 ## 💻 Service Architecture
 <img width="744" alt="아키텍처" src="https://user-images.githubusercontent.com/81337674/187020302-211d9d27-3eb9-49ad-b5db-63f709f4c234.png">
 
+<details>
+<summary>About Detail Architecture Flow</summary>
+
+###  A
+
+
+</details>
+
 ## 📄 Project Architecture
 <img width="700" alt="Project Architecture" src="https://user-images.githubusercontent.com/81337674/187020503-d955158b-c110-482f-a4e0-ac3619d708ae.png">
 
@@ -102,14 +110,14 @@
 <br>
 ## DB & API 설계
 
-## 💖 ERD
+## 기술 선정 이유
 
 #### React + Typescript
 
 <li>자바스크립트 라이브러리인 리액트를 중심으로 개발</li>
 <li>Typescript : 컴파일 단계에서 타입 관련 에러를 막을 수 있으며, 크로스 브라우징(브라우저 호환성) 문제 해결</li>
 
-#### React Query
+#### Redux
 
 <li>데이터 캐싱이 가능하고 Redux의 불필요한 코드를 작성할 필요가 없음</li>
 <li>에러, 로딩, fetching 기능을 한 번에 사용이 가능함</li>
