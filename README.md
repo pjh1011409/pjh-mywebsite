@@ -21,6 +21,13 @@
 1. AWS S3 버켓을 옹해 빌드된 프론트 앱 배포
 2. Github Action의 workflow를 통해 저장소 Main branch 변경을 감시
 3. 변화 감시 시 자동으로 다시 프로젝트를 빌드 & 
+
+
+
+
+📎 상세내용 : 
+
+
 </details>
 
 ## 📄 Project Architecture
