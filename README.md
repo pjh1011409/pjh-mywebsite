@@ -140,20 +140,19 @@
 
 # ⚒ Refectoring
 
-<details>
-<summary> ➡️ 중복되는 useState, onChange</summary>
-👉 Before: 
-👉 After: 
+👉 **중복되는 useState, onChange**
+</br>
+**Before:**
+</br>
+**After:**
 
-</details>
 
+👉 **Barrel Structure & 절대경로**
+</br>
+**Before:**
+</br>
+**After:**
 
-<details>
-<summary>💡 Barrel Structure & 절대경로</summary>
-👉 Before: 
-👉 After: 
-
-</details>
-
-👍 상세내용 : https://velog.io/@pjh1011409/Code-Refactoring
+</br>
+📎 상세내용 : https://velog.io/@pjh1011409/Code-Refactoring
 
