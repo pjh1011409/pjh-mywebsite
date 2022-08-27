@@ -7,20 +7,6 @@
 2022.06.20 ~ 2022. 
 
 
-## 🛠 Tools
-
-<p>
-  <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=white">
-  <img src="https://img.shields.io/badge/html-E34F26?style=for-the-badge&logo=html5&logoColor=white">
-  <img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white">
-  <br>
-  <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=black">
-  <img src="https://img.shields.io/badge/redux-764ABC?style=for-the-badge&logo=redux&logoColor=black">
-  <img src="https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white">
-</p>
-
-
-
 
 ### 🔧 주요 기능
 
@@ -44,6 +30,57 @@
 - 공격, 보조, 아이템, 저주 등 4가지 타입의 다양한 카드를 이용한 2:2 카드 게임을 구현했습니다.
 - 각 캐릭터마다의 고유 특성이 있어, 직업에 따른 다양한 전략을 구상할 수 있습니다.
 </details>
+
+
+### 🔧 프로젝트 구현사항
+
+- 필자의 이력 및 자기소개와 개발 프로젝트를 소개하는 페이지 구성
+- CRUD(입력,조회,수정,삭제)기능과 검색 및 필터 기능이 포함된 게시판 
+
+<details>
+<summary>🗨️ MainPage</summary>
+
+- 메인 프로필 창(profile) 및 세부 신상사항(information)
+- 자기소개(aboutMe)
+- 기술스택(techStack)
+- 프로젝트 소개(project)
+- Q&A (question)
+
+</details>
+<details>
+<summary> Dev Log</summary>
+
+
+- 글 목록(StudyMainPage)
+- 글 상세(StudyDetailPage)
+- 글 작성(StudyWritePage)
+- 글 수정(StudyUpdatePage)
+- 글 삭제(StudyDelete)
+
+</details>
+<details>
+<summary>🧙 navigationBar & footerBar</summary>
+
+- 메뉴바(header)
+- 하단바(footer)
+</details>
+
+
+## 🛠 Tools
+
+<p>
+  <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=white">
+  <img src="https://img.shields.io/badge/html-E34F26?style=for-the-badge&logo=html5&logoColor=white">
+  <img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white">
+  <br>
+  <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=black">
+  <img src="https://img.shields.io/badge/redux-764ABC?style=for-the-badge&logo=redux&logoColor=black">
+  <img src="https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white">
+</p>
+
+
+
+
 #### Dev tools
 
 <p> 
