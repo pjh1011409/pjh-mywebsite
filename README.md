@@ -13,7 +13,7 @@
 
 
 <details>
-<summary>## FrontEnd Architecture</summary>
+<summary>FrontEnd Architecture</summary>
 ![image](https://user-images.githubusercontent.com/81337674/187014975-7e6f01ee-aa64-4b98-a3eb-1986bc194cc8.png)
 </details>
 
@@ -63,6 +63,8 @@
   <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=black">
   <img src="https://img.shields.io/badge/redux-764ABC?style=for-the-badge&logo=redux&logoColor=black">
   <img src="https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white">
+  ![](https://img.shields.io/badge/AXIOS-671ddf?style=for-the-badge&logo=AXIOS&logoColor=black)
+
 </p>
 
 
