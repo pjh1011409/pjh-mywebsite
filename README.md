@@ -140,15 +140,15 @@
 
 # ⚒ Refectoring
 
-👉 **중복되는 useState, onChange**
-</br>
+### 👉 중복되는 useState, onChange
+
 **Before:**
 </br>
 **After:**
 
 
-👉 **Barrel Structure & 절대경로**
-</br>
+### 👉 Barrel Structure & 절대경로
+
 **Before:**
 </br>
 **After:**
