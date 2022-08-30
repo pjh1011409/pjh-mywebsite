@@ -1,11 +1,11 @@
 # PJH WebSite
 😀 개인 포트폴리오 사이트입니다. 저에 대한 개인적인 정보와 커리어가 담긴 사이트이며, 더하여 개발스택 공부, CS지식, 면접준비, 회고 등의 글을 게시할 수 있는 개발 블로그를 탑재하고 있습니다.
 
-<img width="460" alt="mywebsite1" src="https://user-images.githubusercontent.com/81337674/187109367-dcde33d0-1d24-4d79-927d-ed0d9a82e69b.png">  <img width="460" alt="mywebsite2" src="https://user-images.githubusercontent.com/81337674/187109401-6d9f59ac-4bd4-494f-b6ad-ba1775a3c613.png">
-<img width="460" alt="mywebsite3" src="https://user-images.githubusercontent.com/81337674/187109409-cd87daac-2160-4730-a061-3f810669855b.png">  <img width="460" alt="mywebsite4" src="https://user-images.githubusercontent.com/81337674/187109420-ac5c5eef-23fb-4dd5-a0ec-61e2fbb812d6.png">
-<img width="460" alt="mywebsite5" src="https://user-images.githubusercontent.com/81337674/187109428-bd158530-deac-446f-b0e5-741d08c29b6d.png">  <img width="460" alt="mywebsite6" src="https://user-images.githubusercontent.com/81337674/187109433-e520d247-8eef-4c09-9d81-1e0f5a8abaf8.png">
-<img width="460" alt="mywebsite7" src="https://user-images.githubusercontent.com/81337674/187109439-822dde38-98f1-4f0a-aab7-687df6aba256.png">  <img width="460" alt="mywebsite8" src="https://user-images.githubusercontent.com/81337674/187109445-5b3dfdd2-e49b-4707-a181-20852f550ba0.png">
-<img width="460" alt="mywebsite9" src="https://user-images.githubusercontent.com/81337674/187109451-6be960c9-0971-4a95-9018-2a5985669306.png">
+<img width="410" alt="mywebsite1" src="https://user-images.githubusercontent.com/81337674/187109367-dcde33d0-1d24-4d79-927d-ed0d9a82e69b.png">  <img width="410" alt="mywebsite2" src="https://user-images.githubusercontent.com/81337674/187109401-6d9f59ac-4bd4-494f-b6ad-ba1775a3c613.png">
+<img width="410" alt="mywebsite3" src="https://user-images.githubusercontent.com/81337674/187109409-cd87daac-2160-4730-a061-3f810669855b.png">  <img width="410" alt="mywebsite4" src="https://user-images.githubusercontent.com/81337674/187109420-ac5c5eef-23fb-4dd5-a0ec-61e2fbb812d6.png">
+<img width="410" alt="mywebsite5" src="https://user-images.githubusercontent.com/81337674/187109428-bd158530-deac-446f-b0e5-741d08c29b6d.png">  <img width="410" alt="mywebsite6" src="https://user-images.githubusercontent.com/81337674/187109433-e520d247-8eef-4c09-9d81-1e0f5a8abaf8.png">
+<img width="410" alt="mywebsite7" src="https://user-images.githubusercontent.com/81337674/187109439-822dde38-98f1-4f0a-aab7-687df6aba256.png">  <img width="410" alt="mywebsite8" src="https://user-images.githubusercontent.com/81337674/187109445-5b3dfdd2-e49b-4707-a181-20852f550ba0.png">
+<img width="410" alt="mywebsite9" src="https://user-images.githubusercontent.com/81337674/187109451-6be960c9-0971-4a95-9018-2a5985669306.png">
 
 # 🗓 프로젝트 기간
 
