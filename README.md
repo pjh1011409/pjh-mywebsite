@@ -1,11 +1,11 @@
 # PJH WebSite
 😀 개인 포트폴리오 사이트입니다. 저에 대한 개인적인 정보와 커리어가 담긴 사이트이며, 더하여 개발스택 공부, CS지식, 면접준비, 회고 등의 글을 게시할 수 있는 개발 블로그를 탑재하고 있습니다.
 
-<img width="500" alt="mywebsite1" src="https://user-images.githubusercontent.com/81337674/187109367-dcde33d0-1d24-4d79-927d-ed0d9a82e69b.png">  <img width="500" alt="mywebsite2" src="https://user-images.githubusercontent.com/81337674/187109401-6d9f59ac-4bd4-494f-b6ad-ba1775a3c613.png">
-<img width="500" alt="mywebsite3" src="https://user-images.githubusercontent.com/81337674/187109409-cd87daac-2160-4730-a061-3f810669855b.png">  <img width="500" alt="mywebsite4" src="https://user-images.githubusercontent.com/81337674/187109420-ac5c5eef-23fb-4dd5-a0ec-61e2fbb812d6.png">
-<img width="500" alt="mywebsite5" src="https://user-images.githubusercontent.com/81337674/187109428-bd158530-deac-446f-b0e5-741d08c29b6d.png">  <img width="500" alt="mywebsite6" src="https://user-images.githubusercontent.com/81337674/187109433-e520d247-8eef-4c09-9d81-1e0f5a8abaf8.png">
-<img width="500" alt="mywebsite7" src="https://user-images.githubusercontent.com/81337674/187109439-822dde38-98f1-4f0a-aab7-687df6aba256.png">  <img width="500" alt="mywebsite8" src="https://user-images.githubusercontent.com/81337674/187109445-5b3dfdd2-e49b-4707-a181-20852f550ba0.png">
-<img width="500" alt="mywebsite9" src="https://user-images.githubusercontent.com/81337674/187109451-6be960c9-0971-4a95-9018-2a5985669306.png">
+<img width="460" alt="mywebsite1" src="https://user-images.githubusercontent.com/81337674/187109367-dcde33d0-1d24-4d79-927d-ed0d9a82e69b.png">  <img width="460" alt="mywebsite2" src="https://user-images.githubusercontent.com/81337674/187109401-6d9f59ac-4bd4-494f-b6ad-ba1775a3c613.png">
+<img width="460" alt="mywebsite3" src="https://user-images.githubusercontent.com/81337674/187109409-cd87daac-2160-4730-a061-3f810669855b.png">  <img width="460" alt="mywebsite4" src="https://user-images.githubusercontent.com/81337674/187109420-ac5c5eef-23fb-4dd5-a0ec-61e2fbb812d6.png">
+<img width="460" alt="mywebsite5" src="https://user-images.githubusercontent.com/81337674/187109428-bd158530-deac-446f-b0e5-741d08c29b6d.png">  <img width="460" alt="mywebsite6" src="https://user-images.githubusercontent.com/81337674/187109433-e520d247-8eef-4c09-9d81-1e0f5a8abaf8.png">
+<img width="460" alt="mywebsite7" src="https://user-images.githubusercontent.com/81337674/187109439-822dde38-98f1-4f0a-aab7-687df6aba256.png">  <img width="460" alt="mywebsite8" src="https://user-images.githubusercontent.com/81337674/187109445-5b3dfdd2-e49b-4707-a181-20852f550ba0.png">
+<img width="460" alt="mywebsite9" src="https://user-images.githubusercontent.com/81337674/187109451-6be960c9-0971-4a95-9018-2a5985669306.png">
 
 # 🗓 프로젝트 기간
 
@@ -23,12 +23,38 @@
 <details>
 <summary>About Detail Architecture Flow</summary>
 
-###  Deployment automation(배포 자동화)
-1. AWS S3 버켓을 옹해 빌드된 프론트 앱 배포
-2. Github Action의 workflow를 통해 저장소 Main branch 변경을 감시
-3. 변화 감시 시 자동으로 다시 프로젝트를 빌드 & 
+### 1. AWS S3
+build한 파일들을 S3라는 온라인 스토리지 서비스에 저장하여 다른 사용자들에게 인터넷을 통해 제공하기 위해 사용( = 컨텐츠를 저장하고 배포할 때 사용)
 
 
+###2. Cloud Front
+CDN 서비스를 이용하여 캐싱을 통해 사용자에게 콘텐츠를 빠르게 지원하기 위해 사용
+
+### 3. Amazon Route 53
+웹사이트의 도메인 이름을 등록하고, 도메인 이름 입력 시 브라우저를 웹사이트에 연결하도록 도우며, 인터넷을 통해 웹 서버 같은 리소스로 자동화된 요청을 보내어 접근 및 사용이 가능하고 정상 작동 중인지를 확인하기 위해 사용
+
+### 4. Github Actions
+최신화에 맞춰서 배포를 자동화하는 기능을 위해 사용
+
+### 5. Amazon EC2
+가상 서버를 구축하고 보안 및 네트워킹을 구성하여, 쉽게 웹 규모의 클라우드 컴퓨팅 작업을 할 수 있도록 설계하여 빠르게 애플리케이션을 개발하고 배포하기 위해 사용
+
+### 6. Nginx
+WAS의 부담을 줄여, 작은 자원의 사용으로 높은 성능과 높은 동시성을 위해 웹서버사용
+
+### 7. Gunicorn Server
+Nginx와 Django 사이의 Request을 처리해주기위해 WSGI사용
+
+### 8. Redis*
+캐시를 통해 ORM의 결과를 가져와서 DB의 부하를 줄여주기 위해 NoSQL 사용
+
+
+### 9. Amazon RDS
+EC2에 직접 구축하는 것보다 더 많은 부분을 관리할 수 있고 편리하게 사용하기 위해 AWS 관계형 데이터베이스 사용
+
+### 10. AWS S3 File Upload
+정적페이지를 서비스하는 S3에 프로젝트 내의 이미지파일들을 업로드하기 위해 사용
+클라이언트 쪽에서 UUID 방식으로 파일명을 변경하여 업로드
 
 
 📎 상세내용 : 
@@ -37,7 +63,7 @@
 </details>
 
 # 📄 Project Architecture
-<img width="700" alt="Project Architecture" src="https://user-images.githubusercontent.com/81337674/187020503-d955158b-c110-482f-a4e0-ac3619d708ae.png">
+<img width="820" alt="프로젝트 아키텍처" src="https://user-images.githubusercontent.com/81337674/187404534-7e497fe4-cfd9-4c53-92d9-c83522755fa0.png">
 
 
 
