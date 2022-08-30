@@ -18,7 +18,7 @@
 
 
 # 💻 Service Architecture
-<img width="744" alt="아키텍처" src="https://user-images.githubusercontent.com/81337674/187020302-211d9d27-3eb9-49ad-b5db-63f709f4c234.png">
+<img width="820" alt="프로젝트 아키텍처" src="https://user-images.githubusercontent.com/81337674/187406487-c00194b8-ca1b-4834-927a-bc6bec2385ef.png">
 
 <details>
 <summary>About Detail Architecture Flow</summary>
