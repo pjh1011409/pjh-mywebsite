@@ -63,7 +63,7 @@ EC2에 직접 구축하는 것보다 더 많은 부분을 관리할 수 있고 �
 </details>
 
 # 📄 Project Architecture
-<img width="820" alt="프로젝트 아키텍처" src="https://user-images.githubusercontent.com/81337674/187404534-7e497fe4-cfd9-4c53-92d9-c83522755fa0.png">
+<img width="815" alt="Project Structure(screen)" src="https://user-images.githubusercontent.com/81337674/187407159-99f39119-20ed-4b69-830d-efb4cd18b246.png">
 
 
 
