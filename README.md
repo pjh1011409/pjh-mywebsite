@@ -18,7 +18,6 @@
 
 
 # 💻 Service Architecture
-<img width="820" alt="프로젝트 아키텍처" src="https://user-images.githubusercontent.com/81337674/187406487-c00194b8-ca1b-4834-927a-bc6bec2385ef.png">
 
 <details>
 <summary>About Detail Architecture Flow</summary>
@@ -53,14 +52,16 @@ Nginx와 Django 사이의 Request을 처리해주기위해 WSGI사용
 EC2에 직접 구축하는 것보다 더 많은 부분을 관리할 수 있고 편리하게 사용하기 위해 AWS 관계형 데이터베이스 사용
 
 ### 10. AWS S3 File Upload
-정적페이지를 서비스하는 S3에 프로젝트 내의 이미지파일들을 업로드하기 위해 사용
-클라이언트 쪽에서 UUID 방식으로 파일명을 변경하여 업로드
+정적페이지를 서비스하는 S3에 프로젝트 내의 이미지파일들을 업로드하기 위해 사용.</br>
+클라이언트 쪽에서 UUID 방식으로 파일명을 변경하여 업로드.
 
 
 📎 상세내용 : [MyWebSite 배포과정](https://velog.io/@pjh1011409/MyWebSite-%EB%B0%B0%ED%8F%AC%EA%B3%BC%EC%A0%95)
 
 
 </details>
+
+<img width="820" alt="프로젝트 아키텍처" src="https://user-images.githubusercontent.com/81337674/187406487-c00194b8-ca1b-4834-927a-bc6bec2385ef.png">
 
 # 📄 Project Architecture
 <img width="815" alt="Project Structure(screen)" src="https://user-images.githubusercontent.com/81337674/187407159-99f39119-20ed-4b69-830d-efb4cd18b246.png">
