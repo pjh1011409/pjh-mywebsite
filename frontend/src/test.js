@@ -1,24 +1,24 @@
 import React, { useState, useEffect } from 'react';
 // import AuthContext from 'src/context/AuthContext';
-import useAxios from '../src/utils/useAxios';
+import useAxios from './utils/useAxios';
 
-const Test = () => {
+function Test() {
   const [notes, setNotes] = useState([]);
   //   const { authTokens, logoutUser } = useContext(AuthContext);
 
   const api = useAxios();
 
-  useEffect(() => {
-    getNotes();
-  }, []);
-
-  let getNotes = async () => {
-    let response = await api.get('/api/notes/');
+  const getNotes = async () => {
+    const response = await api.get('/api/notes/');
 
     if (response.status === 200) {
       setNotes(response.data);
     }
   };
+
+  useEffect(() => {
+    getNotes();
+  }, []);
 
   return (
     <div>
@@ -31,6 +31,6 @@ const Test = () => {
       </ul>
     </div>
   );
-};
+}
 
 export default Test;

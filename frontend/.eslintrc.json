@@ -15,7 +15,13 @@
   "plugins": ["react"],
   "rules": {
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-    "import/no-unresolved": "off"
+    "import/no-unresolved": "off",
+    "no-unused-vars": "off",
+    "default-param-last": 0,
+    "react/prop-types": "off",
+    "react/jsx-props-no-spreading": "off",
+    "import/prefer-default-export": "off",
+    "no-use-before-define": "off"
   },
   "ignorePatterns": ["build, dist, public, node_modules"]
 }

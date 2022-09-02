@@ -1,47 +1,44 @@
-import axios from 'axios'
-import jwt_decode from "jwt-decode";
-import dayjs from 'dayjs'
-import { useContext } from 'react'
-import AuthContext from '../context/AuthContext'
+import axios from 'axios';
+import jwtDecode from 'jwt-decode';
+import dayjs from 'dayjs';
+import { useContext } from 'react';
+import AuthContext from '../context/AuthContext';
 
-
-const baseURL = 'http://127.0.0.1:8000'
-
+const baseURL = 'http://127.0.0.1:8000';
 
 const useAxios = () => {
-    const {authTokens, setUser, setAuthTokens} = useContext(AuthContext)
-    const axiosInstance = axios.create({
-        baseURL,
-        headers:{Authorization: `Bearer ${authTokens?.access}`}
+  const { authTokens, setUser, setAuthTokens } = useContext(AuthContext);
+  const axiosInstance = axios.create({
+    baseURL,
+    headers: { Authorization: `Bearer ${authTokens?.access}` },
+  });
+
+  axiosInstance.interceptors.request.use(async req => {
+    if (!authTokens) {
+      // eslint-disable-next-line no-const-assign
+      authTokens = localStorage.getItem('authTokens') ? JSON.parse(localStorage.getItem('authTokens')) : null;
+      req.headers.Authorization = `Bearer ${authTokens?.access}`;
+    }
+
+    const user = jwtDecode(authTokens.access);
+    const isExpired = dayjs.unix(user.exp).diff(dayjs()) < 1;
+
+    if (!isExpired) return req;
+
+    const response = await axios.post(`${baseURL}/api/token/refresh/`, {
+      refresh: authTokens.refresh,
     });
 
+    localStorage.setItem('authTokens', JSON.stringify(response.data));
 
-    axiosInstance.interceptors.request.use(async req => {
-        if(!authTokens){
-            authTokens = localStorage.getItem('authTokens') ? JSON.parse(localStorage.getItem('authTokens')) : null
-            req.headers.Authorization = `Bearer ${authTokens?.access}`
-        }
-    
+    setAuthTokens(response.data);
+    setUser(jwtDecode(response.data.access));
 
-        const user = jwt_decode(authTokens.access)
-        const isExpired = dayjs.unix(user.exp).diff(dayjs()) < 1;
-    
-        if(!isExpired) return req
-    
-        const response = await axios.post(`${baseURL}/api/token/refresh/`, {
-            refresh: authTokens.refresh
-          });
-    
-        localStorage.setItem('authTokens', JSON.stringify(response.data))
-        
-        setAuthTokens(response.data)
-        setUser(jwt_decode(response.data.access))
-        
-        req.headers.Authorization = `Bearer ${response.data.access}`
-        return req
-    })
-    
-    return axiosInstance
-}
+    req.headers.Authorization = `Bearer ${response.data.access}`;
+    return req;
+  });
+
+  return axiosInstance;
+};
 
 export default useAxios;

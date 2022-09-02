@@ -10,8 +10,8 @@ import Test from 'test';
 // ------------------authentication(utils & context)---------------------------
 import PrivateRoute from 'utils/PrivateRoute';
 import { AuthProvider } from 'context/AuthContext';
-import { StudyDetail, StudyWrite, StudyUpdate, StudyMain } from './studyPage';
 import LoginPage from './loginPage/loginPage';
+import { StudyDetail, StudyWrite, StudyUpdate, StudyMain } from './studyPage';
 import MainPage from './mainPage/mainPage';
 
 function App() {
@@ -23,11 +23,9 @@ function App() {
           path="/studyMain/*"
           element={
             <AuthProvider>
-              <PrivateRoute>
-                <StudyMain>
-                  <Header />
-                </StudyMain>
-              </PrivateRoute>
+              <StudyMain>
+                <Header />
+              </StudyMain>
             </AuthProvider>
           }
         />
