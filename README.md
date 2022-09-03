@@ -251,6 +251,8 @@ HTTPS 연결을 위해 리버스 프록시를 수행해줄 웹서버가 필요�
     }
 }
 ```
+> 📎 상세내용 : [ESLint & Prettier]([https://velog.io/@pjh1011409/%EB%A1%9C%EA%B7%B8%EC%9D%B8-%EA%B5%AC%ED%98%84-React](https://velog.io/@pjh1011409/ESLint-Prettier))(velog) / 
+  
 ### Django Convention
   
 ### Git Commit Convention
@@ -278,8 +280,8 @@ HTTPS 연결을 위해 리버스 프록시를 수행해줄 웹서버가 필요�
 </br>
 **trouble shooting**: redux-persist를 사용하여 reducer 값들을 localStorage 또는 session에 저장하여 새로고침하여도 저장공간에 있는 데이터를 redux에 불러온다.
 
-> 📎 상세내용 : [Issue & TroubleShooting](https://velog.io/@pjh1011409/%EC%9D%B4%EC%8A%88-%ED%8A%B8%EB%9F%AC%EB%B8%94-%EC%8A%88%ED%8C%85
-  )(velog)
+
+> 📎 상세내용 : [Issue & TroubleShooting](https://velog.io/@pjh1011409/%EC%9D%B4%EC%8A%88-%ED%8A%B8%EB%9F%AC%EB%B8%94-%EC%8A%88%ED%8C%85)
   
 # ⚒ Refectoring
 
