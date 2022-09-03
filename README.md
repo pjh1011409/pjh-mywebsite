@@ -251,7 +251,7 @@ HTTPS 연결을 위해 리버스 프록시를 수행해줄 웹서버가 필요�
     }
 }
 ```
-> 📎 상세내용 : [ESLint & Prettier]([https://velog.io/@pjh1011409/%EB%A1%9C%EA%B7%B8%EC%9D%B8-%EA%B5%AC%ED%98%84-React](https://velog.io/@pjh1011409/ESLint-Prettier))(velog) / 
+> 📎 상세내용 : [ESLint & Prettier](https://velog.io/@pjh1011409/ESLint-Prettier) (velog) 
   
 ### Django Convention
   
