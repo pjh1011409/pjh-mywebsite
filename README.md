@@ -201,10 +201,56 @@ HTTPS 연결을 위해 리버스 프록시를 수행해줄 웹서버가 필요�
 ### MySQL 
   메인 로직에는 1대N 관계가 존재하여 관계형 DB인 MySQL을 사용했습니다.
 
-# ⌨️ Code Convention
+# ⌨️ Convention
   
-### React Convention
+
+###  ✏️ ESLint & Prettier
+
+#### Prettier
+
+.prettierrc
+```
+{
+  "singleQuote": true,     //  쌍따옴표가 아닌 홑따옴표를 사용
+  "semi": true,            // statement 마지막에 세미콜론을 찍음
+  "useTabs": false,        // 탭을 사용하지 않고 스페이스를 사용
+  "tabWidth": 2,           // 탭을 할 경우 2 스페이스
+  "trailingComma": "all",  // 선호되는 한 줄의 길이, 줄바꿈 한폭 길이
+  "printWidth": 120,       // 여러줄로 나뉘었을 때는 쉼표를 사용
+  "arrowParens": "avoid",  // 화살표 함수에서 괄호 사용 의무화
+  "endOfLine": "auto"      // 파일의 마지막에는 EOL을 보장
+  }
+```
+
+#### ESLint
   
+.eslintrc.json
+```
+{
+    "env": {
+        "browser": true,
+        "es2021": true,
+        "node": true
+    },
+    "extends": [
+        "plugin:react/recommended",
+        "airbnb"
+    ],
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 12,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react"
+    ],
+    "rules": {
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
+    }
+}
+```
 ### Django Convention
   
 ### Git Commit Convention
