@@ -21,7 +21,7 @@ function LoginRecordHeader() {
           className={styles.navImg}
         />
         <div as={Link} to="/" className={styles.navTitle}>
-          PJH&#39s WebSite
+          PJH&#39;s WebSite
         </div>
         {/* 토글을 클릭하게되면 x가 뜨게되고, 그렇지 않으면 버거모양유지 */}
         <div
@@ -64,7 +64,7 @@ function LoginRecordHeader() {
                 <div>
                   <img
                     alt="안녕(이미지없음)"
-                    src={`${process.env.PUBLIC_URL}/static/images/hello.png`}
+                    src={`${process.env.PUBLIC_URL}/static/images/login/hello.png`}
                     className={styles.helloImg}
                   />
                   <div className={styles.userName}> {user.username}님 환영합니다</div>

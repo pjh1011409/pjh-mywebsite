@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './profile.module.css';
 
-function Profile(handleIndexClick) {
+function Profile({ handleIndexClick }) {
   return (
     <div className={styles.profileBg}>
       <div className={styles.profileMain}>

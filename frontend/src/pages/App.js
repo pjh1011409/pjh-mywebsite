@@ -6,7 +6,6 @@ import './App.css';
 
 // ----------------components & data---------------------------------
 import { Header, LoginRecordHeader } from 'components/common';
-import Test from 'test';
 // ------------------authentication(utils & context)---------------------------
 import PrivateRoute from 'utils/PrivateRoute';
 import { AuthProvider } from 'context/AuthContext';
@@ -23,9 +22,11 @@ function App() {
           path="/studyMain/*"
           element={
             <AuthProvider>
-              <StudyMain>
-                <Header />
-              </StudyMain>
+              <PrivateRoute>
+                <StudyMain>
+                  <Header />
+                </StudyMain>
+              </PrivateRoute>
             </AuthProvider>
           }
         />
@@ -82,17 +83,6 @@ function App() {
             <AuthProvider>
               <PrivateRoute>
                 <StudyUpdate />
-              </PrivateRoute>
-            </AuthProvider>
-          }
-        />
-        <Route
-          exact
-          path="/test"
-          element={
-            <AuthProvider>
-              <PrivateRoute>
-                <Test />
               </PrivateRoute>
             </AuthProvider>
           }

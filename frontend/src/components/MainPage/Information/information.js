@@ -15,7 +15,6 @@ function Information() {
     // faPhone,
     faEnvelope,
     faGraduationCap,
-    faFile,
   ]);
   const [infoData, setInfoData] = useState([
     '1998.03.16',
@@ -23,7 +22,6 @@ function Information() {
     // '010-2854-5794',
     'pjh31208@naver.com',
     '컴퓨터공학전공',
-    '이력서 보러가기',
   ]);
   return (
     <div style={{ backgroundColor: '#ebf2ee' }}>
@@ -41,6 +39,18 @@ function Information() {
                     </Col>
                   );
                 })}
+                <Col sm className={styles.info}>
+                  {' '}
+                  <FontAwesomeIcon icon={faFile} style={{ marginBottom: '10px' }} />
+                  <h4>
+                    <a
+                      href="https://www.notion.so/FE-Developer-49b3dae4389842d1bc1aac561b1a671f"
+                      style={{ color: 'black' }}
+                    >
+                      이력서 보러가기
+                    </a>
+                  </h4>
+                </Col>
               </Row>
             </div>
           </Col>

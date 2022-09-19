@@ -132,7 +132,8 @@ function StudyUpdate() {
             <Col sm={8} className={styles.form}>
               Title
               <Form.Control
-                ref={el => inputRef.current[0] === el}
+                // eslint-disable-next-line no-return-assign
+                ref={el => (inputRef.current[0] = el)}
                 name="title"
                 type="text"
                 value={title || ''}
@@ -146,7 +147,8 @@ function StudyUpdate() {
             <Col sm={4} className={styles.categoryLayout}>
               Category
               <select
-                ref={el => inputRef.current[1] === el}
+                // eslint-disable-next-line no-return-assign
+                ref={el => (inputRef.current[1] = el)}
                 name="category"
                 value={category || ''}
                 onChange={onChange}
@@ -169,7 +171,8 @@ function StudyUpdate() {
             <Col sm className={styles.form}>
               Sub Title
               <FormControl
-                ref={el => inputRef.current[2] === el}
+                // eslint-disable-next-line no-return-assign
+                ref={el => (inputRef.current[2] = el)}
                 name="subTitle"
                 onChange={onChange}
                 type="text"

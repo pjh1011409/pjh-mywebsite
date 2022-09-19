@@ -23,11 +23,11 @@ function LoginPage() {
                   Welcome !{' '}
                   <img
                     className={styles.welcomeIcon}
-                    src={`${process.env.PUBLIC_URL}./static/images/welcome-icon.png`}
+                    src={`${process.env.PUBLIC_URL}./static/images/login/welcome-icon.png`}
                     alt="환영합니다(이미지없음)"
                   />
                 </h1>
-                <p>Register to use this site &#39 s personal blog</p>
+                <p>Register to use this site &#39;s personal blog</p>
                 <p>👇 Please sign up to log in</p>
                 <button type="button" className={styles.signUpBtn}>
                   Sign Up
