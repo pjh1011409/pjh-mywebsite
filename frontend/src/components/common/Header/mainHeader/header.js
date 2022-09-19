@@ -84,7 +84,7 @@ function Header({ handleIndexClick }) {
                 <div>
                   <img
                     alt="안녕(이미지없음)"
-                    src={`${process.env.PUBLIC_URL}/static/images/hello.png`}
+                    src={`${process.env.PUBLIC_URL}/static/images/login/hello.png`}
                     className={styles.helloImg}
                   />
                   <div className={styles.userName}> {user.username}님 환영합니다</div>

@@ -68,15 +68,6 @@ function StudyMain() {
       <LoginRecordHeader />
 
       <div className={styles.studyMainBg}>
-        <button
-          type="button"
-          onClick={() => {
-            navigate('/test');
-          }}
-        >
-          d
-        </button>
-
         <Tab.Container id="left-tabs-example">
           <Row>
             <Col sm={3} style={{ backgroundColor: '' }}>

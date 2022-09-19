@@ -21,7 +21,8 @@
     "react/prop-types": "off",
     "react/jsx-props-no-spreading": "off",
     "import/prefer-default-export": "off",
-    "no-use-before-define": "off"
+    "no-use-before-define": "off",
+    "react/function-component-definition": [2, { "namedcomponents": "arrow-function" }]
   },
   "ignorePatterns": ["build, dist, public, node_modules"]
 }

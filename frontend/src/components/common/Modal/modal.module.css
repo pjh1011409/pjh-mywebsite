@@ -1,6 +1,6 @@
 .modal {
   position: fixed;
-  top: 180px;
+  top: 120px;
   right: 0;
   bottom: 0;
   left: 0;
@@ -12,7 +12,6 @@
   animation: modal-bg-show 0.3s;
   margin-bottom: 39px;
 }
-
 
 @keyframes modal-show {
   from {
@@ -33,42 +32,69 @@
   }
 }
 
-
-
-.modalSection{
-width: 100%;
-margin: 0 auto;
-border-radius: 0.3rem;
-background-color:#faf7e7;
-/* 팝업이 열릴때 스르륵 열리는 효과 */
-animation: modal-show 0.3s;
-overflow: hidden;
-}
-
-.modalMain{
-height: auto;
-}
-
-
-.inner1{
+.modalSection {
+  margin: 0 auto;
   width: 100%;
-  height: 700px;
-  overflow: auto;
-  margin-bottom: 30px;
+  height: 800px;
+  overflow: scroll;
+  background-color: rgb(108, 108, 236);
+  /* 팝업이 열릴때 스르륵 열리는 효과 */
+  animation: modal-show 0.3s;
+}
+.inner {
+  width: 97%;
+  height: auto;
+  border: 1px solid white;
+  border-radius: 15px 15px;
+  margin: 0 auto;
+  padding: 0px 20px;
+  margin-top: 100px;
+  margin-bottom: 50px;
+  background-color: white;
 }
 
-.inner2{
-width: 95%;
-height: 1000px;
-border: 1px solid;
-margin: 0 auto;
-margin-top: 10px;
+.projectName {
+  padding: 15px;
+  font-weight: bolder;
+  color: rgb(37, 22, 83);
 }
 
+.projectDetail {
+  color: red;
+  font-size: 15px;
+}
 
-.close{
-display: block;
-float: right;
-margin: px;
-color: rgb(25, 100, 25)
+.projectURL,
+.projectTools,
+.projectFunction,
+.projectArchitecture,
+.projectReadMe {
+  padding: 10px 0px;
+  font-weight: bold;
+}
+
+.ArchitectureImg {
+  width: 85%;
+  height: 450px;
+}
+
+.frontend,
+.backend,
+.database,
+.deployment {
+  padding: 0px 20px;
+  line-height: 30px;
+}
+
+.func {
+  padding: 0px 20px;
+  line-height: 30px;
+}
+
+.close {
+  display: block;
+  float: right;
+  margin-top: 60px;
+  margin-right: 10px;
+  color: white;
 }

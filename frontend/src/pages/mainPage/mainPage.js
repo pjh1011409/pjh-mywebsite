@@ -1,3 +1,4 @@
+/* eslint-disable no-return-assign */
 // ----------------react & hooks-------------------------------------
 import React, { useRef } from 'react';
 
@@ -59,16 +60,16 @@ function MainPage() {
       <Header handleIndexClick={handleIndexClick} />
       <Profile handleIndexClick={handleIndexClick} />
       <Information />
-      <div ref={el => NavRef.current[0] === el}>
+      <div ref={el => (NavRef.current[0] = el)}>
         <AboutMe />
       </div>
-      <div ref={el => NavRef.current[1] === el}>
+      <div ref={el => (NavRef.current[1] = el)}>
         <TechStack />
       </div>
-      <div ref={el => NavRef.current[2] === el}>
+      <div ref={el => (NavRef.current[2] = el)}>
         <MyProject />
       </div>
-      <div ref={el => NavRef.current[3] === el}>
+      <div ref={el => (NavRef.current[3] = el)}>
         <Question />
       </div>
       <PositionContainer>

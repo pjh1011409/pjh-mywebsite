@@ -11,6 +11,13 @@ import styles from './aboutMe.module.css';
 function AboutMe() {
   const [image, setImage] = useState(AboutMeImage);
   const [data, setData] = useState(AboutMeData);
+
+  const [href, setHref] = useState([
+    'https://www.notion.so/FE-Developer-49b3dae4389842d1bc1aac561b1a671f',
+    'https://velog.io/@pjh1011409',
+    'https://github.com/pjh1011409',
+    'https://www.instagram.com/invites/contact/?i=1sdkt27ej1q0q&utm_content=1ipqsn5',
+  ]);
   return (
     <div style={{ backgroundColor: '#0078AA' }}>
       <div className={styles.aboutMeBg}>
@@ -35,14 +42,16 @@ function AboutMe() {
           <div className={styles.aboutFooter}>
             <div className={styles.aboutSns}>
               <div className={styles.messsengerDiv}>
-                {image.map(img => {
+                {image.map((img, i) => {
                   return (
-                    <img
-                      alt="메신저(이미지없음)"
-                      className={styles.messenger}
-                      key={img}
-                      src={`${process.env.PUBLIC_URL}./static/images/messenger/${img}`}
-                    />
+                    <a href={href[i]}>
+                      <img
+                        alt="메신저(이미지없음)"
+                        className={styles.messenger}
+                        key={img}
+                        src={`${process.env.PUBLIC_URL}./static/images/messenger/${img}`}
+                      />
+                    </a>
                   );
                 })}
               </div>
