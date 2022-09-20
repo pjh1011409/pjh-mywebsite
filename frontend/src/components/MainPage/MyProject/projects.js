@@ -7,7 +7,7 @@ import { faCircleCheck } from '@fortawesome/free-regular-svg-icons';
 // ----------------components & data---------------------------------
 import { Images, ProjectData, Stack } from 'data/projectData';
 import styles from './projects.module.css';
-import { Modal, Slide } from '../../common';
+import { Modal, ProjectSlide } from '../../common';
 
 function Projects() {
   const [projectData, setProjectData] = useState(ProjectData);
@@ -41,7 +41,7 @@ function Projects() {
                   <div className={styles.inner}>
                     <div className={styles.innerRow}>
                       <div className={styles.projectPhoto}>
-                        <Slide images={images} i={i} />
+                        <ProjectSlide images={images} i={i} />
                       </div>
                       <div className={styles.projectInfo}>
                         <div className={styles.projectTitle}>

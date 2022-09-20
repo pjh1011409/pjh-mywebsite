@@ -7,7 +7,7 @@ import styles from './header.module.css';
 function Header({ handleIndexClick }) {
   const { user, logoutUser } = useContext(AuthContext);
 
-  const [menu, setMenu] = useState(['AboutMe', 'TechStack', 'Projects', 'Q&A']);
+  const [menu, setMenu] = useState(['AboutMe', 'TechStack', 'Projects', 'Q&A', 'Studying']);
   const [menuToggle, setMenuToggle] = useState(false);
   // 메뉴리스트를 클릭할 시 토글이 false가 되어 자동적으로 메뉴박스닫힘 기능 구현
   const onClickNav = i => {
