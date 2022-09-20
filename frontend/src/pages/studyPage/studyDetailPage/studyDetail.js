@@ -58,7 +58,7 @@ function StudyDetail() {
               {' '}
               <img
                 alt="카테고리(이미지없음)"
-                src="/static/images/study/category-icon.png"
+                src="/static/images/studyDetail/category-icon.png"
                 className={styles.studyImg}
               />
               [ {data.category} ]
@@ -66,7 +66,7 @@ function StudyDetail() {
             <div className={styles.title}>
               <img
                 alt="제목(이미지없음)"
-                src={`${process.env.PUBLIC_URL}/static/images/study/title-icon.png`}
+                src={`${process.env.PUBLIC_URL}/static/images/studyDetail/title-icon.png`}
                 className={styles.studyImg}
               />
               {data.title}
@@ -74,7 +74,7 @@ function StudyDetail() {
             <div className={styles.subTitle}>
               <img
                 alt="부제목(이미지없음)"
-                src={`${process.env.PUBLIC_URL}/static/images/study/about-icon.png`}
+                src={`${process.env.PUBLIC_URL}/static/images/studyDetail/about-icon.png`}
                 className={styles.studyImg}
               />
               : {data.subTitle}

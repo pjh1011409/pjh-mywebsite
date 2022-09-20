@@ -1,26 +1,24 @@
-
-
-.projectBg{
+.projectBg {
   padding: 80px 0px;
   height: auto;
   max-width: 100rem;
   margin: 0 auto;
 }
 
-.projectHead{
+.projectHead {
   text-align: center;
   font-size: 50px;
   margin-bottom: 30px;
   font-family: 'Cairo', sans-serif;
   font-weight: bold;
-  color: #0f2b47;;
+  color: #0f2b47;
 }
 
-.projectHeadIcon{
+.projectHeadIcon {
   width: 40px;
   margin-right: 10px;
 }
-.project{
+.project {
   margin: 0 auto;
 }
 
@@ -45,53 +43,52 @@
   height: auto;
 }
 
-.projectPhoto{
+.projectPhoto {
   height: 430px;
 }
 
-.projectInfo{
+.projectInfo {
   width: 90%;
   height: auto;
   margin: 0 auto;
 }
 
-.projectTitle{
+.projectTitle {
   margin: 15px 5px;
   font-size: clamp(1.3em, 1.5vw, 1.5rem);
 }
-.projectTitle img{
+.projectTitle img {
   width: 30px;
   margin-right: 10px;
 }
-.projectIntro{
+.projectIntro {
   margin: 15px 5px;
-  font-size: clamp(1.0em, 1.2vw, 1.2rem);
+  font-size: clamp(1em, 1.2vw, 1.2rem);
 }
 
-.projectIntro img{
+.projectIntro img {
   width: 30px;
   margin-right: 10px;
 }
 
-.projectStack{
+.projectStack {
   display: inline-block;
   margin: 10px 6px;
   background-color: rgb(153, 226, 243);
   border-radius: 5px;
   padding: 2px 7px;
 }
-.projectStack:hover{
+.projectStack:hover {
   transform: scale(1.1);
   cursor: pointer;
 }
 
-.projectPeriod{
+.projectPeriod {
   font-size: 20px;
-  margin: 10px
+  margin: 10px;
 }
 
-
-.modalBg{
+.modalBg {
   width: 100%;
   display: flex;
   justify-content: center;

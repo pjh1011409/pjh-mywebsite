@@ -1,0 +1,23 @@
+.studyName {
+  margin-top: 20px;
+  padding: 0px 15px;
+  font-size: 25px;
+  color: #002541;
+}
+
+.studyExplain {
+  margin: 20px 0px;
+  font-size: 20px;
+  padding: 0px 15px;
+  color: rgb(9, 9, 254);
+}
+
+.velogSite {
+  padding: 0px 15px;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.icon {
+  width: 22px;
+}

@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleUp } from '@fortawesome/free-regular-svg-icons';
 // ----------------components & data---------------------------------
 import { Header, Footer } from 'components/common';
-import { Profile, Information, AboutMe, TechStack, MyProject, Question } from 'components/MainPage';
+import { Profile, Information, AboutMe, TechStack, MyProject, Question, Studying } from 'components/MainPage';
 
 const PositionContainer = styled.div`
   position: fixed;
@@ -71,6 +71,9 @@ function MainPage() {
       </div>
       <div ref={el => (NavRef.current[3] = el)}>
         <Question />
+      </div>
+      <div ref={el => (NavRef.current[4] = el)}>
+        <Studying />
       </div>
       <PositionContainer>
         <TopButton onClick={handleScroll}>

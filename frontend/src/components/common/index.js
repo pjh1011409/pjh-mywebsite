@@ -4,5 +4,5 @@ export { default as Footer } from './Footer/footer';
 
 export { default as Modal } from './Modal/modal';
 export { default as Pagination } from './Pagination/pagination';
-export { default as Slide } from './Slide/slide';
+export { ProjectSlide, StudyingSlide } from './Slide/slide';
 export { default as TextEditor } from './TextEditor/textEditor';
