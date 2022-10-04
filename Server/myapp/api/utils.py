@@ -8,7 +8,7 @@ from .form import *
 
 
 def getNotesList(request):
-    notes = Note.objects.all().order_by('-updated')
+    notes = Note.objects.all()
     serializer = NoteSerializer(notes, many=True)
     return Response(serializer.data)
 
@@ -26,7 +26,7 @@ def createNote(request):
         subTitle = request.POST['subTitle']
         body = request.POST['body']
         image = request.FILES.get('image')
-        
+
         fileupload = Note(
             title=title,
             subTitle=subTitle,
@@ -36,7 +36,6 @@ def createNote(request):
         )
         fileupload.save()
         return redirect('create-note')
-  
 
         # form = NoteForm(request.POST)
         # if form.is_valid():

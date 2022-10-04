@@ -1,8 +1,9 @@
 from pyexpat import model
+from tkinter import CASCADE
 from unicodedata import category
 from django.db import models
 from datetime import datetime    
-
+from django.contrib.auth.models import User
 # Create your models here.
 # python manage.py makemigrations
 # python manage.py migrate
@@ -12,7 +13,7 @@ class Note(models.Model):
     subTitle = models.CharField(max_length=30)
     body = models.TextField(null=True, blank=True)
     image = models.ImageField(null = True, blank=True)
-    
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     updated = models.DateTimeField(default=datetime.now) # 수정시 업데이트 날짜 생성
     created = models.DateTimeField(default=datetime.now) # 생성시 없데이트 날짜 생성
 

@@ -4,12 +4,6 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated
 
-from rest_framework.serializers import Serializer
-from .models import Note
-from .serializers import NoteSerializer
-from api import serializers
-
-from django.http import JsonResponse
 
 from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
@@ -36,12 +30,12 @@ class MyTokenObtainPairView(TokenObtainPairView):
     serializer_class = MyTokenObtainPairSerializer
 
 
-@api_view(['GET','POST','PUT', 'DELETE'])
-@permission_classes([IsAuthenticated])
+@api_view(['GET', 'POST', 'PUT', 'DELETE'])
+# @permission_classes([IsAuthenticated])
 def getRoutes(request):
-     routes = [
-         '/api/token',
-         '/api/token/refresh',
+    routes = [
+        '/api/token',
+        '/api/token/refresh',
         {
             'Endpoint': '/notes/',
             'method': 'GET',
@@ -73,10 +67,7 @@ def getRoutes(request):
             'description': 'Deletes and exiting note'
         },
     ]
-     return Response(routes)
-
-
-
+    return Response(routes)
 
 
 # /notes GET
@@ -85,18 +76,22 @@ def getRoutes(request):
 # /notes/<id> PUT
 # /notes/<id> DELETE
 
-@method_decorator(csrf_exempt,name='dispatch')
-@api_view(['GET', 'POST'])
+@method_decorator(csrf_exempt, name='dispatch')
+@api_view(['GET','POST'])
+# @permission_classes([IsAuthenticated])
 def getNotes(request):
 
     if request.method == 'GET':
         return getNotesList(request)
 
+
     if request.method == 'POST':
         return createNote(request)
 
-@method_decorator(csrf_exempt,name='dispatch')
+
+@method_decorator(csrf_exempt, name='dispatch')
 @api_view(['GET', 'PUT', 'DELETE'])
+@permission_classes([IsAuthenticated])
 def getNote(request, pk):
 
     if request.method == 'GET':
