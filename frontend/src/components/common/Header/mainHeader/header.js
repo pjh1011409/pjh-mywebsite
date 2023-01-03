@@ -1,12 +1,9 @@
 import { NavLink } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import React, { useState, useContext } from 'react';
-import AuthContext from 'context/AuthContext';
 import styles from './header.module.css';
 
 function Header({ handleIndexClick }) {
-  const { user, logoutUser } = useContext(AuthContext);
-
   const [menu, setMenu] = useState(['AboutMe', 'TechStack', 'Projects', 'Q&A', 'Studying']);
   const [menuToggle, setMenuToggle] = useState(false);
   // 메뉴리스트를 클릭할 시 토글이 false가 되어 자동적으로 메뉴박스닫힘 기능 구현
@@ -65,32 +62,6 @@ function Header({ handleIndexClick }) {
                 </div>
               );
             })}
-            <NavLink className={styles.menuItem} as={Link} to="/studyMain">
-              Dev-Log
-            </NavLink>
-            <div className={styles.menuItem}>
-              {user ? (
-                <div role="presentation" onClick={logoutUser} className={styles.logoutMenu}>
-                  Logout
-                </div>
-              ) : (
-                <Link to="/login" className={styles.loginMenu}>
-                  Login
-                </Link>
-              )}
-            </div>
-            <div className={styles.userLayout}>
-              {user && (
-                <div>
-                  <img
-                    alt="안녕(이미지없음)"
-                    src={`${process.env.PUBLIC_URL}/static/images/login/hello.png`}
-                    className={styles.helloImg}
-                  />
-                  <div className={styles.userName}> {user.username}님 환영합니다</div>
-                </div>
-              )}
-            </div>
           </div>
         </div>
       </nav>
